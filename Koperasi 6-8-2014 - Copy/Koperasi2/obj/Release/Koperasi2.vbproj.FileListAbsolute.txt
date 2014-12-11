@@ -1,0 +1,200 @@
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\ResolveAssemblyReference.cache
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.EntryBPKB.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.BastDana.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.BastElektronik.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.BastKTA.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.BastMotor.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmDana.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmElektronik.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmKTA.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmMain.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmMotor2.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmTabApp.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmTabMem.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.MultiReportView.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.pDana.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.pElektronik.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.pKTA.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.ReportView.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmKwitansiOwner.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmLogin.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmPolisAsuransi.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmSelectServer.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmTabKontrak.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.PelunasanKhusus.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.PelunasanNormal.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.frmKwitansi.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.PembayaranAngsuran.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.PembayaranDenda.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.Resources.resources
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.vbproj.GenerateResource.Cache
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.exe.licenses
+E:\Kerjaan\Koperasi\Koperasi2\obj\Release\Koperasi2.pdb
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Report\TandaTerimaBarang.vb
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Report\TandaTerimaBpkb.vb
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Report\TandaTerimaUang.vb
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Report\TandaTerimaBarang.rpt
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Report\TandaTerimaBpkb.rpt
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Report\TandaTerimaUang.rpt
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Koperasi2.exe
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Koperasi2.pdb
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Koperasi2.xml
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Microsoft.Office.Interop.Excel.dll
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\office.dll
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\bin\Release\Microsoft.Vbe.Interop.dll
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\ResolveAssemblyReference.cache
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.EntryBPKB.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.BastDana.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.BastElektronik.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.BastKTA.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.BastMotor.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmDana.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmElektronik.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmKTA.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmMain.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmMotor2.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmTabApp.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmTabMem.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.MultiReportView.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.pDana.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.pElektronik.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.pKTA.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.ReportView.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmKwitansiOwner.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmLogin.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmPolisAsuransi.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmSelectServer.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmTabKontrak.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.PelunasanAsuransi.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.PelunasanDimuka.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.PelunasanKhusus.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.PelunasanNormal.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.frmKwitansi.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.PembayaranAngsuran.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.PembayaranDenda.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.Resources.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.ReportOrder.resources
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.vbproj.GenerateResource.Cache
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.exe.licenses
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.exe
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.xml
+E:\Kerjaan\Koperasi 19-6-2014\Koperasi2\obj\Release\Koperasi2.pdb
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\PO.rpt
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\PO.vb
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBarang.vb
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBpkb.vb
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaUang.vb
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBarang.rpt
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBpkb.rpt
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaUang.rpt
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.exe
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.pdb
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.xml
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Microsoft.Office.Interop.Excel.dll
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Microsoft.Vbe.Interop.dll
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\office.dll
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\ResolveAssemblyReference.cache
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmDanaTunai.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmElektronik.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmKTA.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmMotorBaru.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.EntryBPKB.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastDana.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastElektronik.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastKTA.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmAnggota.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmKaryawan.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmMain.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.Buyback.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakMotorBaru.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PembayaranAngsuran.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabApp.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabKaryawan.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabMem.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.MultiReportView.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.ReportView.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastMotorBaru.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakDanaTunai.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakElektronik.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakKTA.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.POView.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.TabKontrakMesin.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmKwitansiOwner.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmLogin.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPolisAsuransi.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmSelectServer.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabKontrak.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanAsuransi.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanDimuka.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanKhusus.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanNormal.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PembayaranDenda.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.Resources.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.ReportKontrak.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.ReportOrder.resources
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.vbproj.GenerateResource.Cache
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.exe.licenses
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.exe
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.xml
+E:\Kerjaan\Koperasi 6-8-2014 - Copy\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.pdb
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\ResolveAssemblyReference.cache
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmDanaTunai.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmElektronik.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmKTA.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmMotorBaru.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.EntryBPKB.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmAnggota.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmKaryawan.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmMain.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.Buyback.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakMotorBaru.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPenambahanModal.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPencairanCash.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPengembalianModal.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PembayaranAngsuran.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabApp.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabKaryawan.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabMem.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.MultiReportView.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.ReportView.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakDanaTunai.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakElektronik.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakKTA.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.POView.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.TabKontrakMesin.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmKwitansiOwner.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmLogin.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPolisAsuransi.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmSelectServer.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabKontrak.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanAsuransi.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanDimuka.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanKhusus.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PelunasanNormal.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PembayaranDenda.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.Resources.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.ReportKontrak.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.ReportOrder.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.vbproj.GenerateResource.Cache
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.exe.licenses
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.exe
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.xml
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.pdb
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\PO.rpt
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\PO.vb
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBarang.vb
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBpkb.vb
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaUang.vb
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBarang.rpt
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBpkb.rpt
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaUang.rpt
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.exe
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.pdb
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.xml
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Microsoft.Office.Interop.Excel.dll
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Microsoft.Vbe.Interop.dll
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\office.dll
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastDana.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastElektronik.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastKTA.resources
+E:\Kerjaan\Koperasi 14-8-2014\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastMotorBaru.resources

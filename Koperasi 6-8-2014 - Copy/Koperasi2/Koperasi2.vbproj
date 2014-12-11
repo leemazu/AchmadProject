@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06A727CB-81A7-41FC-9816-6DDD5109E008}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Koperasi2.My.MyApplication</StartupObject>
+    <RootNamespace>Koperasi2</RootNamespace>
+    <AssemblyName>Koperasi2</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Koperasi2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Koperasi2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v11.1.Core, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Reports.v11.1.Designer, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v11.1.Core, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.1.Extensions, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1.Extensions, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.1, Version=11.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Aplikasi\frmDanaTunai.Designer.vb">
+      <DependentUpon>frmDanaTunai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplikasi\frmDanaTunai.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplikasi\frmElektronik.Designer.vb">
+      <DependentUpon>frmElektronik.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplikasi\frmElektronik.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplikasi\frmKTA.Designer.vb">
+      <DependentUpon>frmKTA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplikasi\frmKTA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplikasi\frmMotorBaru.Designer.vb">
+      <DependentUpon>frmMotorBaru.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplikasi\frmMotorBaru.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BAST\BastDana.designer.vb">
+      <DependentUpon>BastDana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BAST\BastDana.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BAST\BastElektronik.designer.vb">
+      <DependentUpon>BastElektronik.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BAST\BastElektronik.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BAST\BastKTA.Designer.vb">
+      <DependentUpon>BastKTA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BAST\BastKTA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BAST\BastMotorBaru.Designer.vb">
+      <DependentUpon>BastMotorBaru.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BAST\BastMotorBaru.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmAnggota.Designer.vb">
+      <DependentUpon>frmAnggota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmAnggota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmKaryawan.Designer.vb">
+      <DependentUpon>frmKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmParsis.Designer.vb">
+      <DependentUpon>FrmParsis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmParsis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kontrak\Buyback.Designer.vb">
+      <DependentUpon>Buyback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kontrak\Buyback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kontrak\kontrakDanaTunai.Designer.vb">
+      <DependentUpon>kontrakDanaTunai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kontrak\kontrakDanaTunai.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kontrak\kontrakElektronik.Designer.vb">
+      <DependentUpon>kontrakElektronik.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kontrak\kontrakElektronik.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kontrak\kontrakKTA.Designer.vb">
+      <DependentUpon>kontrakKTA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kontrak\kontrakKTA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kontrak\kontrakMotorBaru.Designer.vb">
+      <DependentUpon>kontrakMotorBaru.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kontrak\kontrakMotorBaru.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\frmPenambahanModal.Designer.vb">
+      <DependentUpon>frmPenambahanModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\frmPenambahanModal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\frmPencairanCash.Designer.vb">
+      <DependentUpon>frmPencairanCash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\frmPencairanCash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\frmPengembalianModal.Designer.vb">
+      <DependentUpon>frmPengembalianModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\frmPengembalianModal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\Copy of PembayaranAngsuran.Designer.vb">
+      <DependentUpon>Copy of PembayaranAngsuran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\Copy of PembayaranAngsuran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportModule.vb" />
+    <Compile Include="Report\POView.Designer.vb">
+      <DependentUpon>POView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\POView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tab\frmTabKaryawan.Designer.vb">
+      <DependentUpon>frmTabKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tab\frmTabKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tab\TabKontrakMesin.Designer.vb">
+      <DependentUpon>TabKontrakMesin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tab\TabKontrakMesin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanAsuransi.Designer.vb">
+      <DependentUpon>PelunasanAsuransi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanAsuransi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmSelectServer.Designer.vb">
+      <DependentUpon>frmSelectServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmSelectServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanDimuka.Designer.vb">
+      <DependentUpon>PelunasanDimuka.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanDimuka.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PembayaranDenda.Designer.vb">
+      <DependentUpon>PembayaranDenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PembayaranDenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\frmKwitansiOwner.Designer.vb">
+      <DependentUpon>frmKwitansiOwner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\frmKwitansiOwner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tab\frmTabKontrak.Designer.vb">
+      <DependentUpon>frmTabKontrak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tab\frmTabKontrak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\PO.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\ReportKontrak.Designer.vb">
+      <DependentUpon>ReportKontrak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportKontrak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportOrder.Designer.vb">
+      <DependentUpon>ReportOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\rptKontrak.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptKontrak.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\TandaTerimaBarang.vb">
+      <DependentUpon>TandaTerimaBarang.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\TandaTerimaBpkb.vb">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TandaTerimaBpkb.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\TandaTerimaUang.vb">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TandaTerimaUang.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Bpkb&amp;Asuransi\EntryBPKB.Designer.vb">
+      <DependentUpon>EntryBPKB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bpkb&amp;Asuransi\EntryBPKB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tab\frmTabApp.Designer.vb">
+      <DependentUpon>frmTabApp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tab\frmTabApp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tab\frmTabMem.designer.vb">
+      <DependentUpon>frmTabMem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tab\frmTabMem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\MultiReportView.Designer.vb">
+      <DependentUpon>MultiReportView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\MultiReportView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportView.Designer.vb">
+      <DependentUpon>ReportView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bpkb&amp;Asuransi\frmPolisAsuransi.Designer.vb">
+      <DependentUpon>frmPolisAsuransi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bpkb&amp;Asuransi\frmPolisAsuransi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanKhusus.Designer.vb">
+      <DependentUpon>PelunasanKhusus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanKhusus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanNormal.Designer.vb">
+      <DependentUpon>PelunasanNormal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\PelunasanNormal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="Module2.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Report\TandaTerimaBarang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TandaTerimaBarang.vb</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\TandaTerimaBpkb.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TandaTerimaBpkb.vb</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\TandaTerimaUang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TandaTerimaUang.vb</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Aplikasi\frmDanaTunai.resx">
+      <DependentUpon>frmDanaTunai.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplikasi\frmElektronik.resx">
+      <DependentUpon>frmElektronik.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplikasi\frmKTA.resx">
+      <DependentUpon>frmKTA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplikasi\frmMotorBaru.resx">
+      <DependentUpon>frmMotorBaru.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BAST\BastDana.resx">
+      <DependentUpon>BastDana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BAST\BastElektronik.resx">
+      <DependentUpon>BastElektronik.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BAST\BastKTA.resx">
+      <DependentUpon>BastKTA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BAST\BastMotorBaru.resx">
+      <DependentUpon>BastMotorBaru.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bpkb&amp;Asuransi\EntryBPKB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EntryBPKB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmAnggota.resx">
+      <DependentUpon>frmAnggota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmKaryawan.resx">
+      <DependentUpon>frmKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmParsis.resx">
+      <DependentUpon>FrmParsis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kontrak\Buyback.resx">
+      <DependentUpon>Buyback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kontrak\kontrakMotorBaru.resx">
+      <DependentUpon>kontrakMotorBaru.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\frmPenambahanModal.resx">
+      <DependentUpon>frmPenambahanModal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\frmPencairanCash.resx">
+      <DependentUpon>frmPencairanCash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\frmPengembalianModal.resx">
+      <DependentUpon>frmPengembalianModal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\Copy of PembayaranAngsuran.resx">
+      <DependentUpon>Copy of PembayaranAngsuran.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab\frmTabApp.resx">
+      <DependentUpon>frmTabApp.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab\frmTabKaryawan.resx">
+      <DependentUpon>frmTabKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab\frmTabMem.resx">
+      <DependentUpon>frmTabMem.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\MultiReportView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MultiReportView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportView.resx">
+      <DependentUpon>ReportView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kontrak\kontrakDanaTunai.resx">
+      <DependentUpon>kontrakDanaTunai.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kontrak\kontrakElektronik.resx">
+      <DependentUpon>kontrakElektronik.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kontrak\kontrakKTA.resx">
+      <DependentUpon>kontrakKTA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\POView.resx">
+      <DependentUpon>POView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab\TabKontrakMesin.resx">
+      <DependentUpon>TabKontrakMesin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\frmKwitansiOwner.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmKwitansiOwner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bpkb&amp;Asuransi\frmPolisAsuransi.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPolisAsuransi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmSelectServer.resx">
+      <DependentUpon>frmSelectServer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab\frmTabKontrak.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTabKontrak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\PelunasanAsuransi.resx">
+      <DependentUpon>PelunasanAsuransi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\PelunasanDimuka.resx">
+      <DependentUpon>PelunasanDimuka.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\PelunasanKhusus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PelunasanKhusus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\PelunasanNormal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PelunasanNormal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\PembayaranDenda.resx">
+      <DependentUpon>PembayaranDenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PO.vb</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportKontrak.resx">
+      <DependentUpon>ReportKontrak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportOrder.resx">
+      <DependentUpon>ReportOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptKontrak.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptKontrak.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

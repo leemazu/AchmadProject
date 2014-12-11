@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Koperasi2">
+</Property><Property Name="Solution File" Value="E:\Kerjaan\Koperasi\Koperasi2.sln">
+</Property><Property Name="Date" Value="Tuesday, June 03, 2014">
+</Property><Property Name="Time" Value="9:18 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Koperasi2.sln" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2.sln">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Koperasi2.vbproj" Description="Project file successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Koperasi2.vbproj">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Koperasi2.vbproj.user" Description="Project user file successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Koperasi2.vbproj.user">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Class1.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Class1.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\ItemGrid.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\ItemGrid.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\DataResult.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\DataResult.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\DataBaseResult.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\DataBaseResult.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\DataTableResult.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\DataTableResult.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form2.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form2.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form2.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form2.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmKwitansiOwner.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmKwitansiOwner.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmKwitansiOwner.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmKwitansiOwner.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmTabKontrak.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmTabKontrak.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmTabKontrak.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmTabKontrak.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Report\TandaTerimaBarang.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Report\TandaTerimaBarang.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Report\TandaTerimaBpkb.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Report\TandaTerimaBpkb.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Report\TandaTerimaUang.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Report\TandaTerimaUang.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\EntryBPKB.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\EntryBPKB.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\EntryBPKB.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\EntryBPKB.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastDana.designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastDana.designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastDana.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastDana.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastElektronik.designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastElektronik.designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastElektronik.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastElektronik.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastKTA.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastKTA.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastKTA.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastKTA.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastMotor.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastMotor.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastMotor.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastMotor.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmElektronik.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmElektronik.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmElektronik.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmElektronik.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmKTA.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmKTA.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmKTA.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmKTA.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmMotor2.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmMotor2.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmMotor2.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmMotor2.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pElektronik.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pElektronik.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pElektronik.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pElektronik.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pKTA.designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pKTA.designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pKTA.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pKTA.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form1.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form1.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form1.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form1.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmDana.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmDana.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmDana.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmDana.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmMain.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmMain.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmMain.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmMain.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmTabApp.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmTabApp.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmTabApp.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmTabApp.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmTabMem.designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmTabMem.designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmTabMem.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmTabMem.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\MultiReportView.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\MultiReportView.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\MultiReportView.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\MultiReportView.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pDana.designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pDana.designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pDana.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pDana.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\ReportView.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\ReportView.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\ReportView.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\ReportView.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmLogin.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmLogin.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmLogin.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmLogin.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmPolisAsuransi.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmPolisAsuransi.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmPolisAsuransi.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmPolisAsuransi.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PelunasanKhusus.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PelunasanKhusus.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PelunasanKhusus.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PelunasanKhusus.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PelunasanNormal.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PelunasanNormal.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PelunasanNormal.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PelunasanNormal.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmKwitansi.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmKwitansi.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmKwitansi.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmKwitansi.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PembayaranAngsuran.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PembayaranAngsuran.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PembayaranAngsuran.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PembayaranAngsuran.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Module1.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Module1.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Module2.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Module2.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\My Project\AssemblyInfo.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\My Project\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\My Project\Application.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\My Project\Application.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\My Project\Resources.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\My Project\Resources.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\My Project\Settings.Designer.vb" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\My Project\Settings.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Report\TandaTerimaBarang.rpt" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Report\TandaTerimaBarang.rpt">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Report\TandaTerimaBpkb.rpt" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Report\TandaTerimaBpkb.rpt">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Report\TandaTerimaUang.rpt" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Report\TandaTerimaUang.rpt">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\My Project\Application.myapp" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\My Project\Application.myapp">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\My Project\Settings.settings" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\My Project\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form2.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form2.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\EntryBPKB.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\EntryBPKB.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastDana.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastDana.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastElektronik.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastElektronik.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastKTA.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastKTA.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\Form BAST\BastMotor.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\Form BAST\BastMotor.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmDana.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmDana.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmElektronik.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmElektronik.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmKTA.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmKTA.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmMain.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmMain.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmMotor2.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmMotor2.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmTabApp.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmTabApp.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\frmTabMem.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\frmTabMem.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\MultiReportView.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\MultiReportView.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pDana.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pDana.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pElektronik.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pElektronik.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\pKTA.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\pKTA.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form Pinjaman\ReportView.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form Pinjaman\ReportView.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmKwitansiOwner.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmKwitansiOwner.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmLogin.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmLogin.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmPolisAsuransi.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmPolisAsuransi.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmTabKontrak.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmTabKontrak.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PelunasanKhusus.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PelunasanKhusus.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PelunasanNormal.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PelunasanNormal.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\frmKwitansi.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\frmKwitansi.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Form\PembayaranAngsuran.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\Form\PembayaranAngsuran.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\My Project\Resources.resx" Description="File successfully backed up as E:\Kerjaan\Koperasi\Backup\Koperasi2\My Project\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Koperasi2.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Koperasi2" Source="Koperasi2\Koperasi2.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Koperasi2.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Koperasi2.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Koperasi2" Source="Koperasi2\Koperasi2.vbproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
