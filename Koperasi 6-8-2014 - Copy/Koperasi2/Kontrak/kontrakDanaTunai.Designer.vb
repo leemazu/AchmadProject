@@ -76,6 +76,12 @@ Partial Class kontrakDanaTunai
         Me.txtAnggotaID = New System.Windows.Forms.TextBox
         Me.Label27 = New System.Windows.Forms.Label
         Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.txtDaruratNama = New System.Windows.Forms.TextBox
+        Me.Label51 = New System.Windows.Forms.Label
+        Me.txtBaruTelp2 = New System.Windows.Forms.TextBox
+        Me.Label88 = New System.Windows.Forms.Label
+        Me.txtDaruratHubungan = New System.Windows.Forms.TextBox
+        Me.Label87 = New System.Windows.Forms.Label
         Me.txtBaruTelp = New System.Windows.Forms.TextBox
         Me.Label73 = New System.Windows.Forms.Label
         Me.txtBaruRW = New System.Windows.Forms.TextBox
@@ -142,64 +148,68 @@ Partial Class kontrakDanaTunai
         Me.cmbKtpKota = New System.Windows.Forms.ComboBox
         Me.txtKtpAlamat = New System.Windows.Forms.TextBox
         Me.Label7 = New System.Windows.Forms.Label
-        Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.TpDanaTunai = New System.Windows.Forms.TabPage
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.txtDTNoBpkb = New System.Windows.Forms.TextBox
+        Me.Label18 = New System.Windows.Forms.Label
+        Me.txtDTAngsuran = New System.Windows.Forms.TextBox
+        Me.Label28 = New System.Windows.Forms.Label
+        Me.txtDTTotalHutang = New System.Windows.Forms.TextBox
+        Me.Label26 = New System.Windows.Forms.Label
+        Me.txtDTBunga = New System.Windows.Forms.TextBox
+        Me.Label25 = New System.Windows.Forms.Label
+        Me.txtDTPokok = New System.Windows.Forms.TextBox
+        Me.Label24 = New System.Windows.Forms.Label
+        Me.txtDTAdminMurni = New System.Windows.Forms.TextBox
+        Me.Label23 = New System.Windows.Forms.Label
+        Me.txtDTBungaPengali = New System.Windows.Forms.TextBox
+        Me.Label22 = New System.Windows.Forms.Label
+        Me.txtDTBungaFlat = New System.Windows.Forms.TextBox
+        Me.Label21 = New System.Windows.Forms.Label
+        Me.btnKalkulasiDanaTunai = New System.Windows.Forms.Button
+        Me.txtDTAdminKredit = New System.Windows.Forms.TextBox
+        Me.Label20 = New System.Windows.Forms.Label
+        Me.txtDTTingkatBunga = New System.Windows.Forms.TextBox
+        Me.Label19 = New System.Windows.Forms.Label
+        Me.txtDTTenor = New System.Windows.Forms.TextBox
+        Me.Label34 = New System.Windows.Forms.Label
+        Me.txtDTPremiAdmin = New System.Windows.Forms.TextBox
+        Me.Label35 = New System.Windows.Forms.Label
+        Me.txtDTAdmin = New System.Windows.Forms.TextBox
+        Me.Label36 = New System.Windows.Forms.Label
+        Me.txtDTPremiAsuransi = New System.Windows.Forms.TextBox
+        Me.Label37 = New System.Windows.Forms.Label
+        Me.txtDTPinjaman = New System.Windows.Forms.TextBox
+        Me.Label38 = New System.Windows.Forms.Label
+        Me.txtDTNopol = New System.Windows.Forms.TextBox
+        Me.Label39 = New System.Windows.Forms.Label
+        Me.txtDTRangka = New System.Windows.Forms.TextBox
+        Me.Label45 = New System.Windows.Forms.Label
+        Me.txtDTMesin = New System.Windows.Forms.TextBox
+        Me.Label46 = New System.Windows.Forms.Label
+        Me.txtDTTahun = New System.Windows.Forms.TextBox
+        Me.Label47 = New System.Windows.Forms.Label
+        Me.txtDTWarna = New System.Windows.Forms.TextBox
+        Me.Label48 = New System.Windows.Forms.Label
+        Me.txtDTTipe = New System.Windows.Forms.TextBox
+        Me.Label49 = New System.Windows.Forms.Label
+        Me.txtDTKendaraan = New System.Windows.Forms.TextBox
+        Me.Label86 = New System.Windows.Forms.Label
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.txtStatusBpkb = New System.Windows.Forms.TextBox
-        Me.txtTglAngsuran = New System.Windows.Forms.TextBox
-        Me.txtTglBpkb = New System.Windows.Forms.TextBox
-        Me.txtNoBPKB = New System.Windows.Forms.TextBox
+        Me.dtpDTKontrak = New System.Windows.Forms.DateTimePicker
         Me.Label50 = New System.Windows.Forms.Label
-        Me.Label51 = New System.Windows.Forms.Label
+        Me.dtpDTAngsuran1 = New System.Windows.Forms.DateTimePicker
+        Me.dtpDTBast = New System.Windows.Forms.DateTimePicker
         Me.Label52 = New System.Windows.Forms.Label
         Me.Label53 = New System.Windows.Forms.Label
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.btnKalkulasi = New System.Windows.Forms.Button
-        Me.txtAngsuran = New System.Windows.Forms.TextBox
-        Me.Label28 = New System.Windows.Forms.Label
-        Me.txtTotalHutang = New System.Windows.Forms.TextBox
-        Me.Label26 = New System.Windows.Forms.Label
-        Me.txtBunga = New System.Windows.Forms.TextBox
-        Me.Label25 = New System.Windows.Forms.Label
-        Me.txtPokok = New System.Windows.Forms.TextBox
-        Me.Label24 = New System.Windows.Forms.Label
-        Me.txtAdminMurni = New System.Windows.Forms.TextBox
-        Me.Label23 = New System.Windows.Forms.Label
-        Me.txtBungaPengali = New System.Windows.Forms.TextBox
-        Me.Label22 = New System.Windows.Forms.Label
-        Me.txtBungaFlat = New System.Windows.Forms.TextBox
-        Me.Label21 = New System.Windows.Forms.Label
-        Me.txtAdminKredit = New System.Windows.Forms.TextBox
-        Me.Label20 = New System.Windows.Forms.Label
-        Me.txtTingkatBunga = New System.Windows.Forms.TextBox
-        Me.Label19 = New System.Windows.Forms.Label
-        Me.txtTenor = New System.Windows.Forms.TextBox
-        Me.Label18 = New System.Windows.Forms.Label
-        Me.txtPremiAdmin = New System.Windows.Forms.TextBox
-        Me.Label34 = New System.Windows.Forms.Label
-        Me.txtAdmin = New System.Windows.Forms.TextBox
-        Me.Label35 = New System.Windows.Forms.Label
-        Me.txtPremiAsuransi = New System.Windows.Forms.TextBox
-        Me.Label36 = New System.Windows.Forms.Label
-        Me.txtPinjaman = New System.Windows.Forms.TextBox
-        Me.Label37 = New System.Windows.Forms.Label
-        Me.txtNopol = New System.Windows.Forms.TextBox
-        Me.Label38 = New System.Windows.Forms.Label
-        Me.txtRangka = New System.Windows.Forms.TextBox
-        Me.Label39 = New System.Windows.Forms.Label
-        Me.txtMesin = New System.Windows.Forms.TextBox
-        Me.Label45 = New System.Windows.Forms.Label
-        Me.txtTahun = New System.Windows.Forms.TextBox
-        Me.Label46 = New System.Windows.Forms.Label
-        Me.txtWarna = New System.Windows.Forms.TextBox
-        Me.Label47 = New System.Windows.Forms.Label
-        Me.txtTipe = New System.Windows.Forms.TextBox
-        Me.Label48 = New System.Windows.Forms.Label
-        Me.txtKendaraan = New System.Windows.Forms.TextBox
-        Me.Label49 = New System.Windows.Forms.Label
+        Me.TpMotorBaru = New System.Windows.Forms.TabPage
+        Me.TpElektronik = New System.Windows.Forms.TabPage
+        Me.TpKTA = New System.Windows.Forms.TabPage
         Me.TabPage4 = New System.Windows.Forms.TabPage
         Me.Button2 = New System.Windows.Forms.Button
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.lblCollateralWarning = New System.Windows.Forms.Label
         Me.txtKontrakID = New System.Windows.Forms.TextBox
         Me.btnAplikasiCari = New System.Windows.Forms.Button
         Me.Label54 = New System.Windows.Forms.Label
@@ -209,25 +219,204 @@ Partial Class kontrakDanaTunai
         Me.cmbKolektor = New System.Windows.Forms.ComboBox
         Me.Label85 = New System.Windows.Forms.Label
         Me.txtAplikasiTipe = New System.Windows.Forms.TextBox
+        Me.btnSave = New System.Windows.Forms.Button
+        Me.btnReset = New System.Windows.Forms.Button
+        Me.btnUpdate = New System.Windows.Forms.Button
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox
+        Me.Label89 = New System.Windows.Forms.Label
+        Me.txtPureDownPaymentP = New System.Windows.Forms.TextBox
+        Me.txtDownPayment = New System.Windows.Forms.TextBox
+        Me.Label90 = New System.Windows.Forms.Label
+        Me.txtDealerSubs = New System.Windows.Forms.TextBox
+        Me.Label91 = New System.Windows.Forms.Label
+        Me.txtMarketingCost = New System.Windows.Forms.TextBox
+        Me.Label92 = New System.Windows.Forms.Label
+        Me.txtDealerTransfer = New System.Windows.Forms.TextBox
+        Me.Label93 = New System.Windows.Forms.Label
+        Me.txtPureDownPayment = New System.Windows.Forms.TextBox
+        Me.Label94 = New System.Windows.Forms.Label
+        Me.txtAngsuran = New System.Windows.Forms.TextBox
+        Me.Label95 = New System.Windows.Forms.Label
+        Me.txtTotalHutang = New System.Windows.Forms.TextBox
+        Me.Label96 = New System.Windows.Forms.Label
+        Me.txtBunga = New System.Windows.Forms.TextBox
+        Me.Label97 = New System.Windows.Forms.Label
+        Me.txtPokok = New System.Windows.Forms.TextBox
+        Me.Label98 = New System.Windows.Forms.Label
+        Me.txtAdminMurni = New System.Windows.Forms.TextBox
+        Me.Label99 = New System.Windows.Forms.Label
+        Me.txtBungaPengali = New System.Windows.Forms.TextBox
+        Me.Label100 = New System.Windows.Forms.Label
+        Me.txtBungaFlat = New System.Windows.Forms.TextBox
+        Me.Label101 = New System.Windows.Forms.Label
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.txtAdminKredit = New System.Windows.Forms.TextBox
+        Me.Label102 = New System.Windows.Forms.Label
+        Me.txtTingkatBunga = New System.Windows.Forms.TextBox
+        Me.Label103 = New System.Windows.Forms.Label
+        Me.txtTenor = New System.Windows.Forms.TextBox
+        Me.Label104 = New System.Windows.Forms.Label
+        Me.txtPremiAdmin = New System.Windows.Forms.TextBox
+        Me.Label105 = New System.Windows.Forms.Label
+        Me.txtAdmin = New System.Windows.Forms.TextBox
+        Me.Label106 = New System.Windows.Forms.Label
+        Me.txtPremiAsuransi = New System.Windows.Forms.TextBox
+        Me.Label107 = New System.Windows.Forms.Label
+        Me.txtPinjaman = New System.Windows.Forms.TextBox
+        Me.Label108 = New System.Windows.Forms.Label
+        Me.txtTahun = New System.Windows.Forms.TextBox
+        Me.Label109 = New System.Windows.Forms.Label
+        Me.txtWarna = New System.Windows.Forms.TextBox
+        Me.Label110 = New System.Windows.Forms.Label
+        Me.txtTipe = New System.Windows.Forms.TextBox
+        Me.Label111 = New System.Windows.Forms.Label
+        Me.txtKendaraan = New System.Windows.Forms.TextBox
+        Me.Label112 = New System.Windows.Forms.Label
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
+        Me.Label113 = New System.Windows.Forms.Label
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker
+        Me.Label114 = New System.Windows.Forms.Label
+        Me.Label115 = New System.Windows.Forms.Label
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox
+        Me.cmbStatusBpkb = New System.Windows.Forms.ComboBox
+        Me.dtKeluar = New System.Windows.Forms.DateTimePicker
+        Me.dtMasuk = New System.Windows.Forms.DateTimePicker
+        Me.txtPengambil = New System.Windows.Forms.TextBox
+        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.txtRangka = New System.Windows.Forms.TextBox
+        Me.txtMesin = New System.Windows.Forms.TextBox
+        Me.txtPlatno = New System.Windows.Forms.TextBox
+        Me.txtNamabpkb = New System.Windows.Forms.TextBox
+        Me.txtNoBpkb = New System.Windows.Forms.TextBox
+        Me.Label116 = New System.Windows.Forms.Label
+        Me.Label117 = New System.Windows.Forms.Label
+        Me.Label118 = New System.Windows.Forms.Label
+        Me.Label119 = New System.Windows.Forms.Label
+        Me.Label120 = New System.Windows.Forms.Label
+        Me.Label121 = New System.Windows.Forms.Label
+        Me.Label122 = New System.Windows.Forms.Label
+        Me.Label123 = New System.Windows.Forms.Label
+        Me.Label124 = New System.Windows.Forms.Label
+        Me.Label125 = New System.Windows.Forms.Label
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker
+        Me.DateTimePicker5 = New System.Windows.Forms.DateTimePicker
+        Me.Button3 = New System.Windows.Forms.Button
+        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.TextBox3 = New System.Windows.Forms.TextBox
+        Me.TextBox4 = New System.Windows.Forms.TextBox
+        Me.TextBox5 = New System.Windows.Forms.TextBox
+        Me.TextBox6 = New System.Windows.Forms.TextBox
+        Me.TextBox7 = New System.Windows.Forms.TextBox
+        Me.TextBox8 = New System.Windows.Forms.TextBox
+        Me.Label126 = New System.Windows.Forms.Label
+        Me.Label127 = New System.Windows.Forms.Label
+        Me.Label128 = New System.Windows.Forms.Label
+        Me.Label129 = New System.Windows.Forms.Label
+        Me.Label130 = New System.Windows.Forms.Label
+        Me.Label131 = New System.Windows.Forms.Label
+        Me.Label132 = New System.Windows.Forms.Label
+        Me.Label133 = New System.Windows.Forms.Label
+        Me.Label134 = New System.Windows.Forms.Label
+        Me.Label135 = New System.Windows.Forms.Label
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox
+        Me.TextBox9 = New System.Windows.Forms.TextBox
+        Me.Label136 = New System.Windows.Forms.Label
+        Me.TextBox10 = New System.Windows.Forms.TextBox
+        Me.Label137 = New System.Windows.Forms.Label
+        Me.TextBox11 = New System.Windows.Forms.TextBox
+        Me.Label138 = New System.Windows.Forms.Label
+        Me.TextBox12 = New System.Windows.Forms.TextBox
+        Me.Label139 = New System.Windows.Forms.Label
+        Me.TextBox13 = New System.Windows.Forms.TextBox
+        Me.Label140 = New System.Windows.Forms.Label
+        Me.TextBox14 = New System.Windows.Forms.TextBox
+        Me.Label141 = New System.Windows.Forms.Label
+        Me.Button4 = New System.Windows.Forms.Button
+        Me.TextBox15 = New System.Windows.Forms.TextBox
+        Me.Label142 = New System.Windows.Forms.Label
+        Me.TextBox16 = New System.Windows.Forms.TextBox
+        Me.Label143 = New System.Windows.Forms.Label
+        Me.TextBox17 = New System.Windows.Forms.TextBox
+        Me.Label144 = New System.Windows.Forms.Label
+        Me.TextBox18 = New System.Windows.Forms.TextBox
+        Me.Label145 = New System.Windows.Forms.Label
+        Me.TextBox19 = New System.Windows.Forms.TextBox
+        Me.Label146 = New System.Windows.Forms.Label
+        Me.TextBox20 = New System.Windows.Forms.TextBox
+        Me.Label147 = New System.Windows.Forms.Label
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox
+        Me.DateTimePicker6 = New System.Windows.Forms.DateTimePicker
+        Me.Label148 = New System.Windows.Forms.Label
+        Me.DateTimePicker7 = New System.Windows.Forms.DateTimePicker
+        Me.DateTimePicker8 = New System.Windows.Forms.DateTimePicker
+        Me.Label149 = New System.Windows.Forms.Label
+        Me.Label150 = New System.Windows.Forms.Label
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox
+        Me.TextBox21 = New System.Windows.Forms.TextBox
+        Me.Label151 = New System.Windows.Forms.Label
+        Me.TextBox22 = New System.Windows.Forms.TextBox
+        Me.Label152 = New System.Windows.Forms.Label
+        Me.TextBox23 = New System.Windows.Forms.TextBox
+        Me.Label153 = New System.Windows.Forms.Label
+        Me.TextBox24 = New System.Windows.Forms.TextBox
+        Me.Label154 = New System.Windows.Forms.Label
+        Me.TextBox25 = New System.Windows.Forms.TextBox
+        Me.Label155 = New System.Windows.Forms.Label
+        Me.TextBox26 = New System.Windows.Forms.TextBox
+        Me.Label156 = New System.Windows.Forms.Label
+        Me.Button5 = New System.Windows.Forms.Button
+        Me.TextBox27 = New System.Windows.Forms.TextBox
+        Me.Label157 = New System.Windows.Forms.Label
+        Me.TextBox28 = New System.Windows.Forms.TextBox
+        Me.Label158 = New System.Windows.Forms.Label
+        Me.TextBox29 = New System.Windows.Forms.TextBox
+        Me.Label159 = New System.Windows.Forms.Label
+        Me.GroupBox13 = New System.Windows.Forms.GroupBox
+        Me.DateTimePicker9 = New System.Windows.Forms.DateTimePicker
+        Me.Label160 = New System.Windows.Forms.Label
+        Me.DateTimePicker10 = New System.Windows.Forms.DateTimePicker
+        Me.DateTimePicker11 = New System.Windows.Forms.DateTimePicker
+        Me.Label161 = New System.Windows.Forms.Label
+        Me.Label162 = New System.Windows.Forms.Label
+        Me.lblDokumen = New System.Windows.Forms.Label
+        Me.txtAplikasiDokumen = New System.Windows.Forms.TextBox
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.TpDanaTunai.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.TpMotorBaru.SuspendLayout()
+        Me.TpElektronik.SuspendLayout()
+        Me.TpKTA.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
+        Me.GroupBox13.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TpDanaTunai)
+        Me.TabControl1.Controls.Add(Me.TpMotorBaru)
+        Me.TabControl1.Controls.Add(Me.TpElektronik)
+        Me.TabControl1.Controls.Add(Me.TpKTA)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Location = New System.Drawing.Point(12, 59)
         Me.TabControl1.Name = "TabControl1"
@@ -237,6 +426,8 @@ Partial Class kontrakDanaTunai
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.txtAplikasiDokumen)
+        Me.TabPage1.Controls.Add(Me.lblDokumen)
         Me.TabPage1.Controls.Add(Me.cmbAplikasiSm)
         Me.TabPage1.Controls.Add(Me.cmbAplikasiSy)
         Me.TabPage1.Controls.Add(Me.cmbAplikasiCa)
@@ -758,6 +949,12 @@ Partial Class kontrakDanaTunai
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.txtDaruratNama)
+        Me.TabPage2.Controls.Add(Me.Label51)
+        Me.TabPage2.Controls.Add(Me.txtBaruTelp2)
+        Me.TabPage2.Controls.Add(Me.Label88)
+        Me.TabPage2.Controls.Add(Me.txtDaruratHubungan)
+        Me.TabPage2.Controls.Add(Me.Label87)
         Me.TabPage2.Controls.Add(Me.txtBaruTelp)
         Me.TabPage2.Controls.Add(Me.Label73)
         Me.TabPage2.Controls.Add(Me.txtBaruRW)
@@ -832,9 +1029,57 @@ Partial Class kontrakDanaTunai
         Me.TabPage2.Text = "Alamat"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'txtDaruratNama
+        '
+        Me.txtDaruratNama.Location = New System.Drawing.Point(811, 335)
+        Me.txtDaruratNama.Name = "txtDaruratNama"
+        Me.txtDaruratNama.Size = New System.Drawing.Size(119, 20)
+        Me.txtDaruratNama.TabIndex = 111
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Location = New System.Drawing.Point(748, 337)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(35, 13)
+        Me.Label51.TabIndex = 110
+        Me.Label51.Text = "Nama"
+        '
+        'txtBaruTelp2
+        '
+        Me.txtBaruTelp2.Location = New System.Drawing.Point(624, 498)
+        Me.txtBaruTelp2.Name = "txtBaruTelp2"
+        Me.txtBaruTelp2.Size = New System.Drawing.Size(119, 20)
+        Me.txtBaruTelp2.TabIndex = 109
+        '
+        'Label88
+        '
+        Me.Label88.AutoSize = True
+        Me.Label88.Location = New System.Drawing.Point(563, 505)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(55, 13)
+        Me.Label88.TabIndex = 108
+        Me.Label88.Text = "Telepon 2"
+        '
+        'txtDaruratHubungan
+        '
+        Me.txtDaruratHubungan.Location = New System.Drawing.Point(811, 370)
+        Me.txtDaruratHubungan.Name = "txtDaruratHubungan"
+        Me.txtDaruratHubungan.Size = New System.Drawing.Size(119, 20)
+        Me.txtDaruratHubungan.TabIndex = 107
+        '
+        'Label87
+        '
+        Me.Label87.AutoSize = True
+        Me.Label87.Location = New System.Drawing.Point(748, 372)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(57, 13)
+        Me.Label87.TabIndex = 106
+        Me.Label87.Text = "Hubungan"
+        '
         'txtBaruTelp
         '
-        Me.txtBaruTelp.Location = New System.Drawing.Point(612, 472)
+        Me.txtBaruTelp.Location = New System.Drawing.Point(624, 472)
         Me.txtBaruTelp.Name = "txtBaruTelp"
         Me.txtBaruTelp.Size = New System.Drawing.Size(119, 20)
         Me.txtBaruTelp.TabIndex = 105
@@ -844,9 +1089,9 @@ Partial Class kontrakDanaTunai
         Me.Label73.AutoSize = True
         Me.Label73.Location = New System.Drawing.Point(563, 480)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(46, 13)
+        Me.Label73.Size = New System.Drawing.Size(55, 13)
         Me.Label73.TabIndex = 104
-        Me.Label73.Text = "Telepon"
+        Me.Label73.Text = "Telepon 1"
         '
         'txtBaruRW
         '
@@ -1370,7 +1615,6 @@ Partial Class kontrakDanaTunai
         'cmbKtpKelurahan
         '
         Me.cmbKtpKelurahan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbKtpKelurahan.Enabled = False
         Me.cmbKtpKelurahan.FormattingEnabled = True
         Me.cmbKtpKelurahan.Location = New System.Drawing.Point(385, 67)
         Me.cmbKtpKelurahan.Name = "cmbKtpKelurahan"
@@ -1380,7 +1624,6 @@ Partial Class kontrakDanaTunai
         'cmbKtpKecamatan
         '
         Me.cmbKtpKecamatan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbKtpKecamatan.Enabled = False
         Me.cmbKtpKecamatan.FormattingEnabled = True
         Me.cmbKtpKecamatan.Location = New System.Drawing.Point(385, 40)
         Me.cmbKtpKecamatan.Name = "cmbKtpKecamatan"
@@ -1390,7 +1633,6 @@ Partial Class kontrakDanaTunai
         'cmbKtpKota
         '
         Me.cmbKtpKota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbKtpKota.Enabled = False
         Me.cmbKtpKota.FormattingEnabled = True
         Me.cmbKtpKota.Location = New System.Drawing.Point(385, 13)
         Me.cmbKtpKota.Name = "cmbKtpKota"
@@ -1415,177 +1657,99 @@ Partial Class kontrakDanaTunai
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Alamat KTP"
         '
-        'TabPage3
+        'TpDanaTunai
         '
-        Me.TabPage3.Controls.Add(Me.GroupBox3)
-        Me.TabPage3.Controls.Add(Me.GroupBox1)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1342, 540)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Collateral"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.txtStatusBpkb)
-        Me.GroupBox3.Controls.Add(Me.txtTglAngsuran)
-        Me.GroupBox3.Controls.Add(Me.txtTglBpkb)
-        Me.GroupBox3.Controls.Add(Me.txtNoBPKB)
-        Me.GroupBox3.Controls.Add(Me.Label50)
-        Me.GroupBox3.Controls.Add(Me.Label51)
-        Me.GroupBox3.Controls.Add(Me.Label52)
-        Me.GroupBox3.Controls.Add(Me.Label53)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 221)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(714, 58)
-        Me.GroupBox3.TabIndex = 13
-        Me.GroupBox3.TabStop = False
-        '
-        'txtStatusBpkb
-        '
-        Me.txtStatusBpkb.Enabled = False
-        Me.txtStatusBpkb.Location = New System.Drawing.Point(78, 25)
-        Me.txtStatusBpkb.MaxLength = 18
-        Me.txtStatusBpkb.Name = "txtStatusBpkb"
-        Me.txtStatusBpkb.Size = New System.Drawing.Size(90, 20)
-        Me.txtStatusBpkb.TabIndex = 17
-        '
-        'txtTglAngsuran
-        '
-        Me.txtTglAngsuran.Enabled = False
-        Me.txtTglAngsuran.Location = New System.Drawing.Point(618, 21)
-        Me.txtTglAngsuran.MaxLength = 18
-        Me.txtTglAngsuran.Name = "txtTglAngsuran"
-        Me.txtTglAngsuran.Size = New System.Drawing.Size(90, 20)
-        Me.txtTglAngsuran.TabIndex = 16
-        '
-        'txtTglBpkb
-        '
-        Me.txtTglBpkb.Enabled = False
-        Me.txtTglBpkb.Location = New System.Drawing.Point(432, 22)
-        Me.txtTglBpkb.MaxLength = 18
-        Me.txtTglBpkb.Name = "txtTglBpkb"
-        Me.txtTglBpkb.Size = New System.Drawing.Size(90, 20)
-        Me.txtTglBpkb.TabIndex = 15
-        '
-        'txtNoBPKB
-        '
-        Me.txtNoBPKB.Enabled = False
-        Me.txtNoBPKB.Location = New System.Drawing.Point(228, 25)
-        Me.txtNoBPKB.MaxLength = 18
-        Me.txtNoBPKB.Name = "txtNoBPKB"
-        Me.txtNoBPKB.Size = New System.Drawing.Size(118, 20)
-        Me.txtNoBPKB.TabIndex = 14
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(170, 29)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(52, 13)
-        Me.Label50.TabIndex = 12
-        Me.Label50.Text = "No.BPKB"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(4, 28)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(68, 13)
-        Me.Label51.TabIndex = 10
-        Me.Label51.Text = "Status BPKB"
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(532, 28)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(77, 13)
-        Me.Label52.TabIndex = 8
-        Me.Label52.Text = "Angsuran Ke-1"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(349, 28)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(77, 13)
-        Me.Label53.TabIndex = 6
-        Me.Label53.Text = "Tanggal BAST"
+        Me.TpDanaTunai.Controls.Add(Me.GroupBox9)
+        Me.TpDanaTunai.Controls.Add(Me.GroupBox1)
+        Me.TpDanaTunai.Controls.Add(Me.GroupBox3)
+        Me.TpDanaTunai.Location = New System.Drawing.Point(4, 22)
+        Me.TpDanaTunai.Name = "TpDanaTunai"
+        Me.TpDanaTunai.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpDanaTunai.Size = New System.Drawing.Size(1342, 540)
+        Me.TpDanaTunai.TabIndex = 2
+        Me.TpDanaTunai.Text = "Collateral"
+        Me.TpDanaTunai.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnKalkulasi)
-        Me.GroupBox1.Controls.Add(Me.txtAngsuran)
-        Me.GroupBox1.Controls.Add(Me.Label28)
-        Me.GroupBox1.Controls.Add(Me.txtTotalHutang)
-        Me.GroupBox1.Controls.Add(Me.Label26)
-        Me.GroupBox1.Controls.Add(Me.txtBunga)
-        Me.GroupBox1.Controls.Add(Me.Label25)
-        Me.GroupBox1.Controls.Add(Me.txtPokok)
-        Me.GroupBox1.Controls.Add(Me.Label24)
-        Me.GroupBox1.Controls.Add(Me.txtAdminMurni)
-        Me.GroupBox1.Controls.Add(Me.Label23)
-        Me.GroupBox1.Controls.Add(Me.txtBungaPengali)
-        Me.GroupBox1.Controls.Add(Me.Label22)
-        Me.GroupBox1.Controls.Add(Me.txtBungaFlat)
-        Me.GroupBox1.Controls.Add(Me.Label21)
-        Me.GroupBox1.Controls.Add(Me.txtAdminKredit)
-        Me.GroupBox1.Controls.Add(Me.Label20)
-        Me.GroupBox1.Controls.Add(Me.txtTingkatBunga)
-        Me.GroupBox1.Controls.Add(Me.Label19)
-        Me.GroupBox1.Controls.Add(Me.txtTenor)
+        Me.GroupBox1.Controls.Add(Me.txtDTNoBpkb)
         Me.GroupBox1.Controls.Add(Me.Label18)
-        Me.GroupBox1.Controls.Add(Me.txtPremiAdmin)
+        Me.GroupBox1.Controls.Add(Me.txtDTAngsuran)
+        Me.GroupBox1.Controls.Add(Me.Label28)
+        Me.GroupBox1.Controls.Add(Me.txtDTTotalHutang)
+        Me.GroupBox1.Controls.Add(Me.Label26)
+        Me.GroupBox1.Controls.Add(Me.txtDTBunga)
+        Me.GroupBox1.Controls.Add(Me.Label25)
+        Me.GroupBox1.Controls.Add(Me.txtDTPokok)
+        Me.GroupBox1.Controls.Add(Me.Label24)
+        Me.GroupBox1.Controls.Add(Me.txtDTAdminMurni)
+        Me.GroupBox1.Controls.Add(Me.Label23)
+        Me.GroupBox1.Controls.Add(Me.txtDTBungaPengali)
+        Me.GroupBox1.Controls.Add(Me.Label22)
+        Me.GroupBox1.Controls.Add(Me.txtDTBungaFlat)
+        Me.GroupBox1.Controls.Add(Me.Label21)
+        Me.GroupBox1.Controls.Add(Me.btnKalkulasiDanaTunai)
+        Me.GroupBox1.Controls.Add(Me.txtDTAdminKredit)
+        Me.GroupBox1.Controls.Add(Me.Label20)
+        Me.GroupBox1.Controls.Add(Me.txtDTTingkatBunga)
+        Me.GroupBox1.Controls.Add(Me.Label19)
+        Me.GroupBox1.Controls.Add(Me.txtDTTenor)
         Me.GroupBox1.Controls.Add(Me.Label34)
-        Me.GroupBox1.Controls.Add(Me.txtAdmin)
+        Me.GroupBox1.Controls.Add(Me.txtDTPremiAdmin)
         Me.GroupBox1.Controls.Add(Me.Label35)
-        Me.GroupBox1.Controls.Add(Me.txtPremiAsuransi)
+        Me.GroupBox1.Controls.Add(Me.txtDTAdmin)
         Me.GroupBox1.Controls.Add(Me.Label36)
-        Me.GroupBox1.Controls.Add(Me.txtPinjaman)
+        Me.GroupBox1.Controls.Add(Me.txtDTPremiAsuransi)
         Me.GroupBox1.Controls.Add(Me.Label37)
-        Me.GroupBox1.Controls.Add(Me.txtNopol)
+        Me.GroupBox1.Controls.Add(Me.txtDTPinjaman)
         Me.GroupBox1.Controls.Add(Me.Label38)
-        Me.GroupBox1.Controls.Add(Me.txtRangka)
+        Me.GroupBox1.Controls.Add(Me.txtDTNopol)
         Me.GroupBox1.Controls.Add(Me.Label39)
-        Me.GroupBox1.Controls.Add(Me.txtMesin)
+        Me.GroupBox1.Controls.Add(Me.txtDTRangka)
         Me.GroupBox1.Controls.Add(Me.Label45)
-        Me.GroupBox1.Controls.Add(Me.txtTahun)
+        Me.GroupBox1.Controls.Add(Me.txtDTMesin)
         Me.GroupBox1.Controls.Add(Me.Label46)
-        Me.GroupBox1.Controls.Add(Me.txtWarna)
+        Me.GroupBox1.Controls.Add(Me.txtDTTahun)
         Me.GroupBox1.Controls.Add(Me.Label47)
-        Me.GroupBox1.Controls.Add(Me.txtTipe)
+        Me.GroupBox1.Controls.Add(Me.txtDTWarna)
         Me.GroupBox1.Controls.Add(Me.Label48)
-        Me.GroupBox1.Controls.Add(Me.txtKendaraan)
+        Me.GroupBox1.Controls.Add(Me.txtDTTipe)
         Me.GroupBox1.Controls.Add(Me.Label49)
-        Me.GroupBox1.Location = New System.Drawing.Point(2, 15)
+        Me.GroupBox1.Controls.Add(Me.txtDTKendaraan)
+        Me.GroupBox1.Controls.Add(Me.Label86)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(825, 200)
-        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.Size = New System.Drawing.Size(846, 200)
+        Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Simulasi Kredit"
         '
-        'btnKalkulasi
+        'txtDTNoBpkb
         '
-        Me.btnKalkulasi.Location = New System.Drawing.Point(637, 119)
-        Me.btnKalkulasi.Name = "btnKalkulasi"
-        Me.btnKalkulasi.Size = New System.Drawing.Size(111, 27)
-        Me.btnKalkulasi.TabIndex = 15
-        Me.btnKalkulasi.Text = "Kalkulasi"
-        Me.btnKalkulasi.UseVisualStyleBackColor = True
-        Me.btnKalkulasi.Visible = False
+        Me.txtDTNoBpkb.Location = New System.Drawing.Point(722, 50)
+        Me.txtDTNoBpkb.MaxLength = 25
+        Me.txtDTNoBpkb.Name = "txtDTNoBpkb"
+        Me.txtDTNoBpkb.Size = New System.Drawing.Size(118, 20)
+        Me.txtDTNoBpkb.TabIndex = 7
         '
-        'txtAngsuran
+        'Label18
         '
-        Me.txtAngsuran.Enabled = False
-        Me.txtAngsuran.Location = New System.Drawing.Point(645, 167)
-        Me.txtAngsuran.MaxLength = 12
-        Me.txtAngsuran.Name = "txtAngsuran"
-        Me.txtAngsuran.Size = New System.Drawing.Size(154, 20)
-        Me.txtAngsuran.TabIndex = 0
-        Me.txtAngsuran.Text = "0"
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(670, 53)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(49, 13)
+        Me.Label18.TabIndex = 15
+        Me.Label18.Text = "No Bpkb"
+        '
+        'txtDTAngsuran
+        '
+        Me.txtDTAngsuran.Enabled = False
+        Me.txtDTAngsuran.Location = New System.Drawing.Point(645, 167)
+        Me.txtDTAngsuran.MaxLength = 12
+        Me.txtDTAngsuran.Name = "txtDTAngsuran"
+        Me.txtDTAngsuran.Size = New System.Drawing.Size(154, 20)
+        Me.txtDTAngsuran.TabIndex = 0
+        Me.txtDTAngsuran.Text = "0"
         '
         'Label28
         '
@@ -1596,15 +1760,15 @@ Partial Class kontrakDanaTunai
         Me.Label28.TabIndex = 0
         Me.Label28.Text = "Angsuran"
         '
-        'txtTotalHutang
+        'txtDTTotalHutang
         '
-        Me.txtTotalHutang.Enabled = False
-        Me.txtTotalHutang.Location = New System.Drawing.Point(479, 167)
-        Me.txtTotalHutang.MaxLength = 12
-        Me.txtTotalHutang.Name = "txtTotalHutang"
-        Me.txtTotalHutang.Size = New System.Drawing.Size(94, 20)
-        Me.txtTotalHutang.TabIndex = 0
-        Me.txtTotalHutang.Text = "0"
+        Me.txtDTTotalHutang.Enabled = False
+        Me.txtDTTotalHutang.Location = New System.Drawing.Point(479, 167)
+        Me.txtDTTotalHutang.MaxLength = 12
+        Me.txtDTTotalHutang.Name = "txtDTTotalHutang"
+        Me.txtDTTotalHutang.Size = New System.Drawing.Size(94, 20)
+        Me.txtDTTotalHutang.TabIndex = 0
+        Me.txtDTTotalHutang.Text = "0"
         '
         'Label26
         '
@@ -1615,15 +1779,15 @@ Partial Class kontrakDanaTunai
         Me.Label26.TabIndex = 0
         Me.Label26.Text = "Total Hutang"
         '
-        'txtBunga
+        'txtDTBunga
         '
-        Me.txtBunga.Enabled = False
-        Me.txtBunga.Location = New System.Drawing.Point(273, 168)
-        Me.txtBunga.MaxLength = 12
-        Me.txtBunga.Name = "txtBunga"
-        Me.txtBunga.Size = New System.Drawing.Size(114, 20)
-        Me.txtBunga.TabIndex = 0
-        Me.txtBunga.Text = "0"
+        Me.txtDTBunga.Enabled = False
+        Me.txtDTBunga.Location = New System.Drawing.Point(273, 168)
+        Me.txtDTBunga.MaxLength = 12
+        Me.txtDTBunga.Name = "txtDTBunga"
+        Me.txtDTBunga.Size = New System.Drawing.Size(114, 20)
+        Me.txtDTBunga.TabIndex = 0
+        Me.txtDTBunga.Text = "0"
         '
         'Label25
         '
@@ -1634,15 +1798,15 @@ Partial Class kontrakDanaTunai
         Me.Label25.TabIndex = 0
         Me.Label25.Text = "Bunga"
         '
-        'txtPokok
+        'txtDTPokok
         '
-        Me.txtPokok.Enabled = False
-        Me.txtPokok.Location = New System.Drawing.Point(110, 167)
-        Me.txtPokok.MaxLength = 12
-        Me.txtPokok.Name = "txtPokok"
-        Me.txtPokok.Size = New System.Drawing.Size(107, 20)
-        Me.txtPokok.TabIndex = 0
-        Me.txtPokok.Text = "0"
+        Me.txtDTPokok.Enabled = False
+        Me.txtDTPokok.Location = New System.Drawing.Point(110, 167)
+        Me.txtDTPokok.MaxLength = 12
+        Me.txtDTPokok.Name = "txtDTPokok"
+        Me.txtDTPokok.Size = New System.Drawing.Size(107, 20)
+        Me.txtDTPokok.TabIndex = 0
+        Me.txtDTPokok.Text = "0"
         '
         'Label24
         '
@@ -1653,15 +1817,15 @@ Partial Class kontrakDanaTunai
         Me.Label24.TabIndex = 0
         Me.Label24.Text = "Pokok"
         '
-        'txtAdminMurni
+        'txtDTAdminMurni
         '
-        Me.txtAdminMurni.Enabled = False
-        Me.txtAdminMurni.Location = New System.Drawing.Point(393, 143)
-        Me.txtAdminMurni.MaxLength = 12
-        Me.txtAdminMurni.Name = "txtAdminMurni"
-        Me.txtAdminMurni.Size = New System.Drawing.Size(98, 20)
-        Me.txtAdminMurni.TabIndex = 0
-        Me.txtAdminMurni.Text = "0"
+        Me.txtDTAdminMurni.Enabled = False
+        Me.txtDTAdminMurni.Location = New System.Drawing.Point(393, 143)
+        Me.txtDTAdminMurni.MaxLength = 12
+        Me.txtDTAdminMurni.Name = "txtDTAdminMurni"
+        Me.txtDTAdminMurni.Size = New System.Drawing.Size(98, 20)
+        Me.txtDTAdminMurni.TabIndex = 0
+        Me.txtDTAdminMurni.Text = "0"
         '
         'Label23
         '
@@ -1672,15 +1836,15 @@ Partial Class kontrakDanaTunai
         Me.Label23.TabIndex = 0
         Me.Label23.Text = "Admin Murni"
         '
-        'txtBungaPengali
+        'txtDTBungaPengali
         '
-        Me.txtBungaPengali.Enabled = False
-        Me.txtBungaPengali.Location = New System.Drawing.Point(267, 143)
-        Me.txtBungaPengali.MaxLength = 5
-        Me.txtBungaPengali.Name = "txtBungaPengali"
-        Me.txtBungaPengali.Size = New System.Drawing.Size(41, 20)
-        Me.txtBungaPengali.TabIndex = 0
-        Me.txtBungaPengali.Text = "0"
+        Me.txtDTBungaPengali.Enabled = False
+        Me.txtDTBungaPengali.Location = New System.Drawing.Point(267, 143)
+        Me.txtDTBungaPengali.MaxLength = 5
+        Me.txtDTBungaPengali.Name = "txtDTBungaPengali"
+        Me.txtDTBungaPengali.Size = New System.Drawing.Size(41, 20)
+        Me.txtDTBungaPengali.TabIndex = 0
+        Me.txtDTBungaPengali.Text = "0"
         '
         'Label22
         '
@@ -1691,15 +1855,15 @@ Partial Class kontrakDanaTunai
         Me.Label22.TabIndex = 0
         Me.Label22.Text = "Bunga Pengali (%)"
         '
-        'txtBungaFlat
+        'txtDTBungaFlat
         '
-        Me.txtBungaFlat.Enabled = False
-        Me.txtBungaFlat.Location = New System.Drawing.Point(110, 143)
-        Me.txtBungaFlat.MaxLength = 5
-        Me.txtBungaFlat.Name = "txtBungaFlat"
-        Me.txtBungaFlat.Size = New System.Drawing.Size(38, 20)
-        Me.txtBungaFlat.TabIndex = 0
-        Me.txtBungaFlat.Text = "0"
+        Me.txtDTBungaFlat.Enabled = False
+        Me.txtDTBungaFlat.Location = New System.Drawing.Point(110, 143)
+        Me.txtDTBungaFlat.MaxLength = 5
+        Me.txtDTBungaFlat.Name = "txtDTBungaFlat"
+        Me.txtDTBungaFlat.Size = New System.Drawing.Size(38, 20)
+        Me.txtDTBungaFlat.TabIndex = 0
+        Me.txtDTBungaFlat.Text = "0"
         '
         'Label21
         '
@@ -1710,15 +1874,25 @@ Partial Class kontrakDanaTunai
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Bunga Flat (%)"
         '
-        'txtAdminKredit
+        'btnKalkulasiDanaTunai
         '
-        Me.txtAdminKredit.Enabled = False
-        Me.txtAdminKredit.Location = New System.Drawing.Point(503, 115)
-        Me.txtAdminKredit.MaxLength = 12
-        Me.txtAdminKredit.Name = "txtAdminKredit"
-        Me.txtAdminKredit.Size = New System.Drawing.Size(92, 20)
-        Me.txtAdminKredit.TabIndex = 14
-        Me.txtAdminKredit.Text = "0"
+        Me.btnKalkulasiDanaTunai.Enabled = False
+        Me.btnKalkulasiDanaTunai.Location = New System.Drawing.Point(673, 115)
+        Me.btnKalkulasiDanaTunai.Name = "btnKalkulasiDanaTunai"
+        Me.btnKalkulasiDanaTunai.Size = New System.Drawing.Size(93, 36)
+        Me.btnKalkulasiDanaTunai.TabIndex = 15
+        Me.btnKalkulasiDanaTunai.Text = "Kalkulasi"
+        Me.btnKalkulasiDanaTunai.UseVisualStyleBackColor = True
+        '
+        'txtDTAdminKredit
+        '
+        Me.txtDTAdminKredit.Enabled = False
+        Me.txtDTAdminKredit.Location = New System.Drawing.Point(503, 115)
+        Me.txtDTAdminKredit.MaxLength = 12
+        Me.txtDTAdminKredit.Name = "txtDTAdminKredit"
+        Me.txtDTAdminKredit.Size = New System.Drawing.Size(92, 20)
+        Me.txtDTAdminKredit.TabIndex = 14
+        Me.txtDTAdminKredit.Text = "0"
         '
         'Label20
         '
@@ -1729,15 +1903,15 @@ Partial Class kontrakDanaTunai
         Me.Label20.TabIndex = 12
         Me.Label20.Text = "Admin Kredit"
         '
-        'txtTingkatBunga
+        'txtDTTingkatBunga
         '
-        Me.txtTingkatBunga.Enabled = False
-        Me.txtTingkatBunga.Location = New System.Drawing.Point(379, 115)
-        Me.txtTingkatBunga.MaxLength = 5
-        Me.txtTingkatBunga.Name = "txtTingkatBunga"
-        Me.txtTingkatBunga.Size = New System.Drawing.Size(42, 20)
-        Me.txtTingkatBunga.TabIndex = 13
-        Me.txtTingkatBunga.Text = "0"
+        Me.txtDTTingkatBunga.Enabled = False
+        Me.txtDTTingkatBunga.Location = New System.Drawing.Point(379, 115)
+        Me.txtDTTingkatBunga.MaxLength = 5
+        Me.txtDTTingkatBunga.Name = "txtDTTingkatBunga"
+        Me.txtDTTingkatBunga.Size = New System.Drawing.Size(42, 20)
+        Me.txtDTTingkatBunga.TabIndex = 13
+        Me.txtDTTingkatBunga.Text = "0"
         '
         'Label19
         '
@@ -1748,227 +1922,320 @@ Partial Class kontrakDanaTunai
         Me.Label19.TabIndex = 0
         Me.Label19.Text = "Tingkat Bunga Efektif (%)"
         '
-        'txtTenor
+        'txtDTTenor
         '
-        Me.txtTenor.Enabled = False
-        Me.txtTenor.Location = New System.Drawing.Point(331, 86)
-        Me.txtTenor.MaxLength = 3
-        Me.txtTenor.Name = "txtTenor"
-        Me.txtTenor.Size = New System.Drawing.Size(38, 20)
-        Me.txtTenor.TabIndex = 9
-        Me.txtTenor.Text = "0"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(236, 89)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(70, 13)
-        Me.Label18.TabIndex = 0
-        Me.Label18.Text = "Tenor (bulan)"
-        '
-        'txtPremiAdmin
-        '
-        Me.txtPremiAdmin.Enabled = False
-        Me.txtPremiAdmin.Location = New System.Drawing.Point(110, 115)
-        Me.txtPremiAdmin.MaxLength = 12
-        Me.txtPremiAdmin.Name = "txtPremiAdmin"
-        Me.txtPremiAdmin.Size = New System.Drawing.Size(118, 20)
-        Me.txtPremiAdmin.TabIndex = 12
-        Me.txtPremiAdmin.Text = "0"
+        Me.txtDTTenor.Enabled = False
+        Me.txtDTTenor.Location = New System.Drawing.Point(331, 86)
+        Me.txtDTTenor.MaxLength = 3
+        Me.txtDTTenor.Name = "txtDTTenor"
+        Me.txtDTTenor.Size = New System.Drawing.Size(38, 20)
+        Me.txtDTTenor.TabIndex = 9
+        Me.txtDTTenor.Text = "0"
         '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(20, 118)
+        Me.Label34.Location = New System.Drawing.Point(236, 89)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(68, 13)
+        Me.Label34.Size = New System.Drawing.Size(70, 13)
         Me.Label34.TabIndex = 0
-        Me.Label34.Text = "Premi+Admin"
+        Me.Label34.Text = "Tenor (bulan)"
         '
-        'txtAdmin
+        'txtDTPremiAdmin
         '
-        Me.txtAdmin.Enabled = False
-        Me.txtAdmin.Location = New System.Drawing.Point(573, 83)
-        Me.txtAdmin.MaxLength = 12
-        Me.txtAdmin.Name = "txtAdmin"
-        Me.txtAdmin.Size = New System.Drawing.Size(103, 20)
-        Me.txtAdmin.TabIndex = 11
-        Me.txtAdmin.Text = "0"
+        Me.txtDTPremiAdmin.Enabled = False
+        Me.txtDTPremiAdmin.Location = New System.Drawing.Point(110, 115)
+        Me.txtDTPremiAdmin.MaxLength = 12
+        Me.txtDTPremiAdmin.Name = "txtDTPremiAdmin"
+        Me.txtDTPremiAdmin.Size = New System.Drawing.Size(118, 20)
+        Me.txtDTPremiAdmin.TabIndex = 12
+        Me.txtDTPremiAdmin.Text = "0"
         '
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(531, 86)
+        Me.Label35.Location = New System.Drawing.Point(20, 118)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(36, 13)
+        Me.Label35.Size = New System.Drawing.Size(68, 13)
         Me.Label35.TabIndex = 0
-        Me.Label35.Text = "Admin"
+        Me.Label35.Text = "Premi+Admin"
         '
-        'txtPremiAsuransi
+        'txtDTAdmin
         '
-        Me.txtPremiAsuransi.Enabled = False
-        Me.txtPremiAsuransi.Location = New System.Drawing.Point(473, 86)
-        Me.txtPremiAsuransi.MaxLength = 6
-        Me.txtPremiAsuransi.Name = "txtPremiAsuransi"
-        Me.txtPremiAsuransi.Size = New System.Drawing.Size(48, 20)
-        Me.txtPremiAsuransi.TabIndex = 10
-        Me.txtPremiAsuransi.Text = "0"
+        Me.txtDTAdmin.Enabled = False
+        Me.txtDTAdmin.Location = New System.Drawing.Point(573, 83)
+        Me.txtDTAdmin.MaxLength = 12
+        Me.txtDTAdmin.Name = "txtDTAdmin"
+        Me.txtDTAdmin.Size = New System.Drawing.Size(103, 20)
+        Me.txtDTAdmin.TabIndex = 11
+        Me.txtDTAdmin.Text = "0"
         '
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(377, 90)
+        Me.Label36.Location = New System.Drawing.Point(531, 86)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(93, 13)
-        Me.Label36.TabIndex = 9
-        Me.Label36.Text = "Premi Asuransi (%)"
+        Me.Label36.Size = New System.Drawing.Size(36, 13)
+        Me.Label36.TabIndex = 0
+        Me.Label36.Text = "Admin"
         '
-        'txtPinjaman
+        'txtDTPremiAsuransi
         '
-        Me.txtPinjaman.Enabled = False
-        Me.txtPinjaman.Location = New System.Drawing.Point(110, 87)
-        Me.txtPinjaman.MaxLength = 12
-        Me.txtPinjaman.Name = "txtPinjaman"
-        Me.txtPinjaman.Size = New System.Drawing.Size(111, 20)
-        Me.txtPinjaman.TabIndex = 8
-        Me.txtPinjaman.Text = "0"
+        Me.txtDTPremiAsuransi.Enabled = False
+        Me.txtDTPremiAsuransi.Location = New System.Drawing.Point(473, 86)
+        Me.txtDTPremiAsuransi.MaxLength = 6
+        Me.txtDTPremiAsuransi.Name = "txtDTPremiAsuransi"
+        Me.txtDTPremiAsuransi.Size = New System.Drawing.Size(48, 20)
+        Me.txtDTPremiAsuransi.TabIndex = 10
+        Me.txtDTPremiAsuransi.Text = "0"
         '
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(17, 93)
+        Me.Label37.Location = New System.Drawing.Point(377, 90)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(50, 13)
-        Me.Label37.TabIndex = 0
-        Me.Label37.Text = "Pinjaman"
+        Me.Label37.Size = New System.Drawing.Size(93, 13)
+        Me.Label37.TabIndex = 9
+        Me.Label37.Text = "Premi Asuransi (%)"
         '
-        'txtNopol
+        'txtDTPinjaman
         '
-        Me.txtNopol.Enabled = False
-        Me.txtNopol.Location = New System.Drawing.Point(539, 50)
-        Me.txtNopol.MaxLength = 8
-        Me.txtNopol.Name = "txtNopol"
-        Me.txtNopol.Size = New System.Drawing.Size(125, 20)
-        Me.txtNopol.TabIndex = 6
+        Me.txtDTPinjaman.Enabled = False
+        Me.txtDTPinjaman.Location = New System.Drawing.Point(110, 87)
+        Me.txtDTPinjaman.MaxLength = 12
+        Me.txtDTPinjaman.Name = "txtDTPinjaman"
+        Me.txtDTPinjaman.Size = New System.Drawing.Size(111, 20)
+        Me.txtDTPinjaman.TabIndex = 8
+        Me.txtDTPinjaman.Text = "0"
         '
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(482, 53)
+        Me.Label38.Location = New System.Drawing.Point(17, 93)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(48, 13)
+        Me.Label38.Size = New System.Drawing.Size(50, 13)
         Me.Label38.TabIndex = 0
-        Me.Label38.Text = "No.Polisi"
+        Me.Label38.Text = "Pinjaman"
         '
-        'txtRangka
+        'txtDTNopol
         '
-        Me.txtRangka.Enabled = False
-        Me.txtRangka.Location = New System.Drawing.Point(348, 50)
-        Me.txtRangka.MaxLength = 20
-        Me.txtRangka.Name = "txtRangka"
-        Me.txtRangka.Size = New System.Drawing.Size(121, 20)
-        Me.txtRangka.TabIndex = 5
+        Me.txtDTNopol.Location = New System.Drawing.Point(539, 50)
+        Me.txtDTNopol.MaxLength = 8
+        Me.txtDTNopol.Name = "txtDTNopol"
+        Me.txtDTNopol.Size = New System.Drawing.Size(125, 20)
+        Me.txtDTNopol.TabIndex = 6
         '
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(280, 53)
+        Me.Label39.Location = New System.Drawing.Point(482, 53)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(62, 13)
+        Me.Label39.Size = New System.Drawing.Size(48, 13)
         Me.Label39.TabIndex = 0
-        Me.Label39.Text = "No.Rangka"
+        Me.Label39.Text = "No.Polisi"
         '
-        'txtMesin
+        'txtDTRangka
         '
-        Me.txtMesin.Enabled = False
-        Me.txtMesin.Location = New System.Drawing.Point(110, 50)
-        Me.txtMesin.MaxLength = 23
-        Me.txtMesin.Name = "txtMesin"
-        Me.txtMesin.Size = New System.Drawing.Size(154, 20)
-        Me.txtMesin.TabIndex = 4
+        Me.txtDTRangka.Location = New System.Drawing.Point(348, 50)
+        Me.txtDTRangka.MaxLength = 20
+        Me.txtDTRangka.Name = "txtDTRangka"
+        Me.txtDTRangka.Size = New System.Drawing.Size(121, 20)
+        Me.txtDTRangka.TabIndex = 5
         '
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(18, 53)
+        Me.Label45.Location = New System.Drawing.Point(280, 53)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(52, 13)
+        Me.Label45.Size = New System.Drawing.Size(62, 13)
         Me.Label45.TabIndex = 0
-        Me.Label45.Text = "No.Mesin"
+        Me.Label45.Text = "No.Rangka"
         '
-        'txtTahun
+        'txtDTMesin
         '
-        Me.txtTahun.Enabled = False
-        Me.txtTahun.Location = New System.Drawing.Point(714, 24)
-        Me.txtTahun.MaxLength = 4
-        Me.txtTahun.Name = "txtTahun"
-        Me.txtTahun.Size = New System.Drawing.Size(35, 20)
-        Me.txtTahun.TabIndex = 3
-        Me.txtTahun.Text = "2000"
+        Me.txtDTMesin.Location = New System.Drawing.Point(110, 50)
+        Me.txtDTMesin.MaxLength = 23
+        Me.txtDTMesin.Name = "txtDTMesin"
+        Me.txtDTMesin.Size = New System.Drawing.Size(154, 20)
+        Me.txtDTMesin.TabIndex = 4
         '
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(670, 27)
+        Me.Label46.Location = New System.Drawing.Point(18, 53)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(38, 13)
+        Me.Label46.Size = New System.Drawing.Size(52, 13)
         Me.Label46.TabIndex = 0
-        Me.Label46.Text = "Tahun"
+        Me.Label46.Text = "No.Mesin"
         '
-        'txtWarna
+        'txtDTTahun
         '
-        Me.txtWarna.Enabled = False
-        Me.txtWarna.Location = New System.Drawing.Point(539, 24)
-        Me.txtWarna.MaxLength = 20
-        Me.txtWarna.Name = "txtWarna"
-        Me.txtWarna.Size = New System.Drawing.Size(125, 20)
-        Me.txtWarna.TabIndex = 2
+        Me.txtDTTahun.Location = New System.Drawing.Point(714, 24)
+        Me.txtDTTahun.MaxLength = 4
+        Me.txtDTTahun.Name = "txtDTTahun"
+        Me.txtDTTahun.Size = New System.Drawing.Size(35, 20)
+        Me.txtDTTahun.TabIndex = 3
+        Me.txtDTTahun.Text = "2000"
         '
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(482, 27)
+        Me.Label47.Location = New System.Drawing.Point(670, 27)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(39, 13)
+        Me.Label47.Size = New System.Drawing.Size(38, 13)
         Me.Label47.TabIndex = 0
-        Me.Label47.Text = "Warna"
+        Me.Label47.Text = "Tahun"
         '
-        'txtTipe
+        'txtDTWarna
         '
-        Me.txtTipe.Enabled = False
-        Me.txtTipe.Location = New System.Drawing.Point(316, 24)
-        Me.txtTipe.MaxLength = 20
-        Me.txtTipe.Name = "txtTipe"
-        Me.txtTipe.Size = New System.Drawing.Size(153, 20)
-        Me.txtTipe.TabIndex = 1
+        Me.txtDTWarna.Location = New System.Drawing.Point(539, 24)
+        Me.txtDTWarna.MaxLength = 20
+        Me.txtDTWarna.Name = "txtDTWarna"
+        Me.txtDTWarna.Size = New System.Drawing.Size(125, 20)
+        Me.txtDTWarna.TabIndex = 2
         '
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(280, 27)
+        Me.Label48.Location = New System.Drawing.Point(482, 27)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(28, 13)
+        Me.Label48.Size = New System.Drawing.Size(39, 13)
         Me.Label48.TabIndex = 0
-        Me.Label48.Text = "Tipe"
+        Me.Label48.Text = "Warna"
         '
-        'txtKendaraan
+        'txtDTTipe
         '
-        Me.txtKendaraan.Enabled = False
-        Me.txtKendaraan.Location = New System.Drawing.Point(110, 24)
-        Me.txtKendaraan.MaxLength = 23
-        Me.txtKendaraan.Name = "txtKendaraan"
-        Me.txtKendaraan.Size = New System.Drawing.Size(154, 20)
-        Me.txtKendaraan.TabIndex = 0
+        Me.txtDTTipe.Location = New System.Drawing.Point(316, 24)
+        Me.txtDTTipe.MaxLength = 20
+        Me.txtDTTipe.Name = "txtDTTipe"
+        Me.txtDTTipe.Size = New System.Drawing.Size(153, 20)
+        Me.txtDTTipe.TabIndex = 1
         '
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(18, 27)
+        Me.Label49.Location = New System.Drawing.Point(280, 27)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(86, 13)
+        Me.Label49.Size = New System.Drawing.Size(28, 13)
         Me.Label49.TabIndex = 0
-        Me.Label49.Text = "Merk Kendaraan"
+        Me.Label49.Text = "Tipe"
+        '
+        'txtDTKendaraan
+        '
+        Me.txtDTKendaraan.Location = New System.Drawing.Point(110, 24)
+        Me.txtDTKendaraan.MaxLength = 23
+        Me.txtDTKendaraan.Name = "txtDTKendaraan"
+        Me.txtDTKendaraan.Size = New System.Drawing.Size(154, 20)
+        Me.txtDTKendaraan.TabIndex = 0
+        '
+        'Label86
+        '
+        Me.Label86.AutoSize = True
+        Me.Label86.Location = New System.Drawing.Point(18, 27)
+        Me.Label86.Name = "Label86"
+        Me.Label86.Size = New System.Drawing.Size(86, 13)
+        Me.Label86.TabIndex = 0
+        Me.Label86.Text = "Merk Kendaraan"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.dtpDTKontrak)
+        Me.GroupBox3.Controls.Add(Me.Label50)
+        Me.GroupBox3.Controls.Add(Me.dtpDTAngsuran1)
+        Me.GroupBox3.Controls.Add(Me.dtpDTBast)
+        Me.GroupBox3.Controls.Add(Me.Label52)
+        Me.GroupBox3.Controls.Add(Me.Label53)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 212)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(714, 58)
+        Me.GroupBox3.TabIndex = 13
+        Me.GroupBox3.TabStop = False
+        '
+        'dtpDTKontrak
+        '
+        Me.dtpDTKontrak.Enabled = False
+        Me.dtpDTKontrak.Location = New System.Drawing.Point(348, 21)
+        Me.dtpDTKontrak.Name = "dtpDTKontrak"
+        Me.dtpDTKontrak.Size = New System.Drawing.Size(132, 20)
+        Me.dtpDTKontrak.TabIndex = 17
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Location = New System.Drawing.Point(256, 25)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(86, 13)
+        Me.Label50.TabIndex = 16
+        Me.Label50.Text = "Tanggal Kontrak"
+        '
+        'dtpDTAngsuran1
+        '
+        Me.dtpDTAngsuran1.Enabled = False
+        Me.dtpDTAngsuran1.Location = New System.Drawing.Point(573, 19)
+        Me.dtpDTAngsuran1.Name = "dtpDTAngsuran1"
+        Me.dtpDTAngsuran1.Size = New System.Drawing.Size(132, 20)
+        Me.dtpDTAngsuran1.TabIndex = 10
+        '
+        'dtpDTBast
+        '
+        Me.dtpDTBast.Enabled = False
+        Me.dtpDTBast.Location = New System.Drawing.Point(94, 22)
+        Me.dtpDTBast.Name = "dtpDTBast"
+        Me.dtpDTBast.Size = New System.Drawing.Size(132, 20)
+        Me.dtpDTBast.TabIndex = 9
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(490, 25)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(77, 13)
+        Me.Label52.TabIndex = 8
+        Me.Label52.Text = "Angsuran Ke-1"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(11, 28)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(77, 13)
+        Me.Label53.TabIndex = 6
+        Me.Label53.Text = "Tanggal BAST"
+        '
+        'TpMotorBaru
+        '
+        Me.TpMotorBaru.Controls.Add(Me.GroupBox8)
+        Me.TpMotorBaru.Controls.Add(Me.GroupBox6)
+        Me.TpMotorBaru.Controls.Add(Me.GroupBox5)
+        Me.TpMotorBaru.Location = New System.Drawing.Point(4, 22)
+        Me.TpMotorBaru.Name = "TpMotorBaru"
+        Me.TpMotorBaru.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpMotorBaru.Size = New System.Drawing.Size(1342, 540)
+        Me.TpMotorBaru.TabIndex = 4
+        Me.TpMotorBaru.Text = "Collateral"
+        Me.TpMotorBaru.UseVisualStyleBackColor = True
+        '
+        'TpElektronik
+        '
+        Me.TpElektronik.Controls.Add(Me.GroupBox11)
+        Me.TpElektronik.Controls.Add(Me.GroupBox10)
+        Me.TpElektronik.Location = New System.Drawing.Point(4, 22)
+        Me.TpElektronik.Name = "TpElektronik"
+        Me.TpElektronik.Size = New System.Drawing.Size(1342, 540)
+        Me.TpElektronik.TabIndex = 5
+        Me.TpElektronik.Text = "Collateral"
+        Me.TpElektronik.UseVisualStyleBackColor = True
+        '
+        'TpKTA
+        '
+        Me.TpKTA.Controls.Add(Me.GroupBox13)
+        Me.TpKTA.Controls.Add(Me.GroupBox12)
+        Me.TpKTA.Location = New System.Drawing.Point(4, 22)
+        Me.TpKTA.Name = "TpKTA"
+        Me.TpKTA.Size = New System.Drawing.Size(1342, 540)
+        Me.TpKTA.TabIndex = 6
+        Me.TpKTA.Text = "Collateral"
+        Me.TpKTA.UseVisualStyleBackColor = True
         '
         'TabPage4
         '
@@ -2006,6 +2273,18 @@ Partial Class kontrakDanaTunai
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "", Nothing, "")})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowFooter = True
+        '
+        'lblCollateralWarning
+        '
+        Me.lblCollateralWarning.AutoSize = True
+        Me.lblCollateralWarning.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCollateralWarning.ForeColor = System.Drawing.Color.Red
+        Me.lblCollateralWarning.Location = New System.Drawing.Point(421, 58)
+        Me.lblCollateralWarning.Name = "lblCollateralWarning"
+        Me.lblCollateralWarning.Size = New System.Drawing.Size(534, 20)
+        Me.lblCollateralWarning.TabIndex = 15
+        Me.lblCollateralWarning.Text = "Collateral Tidak Bisa Diubah Karena Pembayaran Telah Dilakukan"
+        Me.lblCollateralWarning.Visible = False
         '
         'txtKontrakID
         '
@@ -2081,11 +2360,1600 @@ Partial Class kontrakDanaTunai
         Me.txtAplikasiTipe.Size = New System.Drawing.Size(111, 20)
         Me.txtAplikasiTipe.TabIndex = 29
         '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(433, 631)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.TabIndex = 30
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'btnReset
+        '
+        Me.btnReset.Location = New System.Drawing.Point(517, 631)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.TabIndex = 31
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(352, 631)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate.TabIndex = 32
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label89)
+        Me.GroupBox5.Controls.Add(Me.txtPureDownPaymentP)
+        Me.GroupBox5.Controls.Add(Me.txtDownPayment)
+        Me.GroupBox5.Controls.Add(Me.Label90)
+        Me.GroupBox5.Controls.Add(Me.txtDealerSubs)
+        Me.GroupBox5.Controls.Add(Me.Label91)
+        Me.GroupBox5.Controls.Add(Me.txtMarketingCost)
+        Me.GroupBox5.Controls.Add(Me.Label92)
+        Me.GroupBox5.Controls.Add(Me.txtDealerTransfer)
+        Me.GroupBox5.Controls.Add(Me.Label93)
+        Me.GroupBox5.Controls.Add(Me.txtPureDownPayment)
+        Me.GroupBox5.Controls.Add(Me.Label94)
+        Me.GroupBox5.Controls.Add(Me.txtAngsuran)
+        Me.GroupBox5.Controls.Add(Me.Label95)
+        Me.GroupBox5.Controls.Add(Me.txtTotalHutang)
+        Me.GroupBox5.Controls.Add(Me.Label96)
+        Me.GroupBox5.Controls.Add(Me.txtBunga)
+        Me.GroupBox5.Controls.Add(Me.Label97)
+        Me.GroupBox5.Controls.Add(Me.txtPokok)
+        Me.GroupBox5.Controls.Add(Me.Label98)
+        Me.GroupBox5.Controls.Add(Me.txtAdminMurni)
+        Me.GroupBox5.Controls.Add(Me.Label99)
+        Me.GroupBox5.Controls.Add(Me.txtBungaPengali)
+        Me.GroupBox5.Controls.Add(Me.Label100)
+        Me.GroupBox5.Controls.Add(Me.txtBungaFlat)
+        Me.GroupBox5.Controls.Add(Me.Label101)
+        Me.GroupBox5.Controls.Add(Me.Button1)
+        Me.GroupBox5.Controls.Add(Me.txtAdminKredit)
+        Me.GroupBox5.Controls.Add(Me.Label102)
+        Me.GroupBox5.Controls.Add(Me.txtTingkatBunga)
+        Me.GroupBox5.Controls.Add(Me.Label103)
+        Me.GroupBox5.Controls.Add(Me.txtTenor)
+        Me.GroupBox5.Controls.Add(Me.Label104)
+        Me.GroupBox5.Controls.Add(Me.txtPremiAdmin)
+        Me.GroupBox5.Controls.Add(Me.Label105)
+        Me.GroupBox5.Controls.Add(Me.txtAdmin)
+        Me.GroupBox5.Controls.Add(Me.Label106)
+        Me.GroupBox5.Controls.Add(Me.txtPremiAsuransi)
+        Me.GroupBox5.Controls.Add(Me.Label107)
+        Me.GroupBox5.Controls.Add(Me.txtPinjaman)
+        Me.GroupBox5.Controls.Add(Me.Label108)
+        Me.GroupBox5.Controls.Add(Me.txtTahun)
+        Me.GroupBox5.Controls.Add(Me.Label109)
+        Me.GroupBox5.Controls.Add(Me.txtWarna)
+        Me.GroupBox5.Controls.Add(Me.Label110)
+        Me.GroupBox5.Controls.Add(Me.txtTipe)
+        Me.GroupBox5.Controls.Add(Me.Label111)
+        Me.GroupBox5.Controls.Add(Me.txtKendaraan)
+        Me.GroupBox5.Controls.Add(Me.Label112)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 18)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(836, 172)
+        Me.GroupBox5.TabIndex = 12
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Simulasi Kredit"
+        '
+        'Label89
+        '
+        Me.Label89.AutoSize = True
+        Me.Label89.Location = New System.Drawing.Point(146, 138)
+        Me.Label89.Name = "Label89"
+        Me.Label89.Size = New System.Drawing.Size(15, 13)
+        Me.Label89.TabIndex = 27
+        Me.Label89.Text = "%"
+        '
+        'txtPureDownPaymentP
+        '
+        Me.txtPureDownPaymentP.Enabled = False
+        Me.txtPureDownPaymentP.Location = New System.Drawing.Point(167, 136)
+        Me.txtPureDownPaymentP.MaxLength = 5
+        Me.txtPureDownPaymentP.Name = "txtPureDownPaymentP"
+        Me.txtPureDownPaymentP.Size = New System.Drawing.Size(38, 20)
+        Me.txtPureDownPaymentP.TabIndex = 26
+        Me.txtPureDownPaymentP.Text = "0"
+        '
+        'txtDownPayment
+        '
+        Me.txtDownPayment.Location = New System.Drawing.Point(265, 51)
+        Me.txtDownPayment.MaxLength = 12
+        Me.txtDownPayment.Name = "txtDownPayment"
+        Me.txtDownPayment.Size = New System.Drawing.Size(111, 20)
+        Me.txtDownPayment.TabIndex = 5
+        Me.txtDownPayment.Text = "0"
+        '
+        'Label90
+        '
+        Me.Label90.AutoSize = True
+        Me.Label90.Location = New System.Drawing.Point(199, 54)
+        Me.Label90.Name = "Label90"
+        Me.Label90.Size = New System.Drawing.Size(63, 13)
+        Me.Label90.TabIndex = 24
+        Me.Label90.Text = "Uang Muka"
+        '
+        'txtDealerSubs
+        '
+        Me.txtDealerSubs.Location = New System.Drawing.Point(641, 77)
+        Me.txtDealerSubs.MaxLength = 12
+        Me.txtDealerSubs.Name = "txtDealerSubs"
+        Me.txtDealerSubs.Size = New System.Drawing.Size(92, 20)
+        Me.txtDealerSubs.TabIndex = 12
+        Me.txtDealerSubs.Text = "0"
+        '
+        'Label91
+        '
+        Me.Label91.AutoSize = True
+        Me.Label91.Location = New System.Drawing.Point(564, 80)
+        Me.Label91.Name = "Label91"
+        Me.Label91.Size = New System.Drawing.Size(75, 13)
+        Me.Label91.TabIndex = 22
+        Me.Label91.Text = "Subsidi Dealer"
+        '
+        'txtMarketingCost
+        '
+        Me.txtMarketingCost.Enabled = False
+        Me.txtMarketingCost.Location = New System.Drawing.Point(727, 106)
+        Me.txtMarketingCost.MaxLength = 12
+        Me.txtMarketingCost.Name = "txtMarketingCost"
+        Me.txtMarketingCost.Size = New System.Drawing.Size(92, 20)
+        Me.txtMarketingCost.TabIndex = 21
+        Me.txtMarketingCost.Text = "0"
+        '
+        'Label92
+        '
+        Me.Label92.AutoSize = True
+        Me.Label92.Location = New System.Drawing.Point(638, 110)
+        Me.Label92.Name = "Label92"
+        Me.Label92.Size = New System.Drawing.Size(83, 13)
+        Me.Label92.TabIndex = 20
+        Me.Label92.Text = "Biaya Marketing"
+        '
+        'txtDealerTransfer
+        '
+        Me.txtDealerTransfer.Enabled = False
+        Me.txtDealerTransfer.Location = New System.Drawing.Point(536, 110)
+        Me.txtDealerTransfer.MaxLength = 12
+        Me.txtDealerTransfer.Name = "txtDealerTransfer"
+        Me.txtDealerTransfer.Size = New System.Drawing.Size(92, 20)
+        Me.txtDealerTransfer.TabIndex = 19
+        Me.txtDealerTransfer.Text = "0"
+        '
+        'Label93
+        '
+        Me.Label93.AutoSize = True
+        Me.Label93.Location = New System.Drawing.Point(453, 113)
+        Me.Label93.Name = "Label93"
+        Me.Label93.Size = New System.Drawing.Size(80, 13)
+        Me.Label93.TabIndex = 18
+        Me.Label93.Text = "Transfer Dealer"
+        '
+        'txtPureDownPayment
+        '
+        Me.txtPureDownPayment.Enabled = False
+        Me.txtPureDownPayment.Location = New System.Drawing.Point(56, 135)
+        Me.txtPureDownPayment.MaxLength = 12
+        Me.txtPureDownPayment.Name = "txtPureDownPayment"
+        Me.txtPureDownPayment.Size = New System.Drawing.Size(88, 20)
+        Me.txtPureDownPayment.TabIndex = 17
+        Me.txtPureDownPayment.Text = "0"
+        '
+        'Label94
+        '
+        Me.Label94.AutoSize = True
+        Me.Label94.Location = New System.Drawing.Point(2, 136)
+        Me.Label94.Name = "Label94"
+        Me.Label94.Size = New System.Drawing.Size(51, 13)
+        Me.Label94.TabIndex = 16
+        Me.Label94.Text = "DP Murni"
+        '
+        'txtAngsuran
+        '
+        Me.txtAngsuran.Enabled = False
+        Me.txtAngsuran.Location = New System.Drawing.Point(727, 133)
+        Me.txtAngsuran.MaxLength = 12
+        Me.txtAngsuran.Name = "txtAngsuran"
+        Me.txtAngsuran.Size = New System.Drawing.Size(102, 20)
+        Me.txtAngsuran.TabIndex = 0
+        Me.txtAngsuran.Text = "0"
+        '
+        'Label95
+        '
+        Me.Label95.AutoSize = True
+        Me.Label95.Location = New System.Drawing.Point(669, 134)
+        Me.Label95.Name = "Label95"
+        Me.Label95.Size = New System.Drawing.Size(52, 13)
+        Me.Label95.TabIndex = 0
+        Me.Label95.Text = "Angsuran"
+        '
+        'txtTotalHutang
+        '
+        Me.txtTotalHutang.Enabled = False
+        Me.txtTotalHutang.Location = New System.Drawing.Point(569, 134)
+        Me.txtTotalHutang.MaxLength = 12
+        Me.txtTotalHutang.Name = "txtTotalHutang"
+        Me.txtTotalHutang.Size = New System.Drawing.Size(94, 20)
+        Me.txtTotalHutang.TabIndex = 0
+        Me.txtTotalHutang.Text = "0"
+        '
+        'Label96
+        '
+        Me.Label96.AutoSize = True
+        Me.Label96.Location = New System.Drawing.Point(494, 136)
+        Me.Label96.Name = "Label96"
+        Me.Label96.Size = New System.Drawing.Size(69, 13)
+        Me.Label96.TabIndex = 0
+        Me.Label96.Text = "Total Hutang"
+        '
+        'txtBunga
+        '
+        Me.txtBunga.Enabled = False
+        Me.txtBunga.Location = New System.Drawing.Point(403, 134)
+        Me.txtBunga.MaxLength = 12
+        Me.txtBunga.Name = "txtBunga"
+        Me.txtBunga.Size = New System.Drawing.Size(89, 20)
+        Me.txtBunga.TabIndex = 0
+        Me.txtBunga.Text = "0"
+        '
+        'Label97
+        '
+        Me.Label97.AutoSize = True
+        Me.Label97.Location = New System.Drawing.Point(361, 138)
+        Me.Label97.Name = "Label97"
+        Me.Label97.Size = New System.Drawing.Size(38, 13)
+        Me.Label97.TabIndex = 0
+        Me.Label97.Text = "Bunga"
+        '
+        'txtPokok
+        '
+        Me.txtPokok.Enabled = False
+        Me.txtPokok.Location = New System.Drawing.Point(249, 133)
+        Me.txtPokok.MaxLength = 12
+        Me.txtPokok.Name = "txtPokok"
+        Me.txtPokok.Size = New System.Drawing.Size(107, 20)
+        Me.txtPokok.TabIndex = 0
+        Me.txtPokok.Text = "0"
+        '
+        'Label98
+        '
+        Me.Label98.AutoSize = True
+        Me.Label98.Location = New System.Drawing.Point(205, 138)
+        Me.Label98.Name = "Label98"
+        Me.Label98.Size = New System.Drawing.Size(38, 13)
+        Me.Label98.TabIndex = 0
+        Me.Label98.Text = "Pokok"
+        '
+        'txtAdminMurni
+        '
+        Me.txtAdminMurni.Enabled = False
+        Me.txtAdminMurni.Location = New System.Drawing.Point(346, 110)
+        Me.txtAdminMurni.MaxLength = 12
+        Me.txtAdminMurni.Name = "txtAdminMurni"
+        Me.txtAdminMurni.Size = New System.Drawing.Size(98, 20)
+        Me.txtAdminMurni.TabIndex = 0
+        Me.txtAdminMurni.Text = "0"
+        '
+        'Label99
+        '
+        Me.Label99.AutoSize = True
+        Me.Label99.Location = New System.Drawing.Point(275, 113)
+        Me.Label99.Name = "Label99"
+        Me.Label99.Size = New System.Drawing.Size(65, 13)
+        Me.Label99.TabIndex = 0
+        Me.Label99.Text = "Admin Murni"
+        '
+        'txtBungaPengali
+        '
+        Me.txtBungaPengali.Enabled = False
+        Me.txtBungaPengali.Location = New System.Drawing.Point(229, 110)
+        Me.txtBungaPengali.MaxLength = 5
+        Me.txtBungaPengali.Name = "txtBungaPengali"
+        Me.txtBungaPengali.Size = New System.Drawing.Size(41, 20)
+        Me.txtBungaPengali.TabIndex = 0
+        Me.txtBungaPengali.Text = "0"
+        '
+        'Label100
+        '
+        Me.Label100.AutoSize = True
+        Me.Label100.Location = New System.Drawing.Point(126, 113)
+        Me.Label100.Name = "Label100"
+        Me.Label100.Size = New System.Drawing.Size(93, 13)
+        Me.Label100.TabIndex = 0
+        Me.Label100.Text = "Bunga Pengali (%)"
+        '
+        'txtBungaFlat
+        '
+        Me.txtBungaFlat.Enabled = False
+        Me.txtBungaFlat.Location = New System.Drawing.Point(81, 110)
+        Me.txtBungaFlat.MaxLength = 5
+        Me.txtBungaFlat.Name = "txtBungaFlat"
+        Me.txtBungaFlat.Size = New System.Drawing.Size(38, 20)
+        Me.txtBungaFlat.TabIndex = 0
+        Me.txtBungaFlat.Text = "0"
+        '
+        'Label101
+        '
+        Me.Label101.AutoSize = True
+        Me.Label101.Location = New System.Drawing.Point(3, 113)
+        Me.Label101.Name = "Label101"
+        Me.Label101.Size = New System.Drawing.Size(75, 13)
+        Me.Label101.TabIndex = 0
+        Me.Label101.Text = "Bunga Flat (%)"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(741, 73)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(69, 25)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Kalkulasi"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txtAdminKredit
+        '
+        Me.txtAdminKredit.Location = New System.Drawing.Point(461, 78)
+        Me.txtAdminKredit.MaxLength = 12
+        Me.txtAdminKredit.Name = "txtAdminKredit"
+        Me.txtAdminKredit.Size = New System.Drawing.Size(92, 20)
+        Me.txtAdminKredit.TabIndex = 11
+        Me.txtAdminKredit.Text = "0"
+        '
+        'Label102
+        '
+        Me.Label102.AutoSize = True
+        Me.Label102.Location = New System.Drawing.Point(392, 81)
+        Me.Label102.Name = "Label102"
+        Me.Label102.Size = New System.Drawing.Size(66, 13)
+        Me.Label102.TabIndex = 12
+        Me.Label102.Text = "Admin Kredit"
+        '
+        'txtTingkatBunga
+        '
+        Me.txtTingkatBunga.Location = New System.Drawing.Point(346, 78)
+        Me.txtTingkatBunga.MaxLength = 5
+        Me.txtTingkatBunga.Name = "txtTingkatBunga"
+        Me.txtTingkatBunga.Size = New System.Drawing.Size(42, 20)
+        Me.txtTingkatBunga.TabIndex = 10
+        Me.txtTingkatBunga.Text = "0"
+        '
+        'Label103
+        '
+        Me.Label103.AutoSize = True
+        Me.Label103.Location = New System.Drawing.Point(210, 82)
+        Me.Label103.Name = "Label103"
+        Me.Label103.Size = New System.Drawing.Size(127, 13)
+        Me.Label103.TabIndex = 0
+        Me.Label103.Text = "Tingkat Bunga Efektif (%)"
+        '
+        'txtTenor
+        '
+        Me.txtTenor.Location = New System.Drawing.Point(468, 51)
+        Me.txtTenor.MaxLength = 3
+        Me.txtTenor.Name = "txtTenor"
+        Me.txtTenor.Size = New System.Drawing.Size(38, 20)
+        Me.txtTenor.TabIndex = 6
+        Me.txtTenor.Text = "0"
+        '
+        'Label104
+        '
+        Me.Label104.AutoSize = True
+        Me.Label104.Location = New System.Drawing.Point(388, 55)
+        Me.Label104.Name = "Label104"
+        Me.Label104.Size = New System.Drawing.Size(70, 13)
+        Me.Label104.TabIndex = 0
+        Me.Label104.Text = "Tenor (bulan)"
+        '
+        'txtPremiAdmin
+        '
+        Me.txtPremiAdmin.Location = New System.Drawing.Point(87, 77)
+        Me.txtPremiAdmin.MaxLength = 12
+        Me.txtPremiAdmin.Name = "txtPremiAdmin"
+        Me.txtPremiAdmin.Size = New System.Drawing.Size(118, 20)
+        Me.txtPremiAdmin.TabIndex = 9
+        Me.txtPremiAdmin.Text = "0"
+        '
+        'Label105
+        '
+        Me.Label105.AutoSize = True
+        Me.Label105.Location = New System.Drawing.Point(13, 81)
+        Me.Label105.Name = "Label105"
+        Me.Label105.Size = New System.Drawing.Size(68, 13)
+        Me.Label105.TabIndex = 0
+        Me.Label105.Text = "Premi+Admin"
+        '
+        'txtAdmin
+        '
+        Me.txtAdmin.Location = New System.Drawing.Point(707, 50)
+        Me.txtAdmin.MaxLength = 12
+        Me.txtAdmin.Name = "txtAdmin"
+        Me.txtAdmin.Size = New System.Drawing.Size(103, 20)
+        Me.txtAdmin.TabIndex = 8
+        Me.txtAdmin.Text = "0"
+        '
+        'Label106
+        '
+        Me.Label106.AutoSize = True
+        Me.Label106.Location = New System.Drawing.Point(665, 53)
+        Me.Label106.Name = "Label106"
+        Me.Label106.Size = New System.Drawing.Size(36, 13)
+        Me.Label106.TabIndex = 0
+        Me.Label106.Text = "Admin"
+        '
+        'txtPremiAsuransi
+        '
+        Me.txtPremiAsuransi.Location = New System.Drawing.Point(611, 50)
+        Me.txtPremiAsuransi.MaxLength = 6
+        Me.txtPremiAsuransi.Name = "txtPremiAsuransi"
+        Me.txtPremiAsuransi.Size = New System.Drawing.Size(48, 20)
+        Me.txtPremiAsuransi.TabIndex = 7
+        Me.txtPremiAsuransi.Text = "0"
+        '
+        'Label107
+        '
+        Me.Label107.AutoSize = True
+        Me.Label107.Location = New System.Drawing.Point(514, 53)
+        Me.Label107.Name = "Label107"
+        Me.Label107.Size = New System.Drawing.Size(93, 13)
+        Me.Label107.TabIndex = 9
+        Me.Label107.Text = "Premi Asuransi (%)"
+        '
+        'txtPinjaman
+        '
+        Me.txtPinjaman.Location = New System.Drawing.Point(79, 51)
+        Me.txtPinjaman.MaxLength = 12
+        Me.txtPinjaman.Name = "txtPinjaman"
+        Me.txtPinjaman.Size = New System.Drawing.Size(111, 20)
+        Me.txtPinjaman.TabIndex = 4
+        Me.txtPinjaman.Text = "0"
+        '
+        'Label108
+        '
+        Me.Label108.AutoSize = True
+        Me.Label108.Location = New System.Drawing.Point(13, 54)
+        Me.Label108.Name = "Label108"
+        Me.Label108.Size = New System.Drawing.Size(66, 13)
+        Me.Label108.TabIndex = 0
+        Me.Label108.Text = "Harga Motor"
+        '
+        'txtTahun
+        '
+        Me.txtTahun.Location = New System.Drawing.Point(707, 24)
+        Me.txtTahun.MaxLength = 4
+        Me.txtTahun.Name = "txtTahun"
+        Me.txtTahun.Size = New System.Drawing.Size(35, 20)
+        Me.txtTahun.TabIndex = 3
+        Me.txtTahun.Text = "2000"
+        '
+        'Label109
+        '
+        Me.Label109.AutoSize = True
+        Me.Label109.Location = New System.Drawing.Point(663, 27)
+        Me.Label109.Name = "Label109"
+        Me.Label109.Size = New System.Drawing.Size(38, 13)
+        Me.Label109.TabIndex = 0
+        Me.Label109.Text = "Tahun"
+        '
+        'txtWarna
+        '
+        Me.txtWarna.Location = New System.Drawing.Point(532, 24)
+        Me.txtWarna.MaxLength = 20
+        Me.txtWarna.Name = "txtWarna"
+        Me.txtWarna.Size = New System.Drawing.Size(125, 20)
+        Me.txtWarna.TabIndex = 2
+        '
+        'Label110
+        '
+        Me.Label110.AutoSize = True
+        Me.Label110.Location = New System.Drawing.Point(475, 27)
+        Me.Label110.Name = "Label110"
+        Me.Label110.Size = New System.Drawing.Size(39, 13)
+        Me.Label110.TabIndex = 0
+        Me.Label110.Text = "Warna"
+        '
+        'txtTipe
+        '
+        Me.txtTipe.Location = New System.Drawing.Point(309, 24)
+        Me.txtTipe.MaxLength = 20
+        Me.txtTipe.Name = "txtTipe"
+        Me.txtTipe.Size = New System.Drawing.Size(153, 20)
+        Me.txtTipe.TabIndex = 1
+        '
+        'Label111
+        '
+        Me.Label111.AutoSize = True
+        Me.Label111.Location = New System.Drawing.Point(273, 27)
+        Me.Label111.Name = "Label111"
+        Me.Label111.Size = New System.Drawing.Size(28, 13)
+        Me.Label111.TabIndex = 0
+        Me.Label111.Text = "Tipe"
+        '
+        'txtKendaraan
+        '
+        Me.txtKendaraan.Location = New System.Drawing.Point(103, 24)
+        Me.txtKendaraan.MaxLength = 23
+        Me.txtKendaraan.Name = "txtKendaraan"
+        Me.txtKendaraan.Size = New System.Drawing.Size(154, 20)
+        Me.txtKendaraan.TabIndex = 0
+        '
+        'Label112
+        '
+        Me.Label112.AutoSize = True
+        Me.Label112.Location = New System.Drawing.Point(11, 27)
+        Me.Label112.Name = "Label112"
+        Me.Label112.Size = New System.Drawing.Size(86, 13)
+        Me.Label112.TabIndex = 0
+        Me.Label112.Text = "Merk Kendaraan"
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox6.Controls.Add(Me.Label113)
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox6.Controls.Add(Me.DateTimePicker3)
+        Me.GroupBox6.Controls.Add(Me.Label114)
+        Me.GroupBox6.Controls.Add(Me.Label115)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 196)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(714, 58)
+        Me.GroupBox6.TabIndex = 14
+        Me.GroupBox6.TabStop = False
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(348, 21)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker1.TabIndex = 17
+        '
+        'Label113
+        '
+        Me.Label113.AutoSize = True
+        Me.Label113.Location = New System.Drawing.Point(256, 25)
+        Me.Label113.Name = "Label113"
+        Me.Label113.Size = New System.Drawing.Size(86, 13)
+        Me.Label113.TabIndex = 16
+        Me.Label113.Text = "Tanggal Kontrak"
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(573, 19)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker2.TabIndex = 10
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Location = New System.Drawing.Point(94, 22)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker3.TabIndex = 9
+        '
+        'Label114
+        '
+        Me.Label114.AutoSize = True
+        Me.Label114.Location = New System.Drawing.Point(490, 25)
+        Me.Label114.Name = "Label114"
+        Me.Label114.Size = New System.Drawing.Size(77, 13)
+        Me.Label114.TabIndex = 8
+        Me.Label114.Text = "Angsuran Ke-1"
+        '
+        'Label115
+        '
+        Me.Label115.AutoSize = True
+        Me.Label115.Location = New System.Drawing.Point(11, 28)
+        Me.Label115.Name = "Label115"
+        Me.Label115.Size = New System.Drawing.Size(77, 13)
+        Me.Label115.TabIndex = 6
+        Me.Label115.Text = "Tanggal BAST"
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.cmbStatusBpkb)
+        Me.GroupBox8.Controls.Add(Me.dtKeluar)
+        Me.GroupBox8.Controls.Add(Me.dtMasuk)
+        Me.GroupBox8.Controls.Add(Me.txtPengambil)
+        Me.GroupBox8.Controls.Add(Me.TextBox1)
+        Me.GroupBox8.Controls.Add(Me.txtRangka)
+        Me.GroupBox8.Controls.Add(Me.txtMesin)
+        Me.GroupBox8.Controls.Add(Me.txtPlatno)
+        Me.GroupBox8.Controls.Add(Me.txtNamabpkb)
+        Me.GroupBox8.Controls.Add(Me.txtNoBpkb)
+        Me.GroupBox8.Controls.Add(Me.Label116)
+        Me.GroupBox8.Controls.Add(Me.Label117)
+        Me.GroupBox8.Controls.Add(Me.Label118)
+        Me.GroupBox8.Controls.Add(Me.Label119)
+        Me.GroupBox8.Controls.Add(Me.Label120)
+        Me.GroupBox8.Controls.Add(Me.Label121)
+        Me.GroupBox8.Controls.Add(Me.Label122)
+        Me.GroupBox8.Controls.Add(Me.Label123)
+        Me.GroupBox8.Controls.Add(Me.Label124)
+        Me.GroupBox8.Controls.Add(Me.Label125)
+        Me.GroupBox8.Location = New System.Drawing.Point(5, 260)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(472, 213)
+        Me.GroupBox8.TabIndex = 21
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Data Bpkb"
+        '
+        'cmbStatusBpkb
+        '
+        Me.cmbStatusBpkb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbStatusBpkb.FormattingEnabled = True
+        Me.cmbStatusBpkb.Location = New System.Drawing.Point(331, 106)
+        Me.cmbStatusBpkb.Name = "cmbStatusBpkb"
+        Me.cmbStatusBpkb.Size = New System.Drawing.Size(103, 21)
+        Me.cmbStatusBpkb.TabIndex = 34
+        '
+        'dtKeluar
+        '
+        Me.dtKeluar.Location = New System.Drawing.Point(331, 55)
+        Me.dtKeluar.Name = "dtKeluar"
+        Me.dtKeluar.Size = New System.Drawing.Size(102, 20)
+        Me.dtKeluar.TabIndex = 33
+        '
+        'dtMasuk
+        '
+        Me.dtMasuk.Location = New System.Drawing.Point(331, 29)
+        Me.dtMasuk.Name = "dtMasuk"
+        Me.dtMasuk.Size = New System.Drawing.Size(102, 20)
+        Me.dtMasuk.TabIndex = 32
+        '
+        'txtPengambil
+        '
+        Me.txtPengambil.Location = New System.Drawing.Point(331, 81)
+        Me.txtPengambil.MaxLength = 50
+        Me.txtPengambil.Name = "txtPengambil"
+        Me.txtPengambil.Size = New System.Drawing.Size(108, 20)
+        Me.txtPengambil.TabIndex = 30
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(95, 158)
+        Me.TextBox1.MaxLength = 20
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox1.TabIndex = 29
+        '
+        'txtRangka
+        '
+        Me.txtRangka.Location = New System.Drawing.Point(95, 133)
+        Me.txtRangka.MaxLength = 48
+        Me.txtRangka.Name = "txtRangka"
+        Me.txtRangka.Size = New System.Drawing.Size(108, 20)
+        Me.txtRangka.TabIndex = 28
+        '
+        'txtMesin
+        '
+        Me.txtMesin.Location = New System.Drawing.Point(95, 107)
+        Me.txtMesin.MaxLength = 24
+        Me.txtMesin.Name = "txtMesin"
+        Me.txtMesin.Size = New System.Drawing.Size(108, 20)
+        Me.txtMesin.TabIndex = 27
+        '
+        'txtPlatno
+        '
+        Me.txtPlatno.Location = New System.Drawing.Point(95, 81)
+        Me.txtPlatno.MaxLength = 8
+        Me.txtPlatno.Name = "txtPlatno"
+        Me.txtPlatno.Size = New System.Drawing.Size(108, 20)
+        Me.txtPlatno.TabIndex = 26
+        '
+        'txtNamabpkb
+        '
+        Me.txtNamabpkb.Location = New System.Drawing.Point(95, 55)
+        Me.txtNamabpkb.MaxLength = 50
+        Me.txtNamabpkb.Name = "txtNamabpkb"
+        Me.txtNamabpkb.Size = New System.Drawing.Size(108, 20)
+        Me.txtNamabpkb.TabIndex = 25
+        '
+        'txtNoBpkb
+        '
+        Me.txtNoBpkb.Location = New System.Drawing.Point(95, 29)
+        Me.txtNoBpkb.MaxLength = 20
+        Me.txtNoBpkb.Name = "txtNoBpkb"
+        Me.txtNoBpkb.Size = New System.Drawing.Size(108, 20)
+        Me.txtNoBpkb.TabIndex = 24
+        '
+        'Label116
+        '
+        Me.Label116.AutoSize = True
+        Me.Label116.Location = New System.Drawing.Point(6, 32)
+        Me.Label116.Name = "Label116"
+        Me.Label116.Size = New System.Drawing.Size(66, 13)
+        Me.Label116.TabIndex = 21
+        Me.Label116.Text = "Nomor Bpkb"
+        '
+        'Label117
+        '
+        Me.Label117.AutoSize = True
+        Me.Label117.Location = New System.Drawing.Point(6, 58)
+        Me.Label117.Name = "Label117"
+        Me.Label117.Size = New System.Drawing.Size(63, 13)
+        Me.Label117.TabIndex = 5
+        Me.Label117.Text = "Nama Bpkb"
+        '
+        'Label118
+        '
+        Me.Label118.AutoSize = True
+        Me.Label118.Location = New System.Drawing.Point(6, 161)
+        Me.Label118.Name = "Label118"
+        Me.Label118.Size = New System.Drawing.Size(39, 13)
+        Me.Label118.TabIndex = 9
+        Me.Label118.Text = "Warna"
+        '
+        'Label119
+        '
+        Me.Label119.AutoSize = True
+        Me.Label119.Location = New System.Drawing.Point(6, 84)
+        Me.Label119.Name = "Label119"
+        Me.Label119.Size = New System.Drawing.Size(65, 13)
+        Me.Label119.TabIndex = 8
+        Me.Label119.Text = "Nomor Polisi"
+        '
+        'Label120
+        '
+        Me.Label120.AutoSize = True
+        Me.Label120.Location = New System.Drawing.Point(6, 108)
+        Me.Label120.Name = "Label120"
+        Me.Label120.Size = New System.Drawing.Size(69, 13)
+        Me.Label120.TabIndex = 7
+        Me.Label120.Text = "Nomor Mesin"
+        '
+        'Label121
+        '
+        Me.Label121.AutoSize = True
+        Me.Label121.Location = New System.Drawing.Point(6, 136)
+        Me.Label121.Name = "Label121"
+        Me.Label121.Size = New System.Drawing.Size(79, 13)
+        Me.Label121.TabIndex = 6
+        Me.Label121.Text = "Nomor Rangka"
+        '
+        'Label122
+        '
+        Me.Label122.AutoSize = True
+        Me.Label122.Location = New System.Drawing.Point(227, 108)
+        Me.Label122.Name = "Label122"
+        Me.Label122.Size = New System.Drawing.Size(68, 13)
+        Me.Label122.TabIndex = 15
+        Me.Label122.Text = "Status BPKB"
+        '
+        'Label123
+        '
+        Me.Label123.AutoSize = True
+        Me.Label123.Location = New System.Drawing.Point(227, 32)
+        Me.Label123.Name = "Label123"
+        Me.Label123.Size = New System.Drawing.Size(88, 13)
+        Me.Label123.TabIndex = 12
+        Me.Label123.Text = "Tgl BPKB Masuk"
+        '
+        'Label124
+        '
+        Me.Label124.AutoSize = True
+        Me.Label124.Location = New System.Drawing.Point(228, 84)
+        Me.Label124.Name = "Label124"
+        Me.Label124.Size = New System.Drawing.Size(87, 13)
+        Me.Label124.TabIndex = 14
+        Me.Label124.Text = "Pengambil BPKB"
+        '
+        'Label125
+        '
+        Me.Label125.AutoSize = True
+        Me.Label125.Location = New System.Drawing.Point(227, 58)
+        Me.Label125.Name = "Label125"
+        Me.Label125.Size = New System.Drawing.Size(83, 13)
+        Me.Label125.TabIndex = 13
+        Me.Label125.Text = "Tgl Bpkb Keluar"
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.ComboBox1)
+        Me.GroupBox9.Controls.Add(Me.DateTimePicker4)
+        Me.GroupBox9.Controls.Add(Me.DateTimePicker5)
+        Me.GroupBox9.Controls.Add(Me.Button3)
+        Me.GroupBox9.Controls.Add(Me.TextBox2)
+        Me.GroupBox9.Controls.Add(Me.TextBox3)
+        Me.GroupBox9.Controls.Add(Me.TextBox4)
+        Me.GroupBox9.Controls.Add(Me.TextBox5)
+        Me.GroupBox9.Controls.Add(Me.TextBox6)
+        Me.GroupBox9.Controls.Add(Me.TextBox7)
+        Me.GroupBox9.Controls.Add(Me.TextBox8)
+        Me.GroupBox9.Controls.Add(Me.Label126)
+        Me.GroupBox9.Controls.Add(Me.Label127)
+        Me.GroupBox9.Controls.Add(Me.Label128)
+        Me.GroupBox9.Controls.Add(Me.Label129)
+        Me.GroupBox9.Controls.Add(Me.Label130)
+        Me.GroupBox9.Controls.Add(Me.Label131)
+        Me.GroupBox9.Controls.Add(Me.Label132)
+        Me.GroupBox9.Controls.Add(Me.Label133)
+        Me.GroupBox9.Controls.Add(Me.Label134)
+        Me.GroupBox9.Controls.Add(Me.Label135)
+        Me.GroupBox9.Location = New System.Drawing.Point(6, 276)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(472, 213)
+        Me.GroupBox9.TabIndex = 21
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Data Bpkb"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(331, 106)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(103, 21)
+        Me.ComboBox1.TabIndex = 34
+        '
+        'DateTimePicker4
+        '
+        Me.DateTimePicker4.Location = New System.Drawing.Point(331, 55)
+        Me.DateTimePicker4.Name = "DateTimePicker4"
+        Me.DateTimePicker4.Size = New System.Drawing.Size(102, 20)
+        Me.DateTimePicker4.TabIndex = 33
+        '
+        'DateTimePicker5
+        '
+        Me.DateTimePicker5.Location = New System.Drawing.Point(331, 29)
+        Me.DateTimePicker5.Name = "DateTimePicker5"
+        Me.DateTimePicker5.Size = New System.Drawing.Size(102, 20)
+        Me.DateTimePicker5.TabIndex = 32
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(230, 133)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 29)
+        Me.Button3.TabIndex = 31
+        Me.Button3.Text = "Simpan"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(331, 81)
+        Me.TextBox2.MaxLength = 50
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox2.TabIndex = 30
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(95, 158)
+        Me.TextBox3.MaxLength = 20
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox3.TabIndex = 29
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(95, 133)
+        Me.TextBox4.MaxLength = 48
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox4.TabIndex = 28
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(95, 107)
+        Me.TextBox5.MaxLength = 24
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox5.TabIndex = 27
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(95, 81)
+        Me.TextBox6.MaxLength = 8
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox6.TabIndex = 26
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(95, 55)
+        Me.TextBox7.MaxLength = 50
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox7.TabIndex = 25
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(95, 29)
+        Me.TextBox8.MaxLength = 20
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox8.TabIndex = 24
+        '
+        'Label126
+        '
+        Me.Label126.AutoSize = True
+        Me.Label126.Location = New System.Drawing.Point(6, 32)
+        Me.Label126.Name = "Label126"
+        Me.Label126.Size = New System.Drawing.Size(66, 13)
+        Me.Label126.TabIndex = 21
+        Me.Label126.Text = "Nomor Bpkb"
+        '
+        'Label127
+        '
+        Me.Label127.AutoSize = True
+        Me.Label127.Location = New System.Drawing.Point(6, 58)
+        Me.Label127.Name = "Label127"
+        Me.Label127.Size = New System.Drawing.Size(63, 13)
+        Me.Label127.TabIndex = 5
+        Me.Label127.Text = "Nama Bpkb"
+        '
+        'Label128
+        '
+        Me.Label128.AutoSize = True
+        Me.Label128.Location = New System.Drawing.Point(6, 161)
+        Me.Label128.Name = "Label128"
+        Me.Label128.Size = New System.Drawing.Size(39, 13)
+        Me.Label128.TabIndex = 9
+        Me.Label128.Text = "Warna"
+        '
+        'Label129
+        '
+        Me.Label129.AutoSize = True
+        Me.Label129.Location = New System.Drawing.Point(6, 84)
+        Me.Label129.Name = "Label129"
+        Me.Label129.Size = New System.Drawing.Size(65, 13)
+        Me.Label129.TabIndex = 8
+        Me.Label129.Text = "Nomor Polisi"
+        '
+        'Label130
+        '
+        Me.Label130.AutoSize = True
+        Me.Label130.Location = New System.Drawing.Point(6, 108)
+        Me.Label130.Name = "Label130"
+        Me.Label130.Size = New System.Drawing.Size(69, 13)
+        Me.Label130.TabIndex = 7
+        Me.Label130.Text = "Nomor Mesin"
+        '
+        'Label131
+        '
+        Me.Label131.AutoSize = True
+        Me.Label131.Location = New System.Drawing.Point(6, 136)
+        Me.Label131.Name = "Label131"
+        Me.Label131.Size = New System.Drawing.Size(79, 13)
+        Me.Label131.TabIndex = 6
+        Me.Label131.Text = "Nomor Rangka"
+        '
+        'Label132
+        '
+        Me.Label132.AutoSize = True
+        Me.Label132.Location = New System.Drawing.Point(227, 108)
+        Me.Label132.Name = "Label132"
+        Me.Label132.Size = New System.Drawing.Size(68, 13)
+        Me.Label132.TabIndex = 15
+        Me.Label132.Text = "Status BPKB"
+        '
+        'Label133
+        '
+        Me.Label133.AutoSize = True
+        Me.Label133.Location = New System.Drawing.Point(227, 32)
+        Me.Label133.Name = "Label133"
+        Me.Label133.Size = New System.Drawing.Size(88, 13)
+        Me.Label133.TabIndex = 12
+        Me.Label133.Text = "Tgl BPKB Masuk"
+        '
+        'Label134
+        '
+        Me.Label134.AutoSize = True
+        Me.Label134.Location = New System.Drawing.Point(228, 84)
+        Me.Label134.Name = "Label134"
+        Me.Label134.Size = New System.Drawing.Size(87, 13)
+        Me.Label134.TabIndex = 14
+        Me.Label134.Text = "Pengambil BPKB"
+        '
+        'Label135
+        '
+        Me.Label135.AutoSize = True
+        Me.Label135.Location = New System.Drawing.Point(227, 58)
+        Me.Label135.Name = "Label135"
+        Me.Label135.Size = New System.Drawing.Size(83, 13)
+        Me.Label135.TabIndex = 13
+        Me.Label135.Text = "Tgl Bpkb Keluar"
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.TextBox9)
+        Me.GroupBox10.Controls.Add(Me.Label136)
+        Me.GroupBox10.Controls.Add(Me.TextBox10)
+        Me.GroupBox10.Controls.Add(Me.Label137)
+        Me.GroupBox10.Controls.Add(Me.TextBox11)
+        Me.GroupBox10.Controls.Add(Me.Label138)
+        Me.GroupBox10.Controls.Add(Me.TextBox12)
+        Me.GroupBox10.Controls.Add(Me.Label139)
+        Me.GroupBox10.Controls.Add(Me.TextBox13)
+        Me.GroupBox10.Controls.Add(Me.Label140)
+        Me.GroupBox10.Controls.Add(Me.TextBox14)
+        Me.GroupBox10.Controls.Add(Me.Label141)
+        Me.GroupBox10.Controls.Add(Me.Button4)
+        Me.GroupBox10.Controls.Add(Me.TextBox15)
+        Me.GroupBox10.Controls.Add(Me.Label142)
+        Me.GroupBox10.Controls.Add(Me.TextBox16)
+        Me.GroupBox10.Controls.Add(Me.Label143)
+        Me.GroupBox10.Controls.Add(Me.TextBox17)
+        Me.GroupBox10.Controls.Add(Me.Label144)
+        Me.GroupBox10.Controls.Add(Me.TextBox18)
+        Me.GroupBox10.Controls.Add(Me.Label145)
+        Me.GroupBox10.Controls.Add(Me.TextBox19)
+        Me.GroupBox10.Controls.Add(Me.Label146)
+        Me.GroupBox10.Controls.Add(Me.TextBox20)
+        Me.GroupBox10.Controls.Add(Me.Label147)
+        Me.GroupBox10.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(882, 180)
+        Me.GroupBox10.TabIndex = 48
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Simulasi Kredit"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Enabled = False
+        Me.TextBox9.Location = New System.Drawing.Point(687, 145)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox9.TabIndex = 42
+        '
+        'Label136
+        '
+        Me.Label136.AutoSize = True
+        Me.Label136.Location = New System.Drawing.Point(629, 150)
+        Me.Label136.Name = "Label136"
+        Me.Label136.Size = New System.Drawing.Size(52, 13)
+        Me.Label136.TabIndex = 41
+        Me.Label136.Text = "Angsuran"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Enabled = False
+        Me.TextBox10.Location = New System.Drawing.Point(500, 147)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox10.TabIndex = 39
+        '
+        'Label137
+        '
+        Me.Label137.AutoSize = True
+        Me.Label137.Location = New System.Drawing.Point(407, 147)
+        Me.Label137.Name = "Label137"
+        Me.Label137.Size = New System.Drawing.Size(69, 13)
+        Me.Label137.TabIndex = 38
+        Me.Label137.Text = "Total Hutang"
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Enabled = False
+        Me.TextBox11.Location = New System.Drawing.Point(271, 144)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(114, 20)
+        Me.TextBox11.TabIndex = 37
+        Me.TextBox11.Text = "0"
+        '
+        'Label138
+        '
+        Me.Label138.AutoSize = True
+        Me.Label138.Location = New System.Drawing.Point(227, 147)
+        Me.Label138.Name = "Label138"
+        Me.Label138.Size = New System.Drawing.Size(38, 13)
+        Me.Label138.TabIndex = 36
+        Me.Label138.Text = "Bunga"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Enabled = False
+        Me.TextBox12.Location = New System.Drawing.Point(61, 143)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox12.TabIndex = 35
+        '
+        'Label139
+        '
+        Me.Label139.AutoSize = True
+        Me.Label139.Location = New System.Drawing.Point(17, 147)
+        Me.Label139.Name = "Label139"
+        Me.Label139.Size = New System.Drawing.Size(38, 13)
+        Me.Label139.TabIndex = 34
+        Me.Label139.Text = "Pokok"
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Enabled = False
+        Me.TextBox13.Location = New System.Drawing.Point(375, 114)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox13.TabIndex = 31
+        Me.TextBox13.Text = "0"
+        '
+        'Label140
+        '
+        Me.Label140.AutoSize = True
+        Me.Label140.Location = New System.Drawing.Point(276, 117)
+        Me.Label140.Name = "Label140"
+        Me.Label140.Size = New System.Drawing.Size(93, 13)
+        Me.Label140.TabIndex = 30
+        Me.Label140.Text = "Bunga Pengali (%)"
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Enabled = False
+        Me.TextBox14.Location = New System.Drawing.Point(110, 114)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox14.TabIndex = 29
+        Me.TextBox14.Text = "0"
+        '
+        'Label141
+        '
+        Me.Label141.AutoSize = True
+        Me.Label141.Location = New System.Drawing.Point(18, 117)
+        Me.Label141.Name = "Label141"
+        Me.Label141.Size = New System.Drawing.Size(75, 13)
+        Me.Label141.TabIndex = 28
+        Me.Label141.Text = "Bunga Flat (%)"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(670, 87)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(93, 43)
+        Me.Button4.TabIndex = 27
+        Me.Button4.Text = "Kalkulasi"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Location = New System.Drawing.Point(554, 90)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(85, 20)
+        Me.TextBox15.TabIndex = 24
+        Me.TextBox15.Text = "0"
+        '
+        'Label142
+        '
+        Me.Label142.AutoSize = True
+        Me.Label142.Location = New System.Drawing.Point(426, 93)
+        Me.Label142.Name = "Label142"
+        Me.Label142.Size = New System.Drawing.Size(127, 13)
+        Me.Label142.TabIndex = 23
+        Me.Label142.Text = "Tingkat Bunga Efektif (%)"
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Location = New System.Drawing.Point(353, 90)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox16.TabIndex = 22
+        Me.TextBox16.Text = "0"
+        '
+        'Label143
+        '
+        Me.Label143.AutoSize = True
+        Me.Label143.Location = New System.Drawing.Point(277, 93)
+        Me.Label143.Name = "Label143"
+        Me.Label143.Size = New System.Drawing.Size(70, 13)
+        Me.Label143.TabIndex = 21
+        Me.Label143.Text = "Tenor (bulan)"
+        '
+        'TextBox17
+        '
+        Me.TextBox17.Location = New System.Drawing.Point(110, 87)
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox17.TabIndex = 14
+        Me.TextBox17.Text = "0"
+        '
+        'Label144
+        '
+        Me.Label144.AutoSize = True
+        Me.Label144.Location = New System.Drawing.Point(17, 93)
+        Me.Label144.Name = "Label144"
+        Me.Label144.Size = New System.Drawing.Size(73, 13)
+        Me.Label144.TabIndex = 13
+        Me.Label144.Text = "Harga Barang"
+        '
+        'TextBox18
+        '
+        Me.TextBox18.Location = New System.Drawing.Point(110, 50)
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox18.TabIndex = 9
+        '
+        'Label145
+        '
+        Me.Label145.AutoSize = True
+        Me.Label145.Location = New System.Drawing.Point(18, 53)
+        Me.Label145.Name = "Label145"
+        Me.Label145.Size = New System.Drawing.Size(59, 13)
+        Me.Label145.TabIndex = 8
+        Me.Label145.Text = "Nomor Seri"
+        '
+        'TextBox19
+        '
+        Me.TextBox19.Location = New System.Drawing.Point(386, 24)
+        Me.TextBox19.Multiline = True
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.Size = New System.Drawing.Size(486, 46)
+        Me.TextBox19.TabIndex = 3
+        '
+        'Label146
+        '
+        Me.Label146.AutoSize = True
+        Me.Label146.Location = New System.Drawing.Point(280, 27)
+        Me.Label146.Name = "Label146"
+        Me.Label146.Size = New System.Drawing.Size(99, 13)
+        Me.Label146.TabIndex = 2
+        Me.Label146.Text = "Keterangan Barang"
+        '
+        'TextBox20
+        '
+        Me.TextBox20.Location = New System.Drawing.Point(110, 24)
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox20.TabIndex = 1
+        '
+        'Label147
+        '
+        Me.Label147.AutoSize = True
+        Me.Label147.Location = New System.Drawing.Point(18, 27)
+        Me.Label147.Name = "Label147"
+        Me.Label147.Size = New System.Drawing.Size(72, 13)
+        Me.Label147.TabIndex = 0
+        Me.Label147.Text = "Nama Barang"
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.DateTimePicker6)
+        Me.GroupBox11.Controls.Add(Me.Label148)
+        Me.GroupBox11.Controls.Add(Me.DateTimePicker7)
+        Me.GroupBox11.Controls.Add(Me.DateTimePicker8)
+        Me.GroupBox11.Controls.Add(Me.Label149)
+        Me.GroupBox11.Controls.Add(Me.Label150)
+        Me.GroupBox11.Location = New System.Drawing.Point(3, 189)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(714, 58)
+        Me.GroupBox11.TabIndex = 49
+        Me.GroupBox11.TabStop = False
+        '
+        'DateTimePicker6
+        '
+        Me.DateTimePicker6.Location = New System.Drawing.Point(348, 21)
+        Me.DateTimePicker6.Name = "DateTimePicker6"
+        Me.DateTimePicker6.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker6.TabIndex = 17
+        '
+        'Label148
+        '
+        Me.Label148.AutoSize = True
+        Me.Label148.Location = New System.Drawing.Point(256, 25)
+        Me.Label148.Name = "Label148"
+        Me.Label148.Size = New System.Drawing.Size(86, 13)
+        Me.Label148.TabIndex = 16
+        Me.Label148.Text = "Tanggal Kontrak"
+        '
+        'DateTimePicker7
+        '
+        Me.DateTimePicker7.Location = New System.Drawing.Point(573, 19)
+        Me.DateTimePicker7.Name = "DateTimePicker7"
+        Me.DateTimePicker7.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker7.TabIndex = 10
+        '
+        'DateTimePicker8
+        '
+        Me.DateTimePicker8.Location = New System.Drawing.Point(94, 22)
+        Me.DateTimePicker8.Name = "DateTimePicker8"
+        Me.DateTimePicker8.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker8.TabIndex = 9
+        '
+        'Label149
+        '
+        Me.Label149.AutoSize = True
+        Me.Label149.Location = New System.Drawing.Point(490, 25)
+        Me.Label149.Name = "Label149"
+        Me.Label149.Size = New System.Drawing.Size(77, 13)
+        Me.Label149.TabIndex = 8
+        Me.Label149.Text = "Angsuran Ke-1"
+        '
+        'Label150
+        '
+        Me.Label150.AutoSize = True
+        Me.Label150.Location = New System.Drawing.Point(11, 28)
+        Me.Label150.Name = "Label150"
+        Me.Label150.Size = New System.Drawing.Size(77, 13)
+        Me.Label150.TabIndex = 6
+        Me.Label150.Text = "Tanggal BAST"
+        '
+        'GroupBox12
+        '
+        Me.GroupBox12.Controls.Add(Me.TextBox21)
+        Me.GroupBox12.Controls.Add(Me.Label151)
+        Me.GroupBox12.Controls.Add(Me.TextBox22)
+        Me.GroupBox12.Controls.Add(Me.Label152)
+        Me.GroupBox12.Controls.Add(Me.TextBox23)
+        Me.GroupBox12.Controls.Add(Me.Label153)
+        Me.GroupBox12.Controls.Add(Me.TextBox24)
+        Me.GroupBox12.Controls.Add(Me.Label154)
+        Me.GroupBox12.Controls.Add(Me.TextBox25)
+        Me.GroupBox12.Controls.Add(Me.Label155)
+        Me.GroupBox12.Controls.Add(Me.TextBox26)
+        Me.GroupBox12.Controls.Add(Me.Label156)
+        Me.GroupBox12.Controls.Add(Me.Button5)
+        Me.GroupBox12.Controls.Add(Me.TextBox27)
+        Me.GroupBox12.Controls.Add(Me.Label157)
+        Me.GroupBox12.Controls.Add(Me.TextBox28)
+        Me.GroupBox12.Controls.Add(Me.Label158)
+        Me.GroupBox12.Controls.Add(Me.TextBox29)
+        Me.GroupBox12.Controls.Add(Me.Label159)
+        Me.GroupBox12.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox12.Name = "GroupBox12"
+        Me.GroupBox12.Size = New System.Drawing.Size(882, 106)
+        Me.GroupBox12.TabIndex = 48
+        Me.GroupBox12.TabStop = False
+        Me.GroupBox12.Text = "Simulasi Kredit"
+        '
+        'TextBox21
+        '
+        Me.TextBox21.Enabled = False
+        Me.TextBox21.Location = New System.Drawing.Point(682, 72)
+        Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox21.TabIndex = 42
+        '
+        'Label151
+        '
+        Me.Label151.AutoSize = True
+        Me.Label151.Location = New System.Drawing.Point(624, 77)
+        Me.Label151.Name = "Label151"
+        Me.Label151.Size = New System.Drawing.Size(52, 13)
+        Me.Label151.TabIndex = 41
+        Me.Label151.Text = "Angsuran"
+        '
+        'TextBox22
+        '
+        Me.TextBox22.Enabled = False
+        Me.TextBox22.Location = New System.Drawing.Point(495, 74)
+        Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox22.TabIndex = 39
+        '
+        'Label152
+        '
+        Me.Label152.AutoSize = True
+        Me.Label152.Location = New System.Drawing.Point(402, 74)
+        Me.Label152.Name = "Label152"
+        Me.Label152.Size = New System.Drawing.Size(69, 13)
+        Me.Label152.TabIndex = 38
+        Me.Label152.Text = "Total Hutang"
+        '
+        'TextBox23
+        '
+        Me.TextBox23.Enabled = False
+        Me.TextBox23.Location = New System.Drawing.Point(266, 71)
+        Me.TextBox23.Name = "TextBox23"
+        Me.TextBox23.Size = New System.Drawing.Size(114, 20)
+        Me.TextBox23.TabIndex = 37
+        Me.TextBox23.Text = "0"
+        '
+        'Label153
+        '
+        Me.Label153.AutoSize = True
+        Me.Label153.Location = New System.Drawing.Point(222, 74)
+        Me.Label153.Name = "Label153"
+        Me.Label153.Size = New System.Drawing.Size(38, 13)
+        Me.Label153.TabIndex = 36
+        Me.Label153.Text = "Bunga"
+        '
+        'TextBox24
+        '
+        Me.TextBox24.Enabled = False
+        Me.TextBox24.Location = New System.Drawing.Point(56, 70)
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox24.TabIndex = 35
+        '
+        'Label154
+        '
+        Me.Label154.AutoSize = True
+        Me.Label154.Location = New System.Drawing.Point(12, 74)
+        Me.Label154.Name = "Label154"
+        Me.Label154.Size = New System.Drawing.Size(38, 13)
+        Me.Label154.TabIndex = 34
+        Me.Label154.Text = "Pokok"
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Enabled = False
+        Me.TextBox25.Location = New System.Drawing.Point(370, 41)
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(108, 20)
+        Me.TextBox25.TabIndex = 31
+        Me.TextBox25.Text = "0"
+        '
+        'Label155
+        '
+        Me.Label155.AutoSize = True
+        Me.Label155.Location = New System.Drawing.Point(271, 44)
+        Me.Label155.Name = "Label155"
+        Me.Label155.Size = New System.Drawing.Size(93, 13)
+        Me.Label155.TabIndex = 30
+        Me.Label155.Text = "Bunga Pengali (%)"
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Enabled = False
+        Me.TextBox26.Location = New System.Drawing.Point(105, 41)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox26.TabIndex = 29
+        Me.TextBox26.Text = "0"
+        '
+        'Label156
+        '
+        Me.Label156.AutoSize = True
+        Me.Label156.Location = New System.Drawing.Point(13, 44)
+        Me.Label156.Name = "Label156"
+        Me.Label156.Size = New System.Drawing.Size(75, 13)
+        Me.Label156.TabIndex = 28
+        Me.Label156.Text = "Bunga Flat (%)"
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(504, 41)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(93, 24)
+        Me.Button5.TabIndex = 27
+        Me.Button5.Text = "Kalkulasi"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Location = New System.Drawing.Point(549, 17)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Size = New System.Drawing.Size(85, 20)
+        Me.TextBox27.TabIndex = 24
+        Me.TextBox27.Text = "0"
+        '
+        'Label157
+        '
+        Me.Label157.AutoSize = True
+        Me.Label157.Location = New System.Drawing.Point(421, 20)
+        Me.Label157.Name = "Label157"
+        Me.Label157.Size = New System.Drawing.Size(127, 13)
+        Me.Label157.TabIndex = 23
+        Me.Label157.Text = "Tingkat Bunga Efektif (%)"
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Location = New System.Drawing.Point(348, 17)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(67, 20)
+        Me.TextBox28.TabIndex = 22
+        Me.TextBox28.Text = "0"
+        '
+        'Label158
+        '
+        Me.Label158.AutoSize = True
+        Me.Label158.Location = New System.Drawing.Point(272, 20)
+        Me.Label158.Name = "Label158"
+        Me.Label158.Size = New System.Drawing.Size(70, 13)
+        Me.Label158.TabIndex = 21
+        Me.Label158.Text = "Tenor (bulan)"
+        '
+        'TextBox29
+        '
+        Me.TextBox29.Location = New System.Drawing.Point(105, 14)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(154, 20)
+        Me.TextBox29.TabIndex = 14
+        Me.TextBox29.Text = "0"
+        '
+        'Label159
+        '
+        Me.Label159.AutoSize = True
+        Me.Label159.Location = New System.Drawing.Point(12, 20)
+        Me.Label159.Name = "Label159"
+        Me.Label159.Size = New System.Drawing.Size(50, 13)
+        Me.Label159.TabIndex = 13
+        Me.Label159.Text = "Pinjaman"
+        '
+        'GroupBox13
+        '
+        Me.GroupBox13.Controls.Add(Me.DateTimePicker9)
+        Me.GroupBox13.Controls.Add(Me.Label160)
+        Me.GroupBox13.Controls.Add(Me.DateTimePicker10)
+        Me.GroupBox13.Controls.Add(Me.DateTimePicker11)
+        Me.GroupBox13.Controls.Add(Me.Label161)
+        Me.GroupBox13.Controls.Add(Me.Label162)
+        Me.GroupBox13.Location = New System.Drawing.Point(3, 115)
+        Me.GroupBox13.Name = "GroupBox13"
+        Me.GroupBox13.Size = New System.Drawing.Size(714, 58)
+        Me.GroupBox13.TabIndex = 50
+        Me.GroupBox13.TabStop = False
+        '
+        'DateTimePicker9
+        '
+        Me.DateTimePicker9.Location = New System.Drawing.Point(348, 21)
+        Me.DateTimePicker9.Name = "DateTimePicker9"
+        Me.DateTimePicker9.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker9.TabIndex = 17
+        '
+        'Label160
+        '
+        Me.Label160.AutoSize = True
+        Me.Label160.Location = New System.Drawing.Point(256, 25)
+        Me.Label160.Name = "Label160"
+        Me.Label160.Size = New System.Drawing.Size(86, 13)
+        Me.Label160.TabIndex = 16
+        Me.Label160.Text = "Tanggal Kontrak"
+        '
+        'DateTimePicker10
+        '
+        Me.DateTimePicker10.Location = New System.Drawing.Point(573, 19)
+        Me.DateTimePicker10.Name = "DateTimePicker10"
+        Me.DateTimePicker10.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker10.TabIndex = 10
+        '
+        'DateTimePicker11
+        '
+        Me.DateTimePicker11.Location = New System.Drawing.Point(94, 22)
+        Me.DateTimePicker11.Name = "DateTimePicker11"
+        Me.DateTimePicker11.Size = New System.Drawing.Size(132, 20)
+        Me.DateTimePicker11.TabIndex = 9
+        '
+        'Label161
+        '
+        Me.Label161.AutoSize = True
+        Me.Label161.Location = New System.Drawing.Point(490, 25)
+        Me.Label161.Name = "Label161"
+        Me.Label161.Size = New System.Drawing.Size(77, 13)
+        Me.Label161.TabIndex = 8
+        Me.Label161.Text = "Angsuran Ke-1"
+        '
+        'Label162
+        '
+        Me.Label162.AutoSize = True
+        Me.Label162.Location = New System.Drawing.Point(11, 28)
+        Me.Label162.Name = "Label162"
+        Me.Label162.Size = New System.Drawing.Size(77, 13)
+        Me.Label162.TabIndex = 6
+        Me.Label162.Text = "Tanggal BAST"
+        '
+        'lblDokumen
+        '
+        Me.lblDokumen.AutoSize = True
+        Me.lblDokumen.Location = New System.Drawing.Point(3, 515)
+        Me.lblDokumen.Name = "lblDokumen"
+        Me.lblDokumen.Size = New System.Drawing.Size(114, 13)
+        Me.lblDokumen.TabIndex = 67
+        Me.lblDokumen.Text = "Kekurangan Dokumen"
+        '
+        'txtAplikasiDokumen
+        '
+        Me.txtAplikasiDokumen.Enabled = False
+        Me.txtAplikasiDokumen.Location = New System.Drawing.Point(119, 512)
+        Me.txtAplikasiDokumen.MaxLength = 20
+        Me.txtAplikasiDokumen.Name = "txtAplikasiDokumen"
+        Me.txtAplikasiDokumen.Size = New System.Drawing.Size(263, 20)
+        Me.txtAplikasiDokumen.TabIndex = 68
+        '
         'kontrakDanaTunai
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 704)
+        Me.Controls.Add(Me.lblCollateralWarning)
+        Me.Controls.Add(Me.btnUpdate)
+        Me.Controls.Add(Me.btnReset)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtAplikasiTipe)
         Me.Controls.Add(Me.Label85)
         Me.Controls.Add(Me.cmbKolektor)
@@ -2096,7 +3964,7 @@ Partial Class kontrakDanaTunai
         Me.Controls.Add(Me.txtKontrakID)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "kontrakDanaTunai"
-        Me.Text = "kontrakDanaTunai"
+        Me.Text = "View / Edit Kontrak"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -2108,14 +3976,33 @@ Partial Class kontrakDanaTunai
         Me.GroupBox2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.TpDanaTunai.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.TpMotorBaru.ResumeLayout(False)
+        Me.TpElektronik.ResumeLayout(False)
+        Me.TpKTA.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
+        Me.GroupBox12.ResumeLayout(False)
+        Me.GroupBox12.PerformLayout()
+        Me.GroupBox13.ResumeLayout(False)
+        Me.GroupBox13.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2123,7 +4010,7 @@ Partial Class kontrakDanaTunai
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents TpDanaTunai As System.Windows.Forms.TabPage
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents txtAnggotaTelp2 As System.Windows.Forms.TextBox
@@ -2171,66 +4058,13 @@ Partial Class kontrakDanaTunai
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtKontrakID As System.Windows.Forms.TextBox
     Friend WithEvents btnAplikasiCari As System.Windows.Forms.Button
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtAngsuran As System.Windows.Forms.TextBox
-    Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents txtTotalHutang As System.Windows.Forms.TextBox
-    Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents txtBunga As System.Windows.Forms.TextBox
-    Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents txtPokok As System.Windows.Forms.TextBox
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents txtAdminMurni As System.Windows.Forms.TextBox
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents txtBungaPengali As System.Windows.Forms.TextBox
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents txtBungaFlat As System.Windows.Forms.TextBox
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents txtAdminKredit As System.Windows.Forms.TextBox
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents txtTingkatBunga As System.Windows.Forms.TextBox
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents txtTenor As System.Windows.Forms.TextBox
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents txtPremiAdmin As System.Windows.Forms.TextBox
-    Friend WithEvents Label34 As System.Windows.Forms.Label
-    Friend WithEvents txtAdmin As System.Windows.Forms.TextBox
-    Friend WithEvents Label35 As System.Windows.Forms.Label
-    Friend WithEvents txtPremiAsuransi As System.Windows.Forms.TextBox
-    Friend WithEvents Label36 As System.Windows.Forms.Label
-    Friend WithEvents txtPinjaman As System.Windows.Forms.TextBox
-    Friend WithEvents Label37 As System.Windows.Forms.Label
-    Friend WithEvents txtNopol As System.Windows.Forms.TextBox
-    Friend WithEvents Label38 As System.Windows.Forms.Label
-    Friend WithEvents txtRangka As System.Windows.Forms.TextBox
-    Friend WithEvents Label39 As System.Windows.Forms.Label
-    Friend WithEvents txtMesin As System.Windows.Forms.TextBox
-    Friend WithEvents Label45 As System.Windows.Forms.Label
-    Friend WithEvents txtTahun As System.Windows.Forms.TextBox
-    Friend WithEvents Label46 As System.Windows.Forms.Label
-    Friend WithEvents txtWarna As System.Windows.Forms.TextBox
-    Friend WithEvents Label47 As System.Windows.Forms.Label
-    Friend WithEvents txtTipe As System.Windows.Forms.TextBox
-    Friend WithEvents Label48 As System.Windows.Forms.Label
-    Friend WithEvents txtKendaraan As System.Windows.Forms.TextBox
-    Friend WithEvents Label49 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtNoBPKB As System.Windows.Forms.TextBox
-    Friend WithEvents Label50 As System.Windows.Forms.Label
-    Friend WithEvents Label51 As System.Windows.Forms.Label
-    Friend WithEvents Label52 As System.Windows.Forms.Label
-    Friend WithEvents Label53 As System.Windows.Forms.Label
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents Label54 As System.Windows.Forms.Label
     Friend WithEvents txtKontrakStatus As System.Windows.Forms.TextBox
     Friend WithEvents Label55 As System.Windows.Forms.Label
-    Friend WithEvents txtStatusBpkb As System.Windows.Forms.TextBox
-    Friend WithEvents txtTglAngsuran As System.Windows.Forms.TextBox
-    Friend WithEvents txtTglBpkb As System.Windows.Forms.TextBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
-    Friend WithEvents btnKalkulasi As System.Windows.Forms.Button
     Friend WithEvents Label43 As System.Windows.Forms.Label
     Friend WithEvents txtKantorTelp As System.Windows.Forms.TextBox
     Friend WithEvents Label65 As System.Windows.Forms.Label
@@ -2307,4 +4141,232 @@ Partial Class kontrakDanaTunai
     Friend WithEvents cmbAnggotaPekerjaan As System.Windows.Forms.ComboBox
     Friend WithEvents Label85 As System.Windows.Forms.Label
     Friend WithEvents txtAplikasiTipe As System.Windows.Forms.TextBox
+    Friend WithEvents TpMotorBaru As System.Windows.Forms.TabPage
+    Friend WithEvents TpElektronik As System.Windows.Forms.TabPage
+    Friend WithEvents TpKTA As System.Windows.Forms.TabPage
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtDTNoBpkb As System.Windows.Forms.TextBox
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents txtDTAngsuran As System.Windows.Forms.TextBox
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents txtDTTotalHutang As System.Windows.Forms.TextBox
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents txtDTBunga As System.Windows.Forms.TextBox
+    Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents txtDTPokok As System.Windows.Forms.TextBox
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents txtDTAdminMurni As System.Windows.Forms.TextBox
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents txtDTBungaPengali As System.Windows.Forms.TextBox
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents txtDTBungaFlat As System.Windows.Forms.TextBox
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents btnKalkulasiDanaTunai As System.Windows.Forms.Button
+    Friend WithEvents txtDTAdminKredit As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents txtDTTingkatBunga As System.Windows.Forms.TextBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents txtDTTenor As System.Windows.Forms.TextBox
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents txtDTPremiAdmin As System.Windows.Forms.TextBox
+    Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents txtDTAdmin As System.Windows.Forms.TextBox
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents txtDTPremiAsuransi As System.Windows.Forms.TextBox
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents txtDTPinjaman As System.Windows.Forms.TextBox
+    Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents txtDTNopol As System.Windows.Forms.TextBox
+    Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents txtDTRangka As System.Windows.Forms.TextBox
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents txtDTMesin As System.Windows.Forms.TextBox
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents txtDTTahun As System.Windows.Forms.TextBox
+    Friend WithEvents Label47 As System.Windows.Forms.Label
+    Friend WithEvents txtDTWarna As System.Windows.Forms.TextBox
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents txtDTTipe As System.Windows.Forms.TextBox
+    Friend WithEvents Label49 As System.Windows.Forms.Label
+    Friend WithEvents txtDTKendaraan As System.Windows.Forms.TextBox
+    Friend WithEvents Label86 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents Label53 As System.Windows.Forms.Label
+    Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents btnReset As System.Windows.Forms.Button
+    Friend WithEvents btnUpdate As System.Windows.Forms.Button
+    Friend WithEvents txtDaruratHubungan As System.Windows.Forms.TextBox
+    Friend WithEvents Label87 As System.Windows.Forms.Label
+    Friend WithEvents txtBaruTelp2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label88 As System.Windows.Forms.Label
+    Friend WithEvents dtpDTAngsuran1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpDTBast As System.Windows.Forms.DateTimePicker
+    Friend WithEvents lblCollateralWarning As System.Windows.Forms.Label
+    Friend WithEvents dtpDTKontrak As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label50 As System.Windows.Forms.Label
+    Friend WithEvents txtDaruratNama As System.Windows.Forms.TextBox
+    Friend WithEvents Label51 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label89 As System.Windows.Forms.Label
+    Friend WithEvents txtPureDownPaymentP As System.Windows.Forms.TextBox
+    Friend WithEvents txtDownPayment As System.Windows.Forms.TextBox
+    Friend WithEvents Label90 As System.Windows.Forms.Label
+    Friend WithEvents txtDealerSubs As System.Windows.Forms.TextBox
+    Friend WithEvents Label91 As System.Windows.Forms.Label
+    Friend WithEvents txtMarketingCost As System.Windows.Forms.TextBox
+    Friend WithEvents Label92 As System.Windows.Forms.Label
+    Friend WithEvents txtDealerTransfer As System.Windows.Forms.TextBox
+    Friend WithEvents Label93 As System.Windows.Forms.Label
+    Friend WithEvents txtPureDownPayment As System.Windows.Forms.TextBox
+    Friend WithEvents Label94 As System.Windows.Forms.Label
+    Friend WithEvents txtAngsuran As System.Windows.Forms.TextBox
+    Friend WithEvents Label95 As System.Windows.Forms.Label
+    Friend WithEvents txtTotalHutang As System.Windows.Forms.TextBox
+    Friend WithEvents Label96 As System.Windows.Forms.Label
+    Friend WithEvents txtBunga As System.Windows.Forms.TextBox
+    Friend WithEvents Label97 As System.Windows.Forms.Label
+    Friend WithEvents txtPokok As System.Windows.Forms.TextBox
+    Friend WithEvents Label98 As System.Windows.Forms.Label
+    Friend WithEvents txtAdminMurni As System.Windows.Forms.TextBox
+    Friend WithEvents Label99 As System.Windows.Forms.Label
+    Friend WithEvents txtBungaPengali As System.Windows.Forms.TextBox
+    Friend WithEvents Label100 As System.Windows.Forms.Label
+    Friend WithEvents txtBungaFlat As System.Windows.Forms.TextBox
+    Friend WithEvents Label101 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents txtAdminKredit As System.Windows.Forms.TextBox
+    Friend WithEvents Label102 As System.Windows.Forms.Label
+    Friend WithEvents txtTingkatBunga As System.Windows.Forms.TextBox
+    Friend WithEvents Label103 As System.Windows.Forms.Label
+    Friend WithEvents txtTenor As System.Windows.Forms.TextBox
+    Friend WithEvents Label104 As System.Windows.Forms.Label
+    Friend WithEvents txtPremiAdmin As System.Windows.Forms.TextBox
+    Friend WithEvents Label105 As System.Windows.Forms.Label
+    Friend WithEvents txtAdmin As System.Windows.Forms.TextBox
+    Friend WithEvents Label106 As System.Windows.Forms.Label
+    Friend WithEvents txtPremiAsuransi As System.Windows.Forms.TextBox
+    Friend WithEvents Label107 As System.Windows.Forms.Label
+    Friend WithEvents txtPinjaman As System.Windows.Forms.TextBox
+    Friend WithEvents Label108 As System.Windows.Forms.Label
+    Friend WithEvents txtTahun As System.Windows.Forms.TextBox
+    Friend WithEvents Label109 As System.Windows.Forms.Label
+    Friend WithEvents txtWarna As System.Windows.Forms.TextBox
+    Friend WithEvents Label110 As System.Windows.Forms.Label
+    Friend WithEvents txtTipe As System.Windows.Forms.TextBox
+    Friend WithEvents Label111 As System.Windows.Forms.Label
+    Friend WithEvents txtKendaraan As System.Windows.Forms.TextBox
+    Friend WithEvents Label112 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label113 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label114 As System.Windows.Forms.Label
+    Friend WithEvents Label115 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents DateTimePicker4 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker5 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents Label126 As System.Windows.Forms.Label
+    Friend WithEvents Label127 As System.Windows.Forms.Label
+    Friend WithEvents Label128 As System.Windows.Forms.Label
+    Friend WithEvents Label129 As System.Windows.Forms.Label
+    Friend WithEvents Label130 As System.Windows.Forms.Label
+    Friend WithEvents Label131 As System.Windows.Forms.Label
+    Friend WithEvents Label132 As System.Windows.Forms.Label
+    Friend WithEvents Label133 As System.Windows.Forms.Label
+    Friend WithEvents Label134 As System.Windows.Forms.Label
+    Friend WithEvents Label135 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
+    Friend WithEvents cmbStatusBpkb As System.Windows.Forms.ComboBox
+    Friend WithEvents dtKeluar As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtMasuk As System.Windows.Forms.DateTimePicker
+    Friend WithEvents txtPengambil As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtRangka As System.Windows.Forms.TextBox
+    Friend WithEvents txtMesin As System.Windows.Forms.TextBox
+    Friend WithEvents txtPlatno As System.Windows.Forms.TextBox
+    Friend WithEvents txtNamabpkb As System.Windows.Forms.TextBox
+    Friend WithEvents txtNoBpkb As System.Windows.Forms.TextBox
+    Friend WithEvents Label116 As System.Windows.Forms.Label
+    Friend WithEvents Label117 As System.Windows.Forms.Label
+    Friend WithEvents Label118 As System.Windows.Forms.Label
+    Friend WithEvents Label119 As System.Windows.Forms.Label
+    Friend WithEvents Label120 As System.Windows.Forms.Label
+    Friend WithEvents Label121 As System.Windows.Forms.Label
+    Friend WithEvents Label122 As System.Windows.Forms.Label
+    Friend WithEvents Label123 As System.Windows.Forms.Label
+    Friend WithEvents Label124 As System.Windows.Forms.Label
+    Friend WithEvents Label125 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents Label136 As System.Windows.Forms.Label
+    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents Label137 As System.Windows.Forms.Label
+    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
+    Friend WithEvents Label138 As System.Windows.Forms.Label
+    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents Label139 As System.Windows.Forms.Label
+    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents Label140 As System.Windows.Forms.Label
+    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
+    Friend WithEvents Label141 As System.Windows.Forms.Label
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
+    Friend WithEvents Label142 As System.Windows.Forms.Label
+    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
+    Friend WithEvents Label143 As System.Windows.Forms.Label
+    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
+    Friend WithEvents Label144 As System.Windows.Forms.Label
+    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
+    Friend WithEvents Label145 As System.Windows.Forms.Label
+    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
+    Friend WithEvents Label146 As System.Windows.Forms.Label
+    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
+    Friend WithEvents Label147 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
+    Friend WithEvents DateTimePicker6 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label148 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker7 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker8 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label149 As System.Windows.Forms.Label
+    Friend WithEvents Label150 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
+    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
+    Friend WithEvents Label151 As System.Windows.Forms.Label
+    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
+    Friend WithEvents Label152 As System.Windows.Forms.Label
+    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
+    Friend WithEvents Label153 As System.Windows.Forms.Label
+    Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
+    Friend WithEvents Label154 As System.Windows.Forms.Label
+    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
+    Friend WithEvents Label155 As System.Windows.Forms.Label
+    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
+    Friend WithEvents Label156 As System.Windows.Forms.Label
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
+    Friend WithEvents Label157 As System.Windows.Forms.Label
+    Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
+    Friend WithEvents Label158 As System.Windows.Forms.Label
+    Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
+    Friend WithEvents Label159 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox13 As System.Windows.Forms.GroupBox
+    Friend WithEvents DateTimePicker9 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label160 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker10 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker11 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label161 As System.Windows.Forms.Label
+    Friend WithEvents Label162 As System.Windows.Forms.Label
+    Friend WithEvents txtAplikasiDokumen As System.Windows.Forms.TextBox
+    Friend WithEvents lblDokumen As System.Windows.Forms.Label
 End Class

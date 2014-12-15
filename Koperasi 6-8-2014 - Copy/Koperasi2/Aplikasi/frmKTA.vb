@@ -77,7 +77,7 @@
         txtPemHp.Clear()
         txtPemTelp1.Clear()
         txtPemTelp2.Clear()
-        txtPemIbu.Clear()
+        'txtPemIbu.Clear()
         txtPemRt.Clear()
         txtPemRw.Clear()
         txtPenagihanAlamat.Clear()
@@ -179,10 +179,10 @@
             alertmsg = "Nomor Handphone Anggota Tidak Boleh Kosong"
             txtPemHp.Focus()
             hasil = False
-        ElseIf txtPemIbu.Text = "" Then
-            alertmsg = "Nama Ibu Anggota Tidak Boleh Kosong"
-            txtPemIbu.Focus()
-            hasil = False
+            'ElseIf txtPemIbu.Text = "" Then
+            '    alertmsg = "Nama Ibu Anggota Tidak Boleh Kosong"
+            '    'txtPemIbu.Focus()
+            '    hasil = False
         ElseIf txtPenagihanAlamat.Text = "" Then
             alertmsg = "Alamat Penagihan Tidak Boleh Kosong"
             txtPenagihanAlamat.Focus()
@@ -406,7 +406,7 @@
         StrSQL &= "'" & txtPemHp.Text & "', "
         StrSQL &= "'" & txtPemTelp1.Text & "', "
         StrSQL &= "'" & txtPemTelp2.Text & "', "
-        StrSQL &= "'" & txtPemIbu.Text & "', "
+        StrSQL &= "'', " 'bekas nama ibu
         StrSQL &= "'" & txtPemKerja.SelectedValue & "', "
         StrSQL &= "'" & txtPerusahaanNama.Text & "', "
         StrSQL &= "'" & txtPerusahaanJabatan.Text & "', "
@@ -456,41 +456,55 @@
 
     Private Sub PrintTandaTerimaUang()
 
-        StrSQL = "SELECT * FROM TTU where ApplicationID='" & txtAplikasi.Text & "'"
+        'StrSQL = "SELECT * FROM TTU where ApplicationID='" & txtAplikasi.Text & "'"
 
-        RunSQL(StrSQL, 2, "TandaTerimaUang")
+        'RunSQL(StrSQL, 2, "TandaTerimaUang")
 
 
-        RepName = "TandaTerimaUang"
-        'RepName2 = "../Rpt/rptTandaTerimaUang.rpt"
+        'RepName = "TandaTerimaUang"
+        ''RepName2 = "../Rpt/rptTandaTerimaUang.rpt"
 
-        strReportPath = Application.StartupPath & "\Report\" & RepName & ".rpt"
-        'strReportPath = App_Path & "\rpt\" & RepName & ".rpt"
-        If Not IO.File.Exists(strReportPath) Then
-            Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
-        End If
-        Dim rptDocument As New CrystalDecisions.CrystalReports.Engine.ReportDocument
-        Dim paramV As CrystalDecisions.Shared.ParameterValues
-        Dim paramDValue As CrystalDecisions.Shared.ParameterDiscreteValue
+        'strReportPath = Application.StartupPath & "\Report\" & RepName & ".rpt"
+        ''strReportPath = App_Path & "\rpt\" & RepName & ".rpt"
+        'If Not IO.File.Exists(strReportPath) Then
+        '    Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
+        'End If
+        'Dim rptDocument As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+        'Dim paramV As CrystalDecisions.Shared.ParameterValues
+        'Dim paramDValue As CrystalDecisions.Shared.ParameterDiscreteValue
+
+        ''rptDocument.Load(strReportPath)
 
         'rptDocument.Load(strReportPath)
 
-        rptDocument.Load(strReportPath)
+        'rptDocument.SetDataSource(ds)
+        'rptDocument.Refresh()
+        'paramV = New CrystalDecisions.Shared.ParameterValues
+        'paramDValue = New CrystalDecisions.Shared.ParameterDiscreteValue
+        'paramDValue.Value = Terbilang(CDbl(txtPinjaman.Text))
+        'paramV.Add(paramDValue)
+        ''rptDocument.SetParameterValue("terbilang", Terbilang(CDbl(txtPinjaman.Text)))
+        'rptDocument.ParameterFields.Item("terbilang").CurrentValues = paramV
+        'rptDocument.ParameterFields.Item("terbilang").HasCurrentValue = True
+        'rptDocument.SetDatabaseLogon(con_userid, con_password, con_server, con_database)
+        'With MultiReportView
+        '    .CRViewer1.DisplayToolbar = True
+        '    .CRViewer1.ReportSource = rptDocument
+        'End With
 
-        rptDocument.SetDataSource(ds)
-        rptDocument.Refresh()
-        paramV = New CrystalDecisions.Shared.ParameterValues
-        paramDValue = New CrystalDecisions.Shared.ParameterDiscreteValue
-        paramDValue.Value = Terbilang(CDbl(txtPinjaman.Text))
-        paramV.Add(paramDValue)
-        'rptDocument.SetParameterValue("terbilang", Terbilang(CDbl(txtPinjaman.Text)))
-        rptDocument.ParameterFields.Item("terbilang").CurrentValues = paramV
-        rptDocument.ParameterFields.Item("terbilang").HasCurrentValue = True
-        rptDocument.SetDatabaseLogon(con_userid, con_password, con_server, con_database)
-        With MultiReportView
-            .CRViewer1.DisplayToolbar = True
-            .CRViewer1.ReportSource = rptDocument
-        End With
+        Dim dsTTU As New DataSet
+        Dim paramDValue As New CrystalDecisions.Shared.ParameterDiscreteValue
+        StrSQL = "SELECT * FROM TTU where ApplicationID='" & txtAplikasi.Text & "'"
+        RunSQL(StrSQL, 2, "TandaTerimaUang", , dsTTU)
+        RepName = "TandaTerimaUang"
+        strReportPath = Application.StartupPath & "\Report\" & RepName & ".rpt"
+        If Not IO.File.Exists(strReportPath) Then
+            Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
+        Else
+            paramDValue.Value = Terbilang(CDbl(txtPinjaman.Text))
+            ViewReport(MultiReportView.CRViewer1, strReportPath, dsTTU, paramDValue)
+        End If
+
     End Sub
 
     
@@ -601,7 +615,7 @@
                 txtPemTelp2.Text = dt.Rows(0)("Phone3").ToString()
                 txtPemRt.Text = dt.Rows(0)("MemberRT").ToString()
                 txtPemRw.Text = dt.Rows(0)("MemberRW").ToString()
-                txtPemIbu.Text = dt.Rows(0)("MomMaidenName").ToString()
+                'txtPemIbu.Text = dt.Rows(0)("MomMaidenName").ToString()
                 txtPenagihanAlamat.Text = dt.Rows(0)("BillingAddress").ToString()
                 txtPenagihanRt.Text = dt.Rows(0)("BillingRT").ToString()
                 txtPenagihanRw.Text = dt.Rows(0)("BillingRW").ToString()

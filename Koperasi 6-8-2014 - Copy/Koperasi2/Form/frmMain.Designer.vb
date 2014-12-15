@@ -41,9 +41,6 @@ Partial Class frmMain
         Me.ElektronikToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.KontrakToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DanaTunaiToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.MotorBaruToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.KTAToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ElektronikToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BPKBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -58,6 +55,8 @@ Partial Class frmMain
         Me.PelunasanKhususToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PelunasanAsuransiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ReservedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.KaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ParameterSistemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ReportKontrakToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ModalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -68,8 +67,6 @@ Partial Class frmMain
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.flag = New System.Windows.Forms.TextBox
-        Me.KaryawanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ParameterSistemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -148,30 +145,30 @@ Partial Class frmMain
         'DanaTunaiToolStripMenuItem
         '
         Me.DanaTunaiToolStripMenuItem.Name = "DanaTunaiToolStripMenuItem"
-        Me.DanaTunaiToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.DanaTunaiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.DanaTunaiToolStripMenuItem.Text = "Dana Tunai"
         '
         'MotorBaruToolStripMenuItem1
         '
         Me.MotorBaruToolStripMenuItem1.Name = "MotorBaruToolStripMenuItem1"
-        Me.MotorBaruToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
+        Me.MotorBaruToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.MotorBaruToolStripMenuItem1.Text = "Motor Baru"
         '
         'KTAToolStripMenuItem1
         '
         Me.KTAToolStripMenuItem1.Name = "KTAToolStripMenuItem1"
-        Me.KTAToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
+        Me.KTAToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.KTAToolStripMenuItem1.Text = "KTA"
         '
         'ElektronikToolStripMenuItem1
         '
         Me.ElektronikToolStripMenuItem1.Name = "ElektronikToolStripMenuItem1"
-        Me.ElektronikToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
+        Me.ElektronikToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.ElektronikToolStripMenuItem1.Text = "Elektronik"
         '
         'KontrakToolStripMenuItem
         '
-        Me.KontrakToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DanaTunaiToolStripMenuItem1, Me.MotorBaruToolStripMenuItem2, Me.KTAToolStripMenuItem2, Me.ElektronikToolStripMenuItem2, Me.ToolStripMenuItem2, Me.EditToolStripMenuItem})
+        Me.KontrakToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DanaTunaiToolStripMenuItem1, Me.ToolStripMenuItem2, Me.EditToolStripMenuItem})
         Me.KontrakToolStripMenuItem.Name = "KontrakToolStripMenuItem"
         Me.KontrakToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.KontrakToolStripMenuItem.Text = "Kontrak"
@@ -179,36 +176,18 @@ Partial Class frmMain
         'DanaTunaiToolStripMenuItem1
         '
         Me.DanaTunaiToolStripMenuItem1.Name = "DanaTunaiToolStripMenuItem1"
-        Me.DanaTunaiToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
-        Me.DanaTunaiToolStripMenuItem1.Text = "Dana Tunai"
-        '
-        'MotorBaruToolStripMenuItem2
-        '
-        Me.MotorBaruToolStripMenuItem2.Name = "MotorBaruToolStripMenuItem2"
-        Me.MotorBaruToolStripMenuItem2.Size = New System.Drawing.Size(134, 22)
-        Me.MotorBaruToolStripMenuItem2.Text = "Motor Baru"
-        '
-        'KTAToolStripMenuItem2
-        '
-        Me.KTAToolStripMenuItem2.Name = "KTAToolStripMenuItem2"
-        Me.KTAToolStripMenuItem2.Size = New System.Drawing.Size(134, 22)
-        Me.KTAToolStripMenuItem2.Text = "KTA"
-        '
-        'ElektronikToolStripMenuItem2
-        '
-        Me.ElektronikToolStripMenuItem2.Name = "ElektronikToolStripMenuItem2"
-        Me.ElektronikToolStripMenuItem2.Size = New System.Drawing.Size(134, 22)
-        Me.ElektronikToolStripMenuItem2.Text = "Elektronik"
+        Me.DanaTunaiToolStripMenuItem1.Size = New System.Drawing.Size(168, 22)
+        Me.DanaTunaiToolStripMenuItem1.Text = "View/Edit Kontrak"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(131, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(165, 6)
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.EditToolStripMenuItem.Text = "BuyBack"
         '
         'BPKBToolStripMenuItem
@@ -286,6 +265,18 @@ Partial Class frmMain
         Me.ReservedToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
         Me.ReservedToolStripMenuItem.Text = "Master"
         '
+        'KaryawanToolStripMenuItem
+        '
+        Me.KaryawanToolStripMenuItem.Name = "KaryawanToolStripMenuItem"
+        Me.KaryawanToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.KaryawanToolStripMenuItem.Text = "Karyawan"
+        '
+        'ParameterSistemToolStripMenuItem
+        '
+        Me.ParameterSistemToolStripMenuItem.Name = "ParameterSistemToolStripMenuItem"
+        Me.ParameterSistemToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.ParameterSistemToolStripMenuItem.Text = "Parameter Sistem"
+        '
         'ReportToolStripMenuItem
         '
         Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportKontrakToolStripMenuItem})
@@ -347,18 +338,6 @@ Partial Class frmMain
         Me.flag.TabIndex = 9
         Me.flag.Visible = False
         '
-        'KaryawanToolStripMenuItem
-        '
-        Me.KaryawanToolStripMenuItem.Name = "KaryawanToolStripMenuItem"
-        Me.KaryawanToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.KaryawanToolStripMenuItem.Text = "Karyawan"
-        '
-        'ParameterSistemToolStripMenuItem
-        '
-        Me.ParameterSistemToolStripMenuItem.Name = "ParameterSistemToolStripMenuItem"
-        Me.ParameterSistemToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.ParameterSistemToolStripMenuItem.Text = "Parameter Sistem"
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -401,9 +380,6 @@ Partial Class frmMain
     Friend WithEvents ElektronikToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KontrakToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DanaTunaiToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MotorBaruToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents KTAToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ElektronikToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BPKBToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

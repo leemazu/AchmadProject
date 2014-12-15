@@ -67,63 +67,93 @@ Public Class EntryBPKB
     End Sub
 
     Private Sub FillGrid()
-        StrSQL = ""
-        StrSQL = "SELECT Application.ContractID as [No Kontrak],Application.ApplicationID as [No Aplikasi],"
-        StrSQL &= " _Reference.ReferenceName as Pos,Member.MemberName as Pemohon From Application "
-        StrSQL &= "INNER JOIN Contract ON Application.ContractID = contract.ContractID  "
-        StrSQL &= "INNER JOIN _Reference ON Application.PosID = _Reference.ReferenceID "
-        StrSQL &= "INNER JOIN Member ON Application.MemberID = Member.MemberID "
-        StrSQL &= "WHERE Application.ApplicationTypeID = 2 AND Contract.BpkbNo = '' "
+        'Dim dsBpkb As New DataSet
+        'StrSQL = ""
+        'StrSQL = "SELECT Application.ContractID as [No Kontrak],Application.ApplicationID as [No Aplikasi],"
+        'StrSQL &= " _Reference.ReferenceName as Pos,Member.MemberName as Pemohon From Application "
+        'StrSQL &= "INNER JOIN Contract ON Application.ContractID = contract.ContractID  "
+        'StrSQL &= "INNER JOIN _Reference ON Application.PosID = _Reference.ReferenceID "
+        'StrSQL &= "INNER JOIN Member ON Application.MemberID = Member.MemberID "
+        'StrSQL &= "WHERE Application.ApplicationTypeID = 2 AND Contract.BpkbNo = '' "
 
-        RunSQL(StrSQL, 2, "TableApplication")
-        gv1.DataSource = ds
-        gv1.DataMember = "TableApplication"
-        FlagGrid = True
+        'RunSQL(StrSQL, 2, "TableApplication", , dsBpkb)
+        'gv1.DataSource = dsBpkb
+        'gv1.DataMember = "TableApplication"
+        'FlagGrid = True
+
+        Dim dsGridBPKB As New DataSet
+        StrSQL = ""
+        StrSQL = "SELECT DISTINCT * FROM V_BpkbList order by [Nama Pelanggan] ASC "
+        RunSQL(StrSQL, 2, "TableBpkb", , dsGridBPKB)
+        gv1.DataSource = dsGridBPKB
+        gv1.DataMember = "TableBpkb"
+        gv1.AutoResizeColumns()
 
     End Sub
 
 
     Private Sub txtCari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCari.TextChanged
-        FlagGrid = False
-        da.Dispose()
-        ds.Clear()
+        'FlagGrid = False
+        'Dim dsFilterBpkb As New DataSet
+        'StrSQL = ""
+        'StrSQL = "SELECT Application.ContractID as [No Kontrak],Application.ApplicationID as [No Aplikasi],"
+        'StrSQL &= " _Reference.ReferenceName as Pos,Member.MemberName as Pemohon From Application "
+        'StrSQL &= "INNER JOIN Contract ON Application.ContractID = contract.ContractID  "
+        'StrSQL &= "INNER JOIN _Reference ON Application.PosID = _Reference.ReferenceID "
+        'StrSQL &= "INNER JOIN Member ON Application.MemberID = Member.MemberID "
+        'StrSQL &= "WHERE Application.ApplicationTypeID = 2 "
+        'StrSQL &= "AND (Application.ContractID LIKE '%" & txtCari.Text & "%' OR "
+        'StrSQL &= "Member.MemberName LIKE '%" & txtCari.Text & "%')"
+        'RunSQL(StrSQL, 2, "FilterBpkb", , dsFilterBpkb)
+        'gv1.DataSource = dsFilterBpkb
+        'gv1.DataMember = "FilterBpkb"
+        'FlagGrid = True
+        Dim filter As String = antisqli(txtCari.Text)
+        Dim dsFilterBpkb As New DataSet
         StrSQL = ""
-        StrSQL = "SELECT Application.ContractID as [No Kontrak],Application.ApplicationID as [No Aplikasi],"
-        StrSQL &= " _Reference.ReferenceName as Pos,Member.MemberName as Pemohon From Application "
-        StrSQL &= "INNER JOIN Contract ON Application.ContractID = contract.ContractID  "
-        StrSQL &= "INNER JOIN _Reference ON Application.PosID = _Reference.ReferenceID "
-        StrSQL &= "INNER JOIN Member ON Application.MemberID = Member.MemberID "
-        StrSQL &= "WHERE Application.ApplicationTypeID = 2 "
-        StrSQL &= "AND (Application.ContractID LIKE '%" & txtCari.Text & "%' OR "
-        StrSQL &= "Member.MemberName LIKE '%" & txtCari.Text & "%')"
-        RunSQL(StrSQL, 2, "FilterBpkb")
-        gv1.DataSource = ds
-        gv1.DataMember = "FilterBpkb"
-        FlagGrid = True
+        StrSQL = "SELECT DISTINCT * FROM V_BpkbList  "
+        StrSQL &= "WHERE [Nomor Aplikasi] LIKE '%" & filter & "%'  "
+        StrSQL &= "OR [Nomor Kontrak] LIKE '%" & filter & "%'  "
+        StrSQL &= "OR [Nama Pelanggan] LIKE '%" & filter & "%'  "
+        StrSQL &= "ORDER BY [Nama Pelanggan] ASC "
+        RunSQL(StrSQL, 2, "TableFilterBpkb", , dsFilterBpkb)
+        gv1.DataSource = dsFilterBpkb
+        gv1.DataMember = "TableFilterBpkb"
+        gv1.AutoResizeColumns()
     End Sub
 
     Private Sub gv1_SelectionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gv1.SelectionChanged
-        If FlagGrid = True Then
-            Dim statusBpkb As Integer
-            Try
-                statusBpkb = CInt(getFieldValue("Select State From Contract Where ContractId='" & CStr(gv1.CurrentRow.Cells("No Kontrak").Value & "' ")))
-            Catch ex As Exception
+        'If FlagGrid = True Then
+        '    Dim statusBpkb As Integer
+        '    Try
+        '        statusBpkb = CInt(getFieldValue("Select State From Contract Where ContractId='" & CStr(gv1.CurrentRow.Cells("No Kontrak").Value & "' ")))
+        '    Catch ex As Exception
 
-            End Try
+        '    End Try
 
-            txtKontrak.Text = CStr(gv1.CurrentRow.Cells("No Kontrak").Value)
-            txtAplikasi.Text = CStr(gv1.CurrentRow.Cells("No Aplikasi").Value)
-            txtPos.Text = CStr(gv1.CurrentRow.Cells("Pos").Value)
-            txtPemohon.Text = CStr(gv1.CurrentRow.Cells("Pemohon").Value)
-            MemberID = getFieldValue("SELECT MemberID From Application Where ApplicationID ='" & txtAplikasi.Text & "'")
+        '    txtKontrak.Text = CStr(gv1.CurrentRow.Cells("No Kontrak").Value)
+        '    txtAplikasi.Text = CStr(gv1.CurrentRow.Cells("No Aplikasi").Value)
+        '    txtPos.Text = CStr(gv1.CurrentRow.Cells("Pos").Value)
+        '    txtPemohon.Text = CStr(gv1.CurrentRow.Cells("Pemohon").Value)
+        '    MemberID = getFieldValue("SELECT MemberID From Application Where ApplicationID ='" & txtAplikasi.Text & "'")
 
-            If statusBpkb = 1 Then
-                txtStatusKontrak.Text = "Aktif"
-            Else
-                txtStatusKontrak.Text = "Lunas"
-            End If
+        '    If statusBpkb = 1 Then
+        '        txtStatusKontrak.Text = "Aktif"
+        '    Else
+        '        txtStatusKontrak.Text = "Lunas"
+        '    End If
 
-        End If
+        'End If
+
+        Try
+            txtAplikasi.Text = gv1.CurrentRow.Cells("Nomor Aplikasi").Value.ToString()
+            txtPemohon.Text = gv1.CurrentRow.Cells("Nama Pelanggan").Value.ToString()
+            txtPos.Text = gv1.CurrentRow.Cells("Pos").Value.ToString()
+            txtNoBpkb.Text = gv1.CurrentRow.Cells("No BPKB").Value.ToString()
+            txtKontrak.Text = gv1.CurrentRow.Cells("Nomor Kontrak").Value.ToString()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click

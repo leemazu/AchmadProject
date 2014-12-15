@@ -33,8 +33,7 @@ Public Class BastKTA
     End Sub
 
     Private Sub FillTable()
-        da.Dispose()
-        ds.Clear()
+        Dim DsKTA As New DataSet
         StrSQL = "SELECT ApplicationID as [No.Aplikasi],"
         StrSQL &= "MemberName as [Nama Konsumen],"
         StrSQL &= "Convert(varchar(10),convert(date,BirthDate,106),103) as [Tanggal Lahir],"
@@ -43,15 +42,14 @@ Public Class BastKTA
         StrSQL &= "convert(int,(MotorPrice+InsuranceAdmin+LoanAdmin)) as Modal "
         StrSQL &= "from [Application] INNER JOIN Member ON application.MemberID=member.memberid "
         StrSQL &= "AND Application.ApplicationTypeID ='4' AND Application.State=0 ORDER BY ApplicationID ASC"
-        RunSQL(StrSQL, 2, "BastKTA")
-        gv1.DataSource = ds
+        RunSQL(StrSQL, 2, "BastKTA", , DsKTA)
+        gv1.DataSource = DsKTA
         gv1.DataMember = "BastKTA"
         flagGrid = True
     End Sub
 
     Private Sub txtCari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCari.TextChanged
-        da.Dispose()
-        ds.Clear()
+        Dim dsFilterKta As New DataSet
         StrSQL = "SELECT TOP 100 ApplicationID as [No.Aplikasi],"
         StrSQL &= "MemberName as [Nama Konsumen],"
         StrSQL &= "Convert(varchar(10),convert(date,BirthDate,103),103) as [Tanggal Lahir],"
@@ -63,8 +61,8 @@ Public Class BastKTA
         StrSQL &= "OR MemberName LIKE '%" & antisqli(txtCari.Text) & "%') "
         StrSQL &= "AND App.ApplicationTypeID ='4' "
         StrSQL &= "AND App.MemberID = Mem.MemberID AND Application.State=0"
-        RunSQL(StrSQL, 2, "FilterBastKTA")
-        gv1.DataSource = ds
+        RunSQL(StrSQL, 2, "FilterBastKTA", , dsFilterKta)
+        gv1.DataSource = dsFilterKta
         gv1.DataMember = "FilterBastKTA"
     End Sub
 

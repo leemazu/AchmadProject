@@ -156,6 +156,12 @@
     <Compile Include="BAST\BastMotorBaru.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Control\CtrlDanaTunai.Designer.vb">
+      <DependentUpon>CtrlDanaTunai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CtrlDanaTunai.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Form\frmAnggota.Designer.vb">
       <DependentUpon>frmAnggota.vb</DependentUpon>
     </Compile>
@@ -450,6 +456,9 @@
     <EmbeddedResource Include="Bpkb&amp;Asuransi\EntryBPKB.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EntryBPKB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CtrlDanaTunai.resx">
+      <DependentUpon>CtrlDanaTunai.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmAnggota.resx">
       <DependentUpon>frmAnggota.vb</DependentUpon>

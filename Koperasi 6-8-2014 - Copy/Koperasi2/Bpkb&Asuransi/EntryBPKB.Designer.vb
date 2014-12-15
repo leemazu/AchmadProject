@@ -196,14 +196,14 @@ Partial Class EntryBPKB
         Me.gv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gv1.Location = New System.Drawing.Point(18, 33)
         Me.gv1.Name = "gv1"
-        Me.gv1.Size = New System.Drawing.Size(486, 192)
+        Me.gv1.Size = New System.Drawing.Size(535, 192)
         Me.gv1.TabIndex = 18
         '
         'txtCari
         '
-        Me.txtCari.Location = New System.Drawing.Point(172, 7)
+        Me.txtCari.Location = New System.Drawing.Point(218, 7)
         Me.txtCari.Name = "txtCari"
-        Me.txtCari.Size = New System.Drawing.Size(332, 20)
+        Me.txtCari.Size = New System.Drawing.Size(335, 20)
         Me.txtCari.TabIndex = 17
         '
         'Label16
@@ -211,9 +211,9 @@ Partial Class EntryBPKB
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(15, 10)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(152, 13)
+        Me.Label16.Size = New System.Drawing.Size(197, 13)
         Me.Label16.TabIndex = 16
-        Me.Label16.Text = "Cari (No.Kontrak / Konsumen )"
+        Me.Label16.Text = "Filter No Aplikasi/NoKontrak/Pelanggan"
         '
         'GroupBox1
         '
@@ -229,7 +229,7 @@ Partial Class EntryBPKB
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Location = New System.Drawing.Point(20, 250)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(475, 117)
+        Me.GroupBox1.Size = New System.Drawing.Size(533, 117)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Kontrak"
@@ -299,7 +299,7 @@ Partial Class EntryBPKB
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Location = New System.Drawing.Point(23, 373)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(472, 213)
+        Me.GroupBox2.Size = New System.Drawing.Size(530, 213)
         Me.GroupBox2.TabIndex = 20
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Data Bpkb"

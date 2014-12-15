@@ -127,8 +127,6 @@ Partial Class frmElektronik
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.txtPemKerja = New System.Windows.Forms.ComboBox
         Me.Label44 = New System.Windows.Forms.Label
-        Me.txtPemIbu = New System.Windows.Forms.TextBox
-        Me.Label43 = New System.Windows.Forms.Label
         Me.txtPemTelp2 = New System.Windows.Forms.TextBox
         Me.Label42 = New System.Windows.Forms.Label
         Me.txtPemTelp1 = New System.Windows.Forms.TextBox
@@ -1193,8 +1191,6 @@ Partial Class frmElektronik
         '
         Me.GroupBox2.Controls.Add(Me.txtPemKerja)
         Me.GroupBox2.Controls.Add(Me.Label44)
-        Me.GroupBox2.Controls.Add(Me.txtPemIbu)
-        Me.GroupBox2.Controls.Add(Me.Label43)
         Me.GroupBox2.Controls.Add(Me.txtPemTelp2)
         Me.GroupBox2.Controls.Add(Me.Label42)
         Me.GroupBox2.Controls.Add(Me.txtPemTelp1)
@@ -1237,36 +1233,19 @@ Partial Class frmElektronik
         '
         Me.txtPemKerja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtPemKerja.FormattingEnabled = True
-        Me.txtPemKerja.Location = New System.Drawing.Point(332, 214)
+        Me.txtPemKerja.Location = New System.Drawing.Point(94, 207)
         Me.txtPemKerja.Name = "txtPemKerja"
-        Me.txtPemKerja.Size = New System.Drawing.Size(103, 21)
+        Me.txtPemKerja.Size = New System.Drawing.Size(210, 21)
         Me.txtPemKerja.TabIndex = 17
         '
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(271, 217)
+        Me.Label44.Location = New System.Drawing.Point(16, 215)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(55, 13)
         Me.Label44.TabIndex = 0
         Me.Label44.Text = "Pekerjaan"
-        '
-        'txtPemIbu
-        '
-        Me.txtPemIbu.Location = New System.Drawing.Point(150, 214)
-        Me.txtPemIbu.MaxLength = 20
-        Me.txtPemIbu.Name = "txtPemIbu"
-        Me.txtPemIbu.Size = New System.Drawing.Size(115, 20)
-        Me.txtPemIbu.TabIndex = 16
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(15, 214)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(129, 13)
-        Me.Label43.TabIndex = 0
-        Me.Label43.Text = "Nama Gadis Ibu Kandung"
         '
         'txtPemTelp2
         '
@@ -1710,8 +1689,6 @@ Partial Class frmElektronik
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents txtPemKerja As System.Windows.Forms.ComboBox
     Friend WithEvents Label44 As System.Windows.Forms.Label
-    Friend WithEvents txtPemIbu As System.Windows.Forms.TextBox
-    Friend WithEvents Label43 As System.Windows.Forms.Label
     Friend WithEvents txtPemTelp2 As System.Windows.Forms.TextBox
     Friend WithEvents Label42 As System.Windows.Forms.Label
     Friend WithEvents txtPemTelp1 As System.Windows.Forms.TextBox

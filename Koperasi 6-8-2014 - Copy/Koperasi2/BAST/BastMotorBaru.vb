@@ -60,9 +60,9 @@ Public Class BastMotorBaru
 
         Dim TableBpkb As DataTable = CType(getTable(), DataTable)
         Dim tableCollector As DataTable = CType(getTable(), DataTable)
-        StrSQL = ""
-        StrSQL = "Sp_Reference_CBO 'BST'"
-        FillComboWithValue(cmbBpkb, StrSQL, TableBpkb)
+        'StrSQL = ""
+        'StrSQL = "Sp_Reference_CBO 'BST'"
+        'FillComboWithValue(cmbBpkb, StrSQL, TableBpkb)
 
         StrSQL = ""
         StrSQL = "SpEmployee_CBO 'CL'"
@@ -79,13 +79,13 @@ Public Class BastMotorBaru
         txtWarna.Clear()
         txtTahun.Clear()
         txtTransferDealer.Clear()
-        txtRangka.Clear()
+        'txtRangka.Clear()
         txtMotorPrice.Clear()
         txtDealerSubs.Clear()
         txtTenor.Clear()
         txtAngsuran.Clear()
         txtModal.Clear()
-        cmbBpkb.SelectedIndex = 0
+        ' cmbBpkb.SelectedIndex = 0
         txtKontrak.Clear()
         cmbCollector.SelectedIndex = 0
         txtBunga.Clear()
@@ -152,13 +152,13 @@ Public Class BastMotorBaru
         End If
     End Sub
 
-    Private Sub updateApplication()
-        StrSQL = ""
-        StrSQL = "UPDATE Application SET FrameCode='" & txtRangka.Text & "', "
-        StrSQL &= "EngineCode='" & txtMesin.Text & "' "
-        StrSQL &= "WHERE ApplicationID='" & txtAplikasi.Text & "'"
-        RunSQL(StrSQL, 0)
-    End Sub
+    'Private Sub updateApplication()
+    '    StrSQL = ""
+    '    StrSQL = "UPDATE Application SET FrameCode='" & txtRangka.Text & "', "
+    '    StrSQL &= "EngineCode='" & txtMesin.Text & "' "
+    '    StrSQL &= "WHERE ApplicationID='" & txtAplikasi.Text & "'"
+    '    RunSQL(StrSQL, 0)
+    'End Sub
 
     Private Sub Contract_SAV()
         StrSQL = ""
@@ -168,11 +168,11 @@ Public Class BastMotorBaru
         StrSQL &= "'" & dtKontrak.Value & "',"
         StrSQL &= "'" & dtBast.Value & "',"
         StrSQL &= "'" & dtAngsuran.Value & "',"
-        StrSQL &= "'" & CStr(cmbBpkb.SelectedValue) & "',"
+        StrSQL &= "''," 'bpkb dihapus
         StrSQL &= "'',"
         StrSQL &= "'" & txtWarna.Text & "',"
-        StrSQL &= "'" & txtRangka.Text & "',"
-        StrSQL &= "'" & txtMesin.Text & "',"
+        StrSQL &= "''," 'rangka dihapus
+        StrSQL &= "''," 'mesin dihapus
         StrSQL &= "1,"
         StrSQL &= "'none',"
         StrSQL &= "'" & CStr(cmbCollector.SelectedValue) & "'"

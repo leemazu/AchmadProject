@@ -11,7 +11,7 @@
         Dim dsContractList As New DataSet
         If txtFlag.Text = "1" Then
             StrSQL = ""
-            StrSQL = "SELECT*FROM V_ContractList Order By [Nama Pelanggan] ASC"
+            StrSQL = "SELECT DISTINCT *FROM V_ContractList Order By [Nama Pelanggan] ASC"
             RunSQL(StrSQL, 2, "TabelViewKontrakMesin", , dsContractList)
             gv1.DataSource = dsContractList
             gv1.DataMember = "TabelViewKontrakMesin"
@@ -97,7 +97,7 @@
             Dim filter As String = antisqli(txtFilter.Text)
             Dim dsAfterFilter As New DataSet
             StrSQL = ""
-            StrSQL = "SELECT*FROM V_ContractList "
+            StrSQL = "SELECT DISTINCT *FROM V_ContractList "
             StrSQL &= "WHERE [Nomor Aplikasi] LIKE '%" & filter & "%' OR "
             StrSQL &= " [Nomor Kontrak] LIKE '%" & filter & "%' OR "
             StrSQL &= " [Nama Pelanggan] LIKE '%" & filter & "%' "

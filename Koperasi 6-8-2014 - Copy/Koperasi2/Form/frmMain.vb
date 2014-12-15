@@ -157,8 +157,11 @@ Public Class frmMain
     End Sub
 
     Private Sub DanaTunaiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DanaTunaiToolStripMenuItem.Click
-        BastDana.Show()
+
         BastDana.MdiParent = Me
+        BastDana.StartPosition = FormStartPosition.Manual
+        BastDana.Location = New Point(0, 0)
+        BastDana.Show()
     End Sub
 
     Private Sub MotorBaruToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MotorBaruToolStripMenuItem.Click
@@ -211,7 +214,7 @@ Public Class frmMain
         kontrakDanaTunai.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub KTAToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KTAToolStripMenuItem2.Click
+    Private Sub KTAToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         kontrakKTA.Show()
         kontrakKTA.MdiParent = Me
         kontrakKTA.WindowState = FormWindowState.Maximized
@@ -288,14 +291,14 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub MotorBaruToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MotorBaruToolStripMenuItem2.Click
+    Private Sub MotorBaruToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         kontrakMotorBaru.Show()
         kontrakMotorBaru.MdiParent = Me
         kontrakMotorBaru.WindowState = FormWindowState.Maximized
 
     End Sub
 
-    Private Sub ElektronikToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ElektronikToolStripMenuItem2.Click
+    Private Sub ElektronikToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         kontrakElektronik.Show()
         kontrakElektronik.MdiParent = Me
         kontrakElektronik.WindowState = FormWindowState.Maximized

@@ -30,6 +30,7 @@ Public Class frmDanaTunai
     Dim tblBpKot As New DataTable
     Dim tblBpKec As New DataTable
     Dim tblBpKel As New DataTable
+    Dim oldBpkb As String = ""
 #End Region
 #Region "Function"
     Private Sub setTanggal()
@@ -58,6 +59,7 @@ Public Class frmDanaTunai
     Private Sub FreshForm()
         'txtAplikasi.Text = autoNumber()
         ' txtPemNo.Text = autoNumberMember()
+        oldBpkb = ""
         posFlag = False
         txtKendaraan.Clear()
         txtTipe.Clear()
@@ -339,15 +341,15 @@ Public Class frmDanaTunai
         StrSQL &= "'" & cmbSalesman.SelectedValue & "', "
         StrSQL &= "'1', "
         StrSQL &= "'" & txtTenor.Text & "', "
-        StrSQL &= CInt(txtTingkatBunga.Text) & ", "
-        StrSQL &= CDbl(txtPinjaman.Text) & ", "
-        StrSQL &= "0, "
-        StrSQL &= "0, " 'CDbl(DownPayment.Text) & ", "
-        StrSQL &= CDbl(txtPremiAsuransi.Text) & ", "
-        StrSQL &= CDbl(txtAdminKredit.Text) & ", "
+        StrSQL &= CInt(txtTingkatBunga.Text) & ", " 'effectiveinterestP
+        StrSQL &= CDbl(txtPinjaman.Text) & ", " 'motor price
+        StrSQL &= "0, " 'electronicprice
+        StrSQL &= "0, " 'CDbl(DownPayment.Text) & ", " 'downpayment
+        StrSQL &= CDbl(txtPremiAsuransi.Text) & ", " 'insuranceRate
+        StrSQL &= CDbl(txtAdminKredit.Text) & ", " 'LoanAdmin
         StrSQL &= "0, " 'CDbl(DealerSubs.Text) & ", "
-        StrSQL &= "0, "
-        StrSQL &= CDbl(txtAdmin.Text) & ", "
+        StrSQL &= "0, " 'MarketingCost
+        StrSQL &= CDbl(txtAdmin.Text) & ", " 'InsuranceAdmin
         StrSQL &= "'" & txtKendaraan.Text & "', "
         StrSQL &= "'" & txtTipe.Text & "', "
         StrSQL &= "'" & txtWarna.Text & "', "
@@ -357,7 +359,7 @@ Public Class frmDanaTunai
         StrSQL &= "'" & txtKomentar.Text & "',"
         StrSQL &= "'',"
         StrSQL &= CDbl(txtPokok.Text) & ", "
-        StrSQL &= CDbl(txtAngsuran.Text) & ", "
+        StrSQL &= CDbl(txtAngsuran.Text) & ", " 'installment
         StrSQL &= "'', "
         StrSQL &= "'" & txtBpkb.Text & "',"
         StrSQL &= "'" & txtRangka.Text & "',"
@@ -420,6 +422,36 @@ Public Class frmDanaTunai
         StrSQL &= CDbl(txtUangKeluar.Text) & ", "
         StrSQL &= "'" & oldMemberID & "' "
         RunSQL(StrSQL, 0)
+
+        Dim statusBpkb As String
+        StrSQL = ""
+        StrSQL = "SELECT*FROM Bpkb Where NoBpkb = '" & oldBpkb & "' "
+        RunSQL(StrSQL, 1)
+        If dt.Rows.Count > 0 Then
+            statusBpkb = "UPD"
+        Else
+            statusBpkb = "INS"
+        End If
+
+        StrSQL = ""
+        StrSQL = "Sp_BpkbSAVE "
+        StrSQL &= "'" & statusBpkb & "', "
+        StrSQL &= "'" & txtBpkb.Text & "', "
+        StrSQL &= "'" & txtBpkbNama.Text & "', "
+        StrSQL &= "'" & txtNopol.Text & "', "
+        StrSQL &= "'" & txtMesin.Text & "', "
+        StrSQL &= "'" & txtRangka.Text & "', "
+        StrSQL &= "'" & txtWarna.Text & "', "
+        StrSQL &= "'', " 'tglmasuk
+        StrSQL &= "'', " 'tglkeluar
+        StrSQL &= "'', " 'pengambil
+        StrSQL &= "'423E4A13', " 'ONHAND
+        StrSQL &= "'" & antisqli(txtBpkbAlamat.Text) & "', "
+        StrSQL &= "'" & cmbBpkbKel.SelectedValue & "', "
+        StrSQL &= "'" & txtBpkbRt.Text & "', "
+        StrSQL &= "'" & txtBpkbRw.Text & "', "
+        StrSQL &= "'" & oldBpkb & "' "
+        RunSQL(StrSQL, 0)
     End Sub
     Private Sub PrintTandaTerimaUang()
 
@@ -462,10 +494,9 @@ Public Class frmDanaTunai
             paramDValue.Value = Terbilang(CDbl(txtPinjaman.Text))
             ViewReport(MultiReportView.CRViewer1, strReportPath, dsTTU, paramDValue)
         End If
-      
+
 
     End Sub
-
     Private Sub tempTandaTerimaUang()
         Dim tanggal As String = "1"
         tanggal = Convert.ToString(dtTanggal.Value.Day)
@@ -475,7 +506,6 @@ Public Class frmDanaTunai
         RunSQL(StrSQL, 0)
         PrintTandaTerimaUang()
     End Sub
-
     Private Sub tempTandaTerimaBpkb()
         Dim tanggal2 As String = "1"
         tanggal2 = Convert.ToString(dtTanggal.Value.Day)
@@ -698,6 +728,7 @@ Public Class frmDanaTunai
             If dt.Rows.Count > 0 Then
                 Dim platno As String = dt.Rows(0)("PlatNo")
                 Dim bpkbno As String = dt.Rows(0)("BpkbNo")
+                oldBpkb = bpkbno
                 Dim motorprice As String = dt.Rows(0)("Motorprice")
                 Dim insurancerate As String = dt.Rows(0)("insurancerate")
                 Dim insuranceadmin As String = dt.Rows(0)("insuranceadmin")
@@ -974,4 +1005,7 @@ Public Class frmDanaTunai
     End Sub
 
 
+    Private Sub Panel1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class

@@ -16,8 +16,7 @@ Public Class BastElektronik
     End Sub
 
     Private Sub FillTable()
-        da.Dispose()
-        ds.Clear()
+        Dim dsElektronik As New DataSet
         StrSQL = "SELECT ApplicationID as [No.Aplikasi],"
         StrSQL &= "MemberName as [Nama Konsumen],"
         StrSQL &= "Convert(varchar,BirthDate,103) as [Tanggal Lahir],"
@@ -29,15 +28,14 @@ Public Class BastElektronik
         StrSQL &= "convert(int,(MotorPrice+InsuranceAdmin+LoanAdmin)) as Modal "
         StrSQL &= "from [Application] INNER JOIN Member ON application.MemberID=member.memberid "
         StrSQL &= "AND Application.ApplicationTypeID ='3' AND Application.State=0 ORDER BY ApplicationID ASC"
-        RunSQL(StrSQL, 2, "BastElektronik")
-        gv1.DataSource = ds
+        RunSQL(StrSQL, 2, "BastElektronik", , dsElektronik)
+        gv1.DataSource = dsElektronik
         gv1.DataMember = "BastElektronik"
         flagGrid = True
     End Sub
 
     Private Sub txtCari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCari.TextChanged
-        da.Dispose()
-        ds.Clear()
+        Dim dsFilterelektronik As New DataSet
         StrSQL = ""
         StrSQL = "SELECT ApplicationID as [No.Aplikasi],"
         StrSQL &= "MemberName as [Nama Konsumen],"
@@ -52,8 +50,8 @@ Public Class BastElektronik
         StrSQL &= "AND (ApplicationID LIKE '%" & antisqli(txtCari.Text) & "%' "
         StrSQL &= "OR MemberName LIKE '%" & antisqli(txtCari.Text) & "%') "
         StrSQL &= "AND Application.ApplicationTypeID ='3' AND Application.State=0 ORDER BY ApplicationID ASC"
-        RunSQL(StrSQL, 2, "FilterBastElektronik")
-        gv1.DataSource = ds
+        RunSQL(StrSQL, 2, "FilterBastElektronik", , dsFilterelektronik)
+        gv1.DataSource = dsFilterelektronik
         gv1.DataMember = "FilterBastElektronik"
     End Sub
 

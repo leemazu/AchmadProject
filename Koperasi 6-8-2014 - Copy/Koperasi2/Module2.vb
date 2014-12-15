@@ -121,16 +121,51 @@ Module Module2
 
     Public Function detailAlamat(ByVal kodePost As String) As getAddress
         Dim detAl = New getAddress()
-        StrSQL = ""
-        StrSQL = "SELECT VILLAGE,SubDistrict,City From __addrLocation Where AddrLocationID='" & kodePost & "'"
-        RunSQL(StrSQL, 1)
+        Dim dtGetAlamat As New DataTable
+        Dim connGetAlamat As New SqlConnection
+        Dim connStringGetAlamat As String
+        Dim cmdGetAlamat As New SqlCommand
+        Dim rdrGetAlamat As SqlDataReader
+
+        connStringGetAlamat = "data source={0};user id={1};password={2};initial catalog={3}"
+        connStringGetAlamat = String.Format(con_string, con_server, con_userid, con_password, con_database)
+        connGetAlamat = New SqlConnection(connStringGetAlamat)
+
+        If kodePost = "" Then
+            kodePost = "001012012000000"
+        End If
+
+
         Try
-            detAl.kelurahan = dt.Rows(0)("VILLAGE").ToString()
-            detAl.kecamatan = dt.Rows(0)("SubDistrict").ToString()
-            detAl.kota = dt.Rows(0)("City").ToString()
+            connGetAlamat.Open()
+            cmdGetAlamat = New SqlCommand("SELECT VILLAGE,SubDistrict,City From __addrLocation Where AddrLocationID='" & kodePost & "'", connGetAlamat)
+            With dtGetAlamat
+                .Clear()
+                'dt = New DataTable
+                rdrGetAlamat = cmdGetAlamat.ExecuteReader()
+                Try
+                    .Load(rdrGetAlamat)
+                Catch ex As Exception
+                End Try
+                connGetAlamat.Close()
+            End With
+        Catch ex As Exception
+
+        End Try
+
+
+
+        Try
+            detAl.kelurahan = dtGetAlamat.Rows(0)("VILLAGE").ToString()
+            detAl.kecamatan = dtGetAlamat.Rows(0)("SubDistrict").ToString()
+            detAl.kota = dtGetAlamat.Rows(0)("City").ToString()
         Catch ex As Exception
         End Try
         Return detAl
+
+
+
+
     End Function
 
     Public Sub ChangedIndexComboBox(ByVal strSql As String, ByVal comboBox As ComboBox, ByVal numberSelected As String, ByVal dataTable As DataTable)

@@ -52,7 +52,6 @@ Partial Class BastMotorBaru
         Me.txtDealerSubs = New System.Windows.Forms.TextBox
         Me.Label5 = New System.Windows.Forms.Label
         Me.dtAngsuran = New System.Windows.Forms.DateTimePicker
-        Me.Label20 = New System.Windows.Forms.Label
         Me.dtPem = New System.Windows.Forms.DateTimePicker
         Me.Label4 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
@@ -70,12 +69,7 @@ Partial Class BastMotorBaru
         Me.Label2 = New System.Windows.Forms.Label
         Me.gv1 = New System.Windows.Forms.DataGridView
         Me.txtCari = New System.Windows.Forms.TextBox
-        Me.cmbBpkb = New System.Windows.Forms.ComboBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.txtMesin = New System.Windows.Forms.TextBox
-        Me.Label21 = New System.Windows.Forms.Label
-        Me.txtRangka = New System.Windows.Forms.TextBox
-        Me.Label23 = New System.Windows.Forms.Label
         Me.txtBunga = New System.Windows.Forms.TextBox
         Me.GroupBox1.SuspendLayout()
         CType(Me.gv1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +87,7 @@ Partial Class BastMotorBaru
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(523, 486)
+        Me.Button1.Location = New System.Drawing.Point(345, 457)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(73, 26)
         Me.Button1.TabIndex = 26
@@ -103,7 +97,7 @@ Partial Class BastMotorBaru
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(20, 489)
+        Me.Label12.Location = New System.Drawing.Point(23, 456)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(78, 13)
         Me.Label12.TabIndex = 23
@@ -111,7 +105,7 @@ Partial Class BastMotorBaru
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(612, 485)
+        Me.Button2.Location = New System.Drawing.Point(434, 456)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(73, 29)
         Me.Button2.TabIndex = 27
@@ -128,9 +122,9 @@ Partial Class BastMotorBaru
         '
         'dtKontrak
         '
-        Me.dtKontrak.Location = New System.Drawing.Point(348, 482)
+        Me.dtKontrak.Location = New System.Drawing.Point(296, 19)
         Me.dtKontrak.Name = "dtKontrak"
-        Me.dtKontrak.Size = New System.Drawing.Size(152, 20)
+        Me.dtKontrak.Size = New System.Drawing.Size(85, 20)
         Me.dtKontrak.TabIndex = 28
         '
         'txtTahun
@@ -153,7 +147,7 @@ Partial Class BastMotorBaru
         '
         'txtKontrak
         '
-        Me.txtKontrak.Location = New System.Drawing.Point(104, 483)
+        Me.txtKontrak.Location = New System.Drawing.Point(107, 450)
         Me.txtKontrak.MaxLength = 12
         Me.txtKontrak.Name = "txtKontrak"
         Me.txtKontrak.Size = New System.Drawing.Size(147, 20)
@@ -162,7 +156,7 @@ Partial Class BastMotorBaru
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(256, 485)
+        Me.Label11.Location = New System.Drawing.Point(213, 22)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(86, 13)
         Me.Label11.TabIndex = 25
@@ -170,7 +164,7 @@ Partial Class BastMotorBaru
         '
         'dtBast
         '
-        Me.dtBast.Location = New System.Drawing.Point(270, 53)
+        Me.dtBast.Location = New System.Drawing.Point(95, 19)
         Me.dtBast.Name = "dtBast"
         Me.dtBast.Size = New System.Drawing.Size(85, 20)
         Me.dtBast.TabIndex = 7
@@ -178,7 +172,7 @@ Partial Class BastMotorBaru
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(187, 57)
+        Me.Label9.Location = New System.Drawing.Point(12, 23)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(77, 13)
         Me.Label9.TabIndex = 6
@@ -247,8 +241,9 @@ Partial Class BastMotorBaru
         '
         'cmbCollector
         '
+        Me.cmbCollector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCollector.FormattingEnabled = True
-        Me.cmbCollector.Location = New System.Drawing.Point(104, 513)
+        Me.cmbCollector.Location = New System.Drawing.Point(107, 480)
         Me.cmbCollector.Name = "cmbCollector"
         Me.cmbCollector.Size = New System.Drawing.Size(142, 21)
         Me.cmbCollector.TabIndex = 32
@@ -265,7 +260,7 @@ Partial Class BastMotorBaru
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(20, 516)
+        Me.Label22.Location = New System.Drawing.Point(23, 483)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(77, 13)
         Me.Label22.TabIndex = 31
@@ -301,7 +296,7 @@ Partial Class BastMotorBaru
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(372, 58)
+        Me.Label10.Location = New System.Drawing.Point(399, 21)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(77, 13)
         Me.Label10.TabIndex = 8
@@ -336,19 +331,10 @@ Partial Class BastMotorBaru
         '
         'dtAngsuran
         '
-        Me.dtAngsuran.Location = New System.Drawing.Point(455, 53)
+        Me.dtAngsuran.Location = New System.Drawing.Point(482, 16)
         Me.dtAngsuran.Name = "dtAngsuran"
         Me.dtAngsuran.Size = New System.Drawing.Size(102, 20)
         Me.dtAngsuran.TabIndex = 9
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(4, 57)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(68, 13)
-        Me.Label20.TabIndex = 10
-        Me.Label20.Text = "Status BPKB"
         '
         'dtPem
         '
@@ -528,65 +514,19 @@ Partial Class BastMotorBaru
         Me.txtCari.Size = New System.Drawing.Size(564, 20)
         Me.txtCari.TabIndex = 19
         '
-        'cmbBpkb
-        '
-        Me.cmbBpkb.FormattingEnabled = True
-        Me.cmbBpkb.Location = New System.Drawing.Point(82, 55)
-        Me.cmbBpkb.Name = "cmbBpkb"
-        Me.cmbBpkb.Size = New System.Drawing.Size(90, 21)
-        Me.cmbBpkb.TabIndex = 15
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.txtMesin)
-        Me.GroupBox2.Controls.Add(Me.Label21)
-        Me.GroupBox2.Controls.Add(Me.txtRangka)
-        Me.GroupBox2.Controls.Add(Me.Label23)
-        Me.GroupBox2.Controls.Add(Me.cmbBpkb)
-        Me.GroupBox2.Controls.Add(Me.Label20)
         Me.GroupBox2.Controls.Add(Me.dtAngsuran)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.dtBast)
         Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.dtKontrak)
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Location = New System.Drawing.Point(21, 392)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(714, 84)
+        Me.GroupBox2.Size = New System.Drawing.Size(714, 52)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
-        '
-        'txtMesin
-        '
-        Me.txtMesin.Location = New System.Drawing.Point(272, 27)
-        Me.txtMesin.MaxLength = 15
-        Me.txtMesin.Name = "txtMesin"
-        Me.txtMesin.Size = New System.Drawing.Size(101, 20)
-        Me.txtMesin.TabIndex = 21
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(197, 29)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(69, 13)
-        Me.Label21.TabIndex = 20
-        Me.Label21.Text = "Nomor Mesin"
-        '
-        'txtRangka
-        '
-        Me.txtRangka.Location = New System.Drawing.Point(92, 26)
-        Me.txtRangka.MaxLength = 15
-        Me.txtRangka.Name = "txtRangka"
-        Me.txtRangka.Size = New System.Drawing.Size(85, 20)
-        Me.txtRangka.TabIndex = 19
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(7, 29)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(79, 13)
-        Me.Label23.TabIndex = 18
-        Me.Label23.Text = "Nomor Rangka"
         '
         'txtBunga
         '
@@ -606,9 +546,7 @@ Partial Class BastMotorBaru
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.txtBungaPengali)
-        Me.Controls.Add(Me.dtKontrak)
         Me.Controls.Add(Me.txtKontrak)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtPokok)
         Me.Controls.Add(Me.txtEffectiveInterest)
         Me.Controls.Add(Me.cmbCollector)
@@ -660,7 +598,6 @@ Partial Class BastMotorBaru
     Friend WithEvents txtDealerSubs As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents dtAngsuran As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents dtPem As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -672,7 +609,6 @@ Partial Class BastMotorBaru
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents gv1 As System.Windows.Forms.DataGridView
     Friend WithEvents txtCari As System.Windows.Forms.TextBox
-    Friend WithEvents cmbBpkb As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents txtBunga As System.Windows.Forms.TextBox
     Friend WithEvents txtDownPayment As System.Windows.Forms.TextBox
@@ -681,8 +617,4 @@ Partial Class BastMotorBaru
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents txtWarna As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents txtMesin As System.Windows.Forms.TextBox
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents txtRangka As System.Windows.Forms.TextBox
-    Friend WithEvents Label23 As System.Windows.Forms.Label
 End Class
