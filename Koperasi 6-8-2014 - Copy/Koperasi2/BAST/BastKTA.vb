@@ -7,6 +7,8 @@ Public Class BastKTA
         settanggal()
         FillTable()
         FillCombo()
+
+
     End Sub
     Private Sub FillCombo()
         Dim tableCollector As DataTable = CType(getTable(), DataTable)
@@ -67,16 +69,7 @@ Public Class BastKTA
     End Sub
 
     Private Sub gv1_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles gv1.CellContentDoubleClick
-        txtAplikasi.Text = gv1.CurrentRow.Cells(0).Value
-        txtPemNama.Text = gv1.CurrentRow.Cells(1).Value
-        RunSQL("SELECT BirthDate from Member inner join Application ON member.MemberID=application.memberid AND applicationid ='" & antisqli(txtAplikasi.Text) & "'", 1)
-        dtPem.Text = dt.Rows(0)("BirthDate")
-        'dtPem.Text = gv1.CurrentRow.Cells(2).Value
-        txtPinjaman.Text = gv1.CurrentRow.Cells(3).Value
-        txtTenor.Text = gv1.CurrentRow.Cells(4).Value
-        txtAngsuran.Text = gv1.CurrentRow.Cells(5).Value
-        txtModal.Text = gv1.CurrentRow.Cells(6).Value
-        txtKontrak.Text = AutoNumberContract(txtAplikasi.Text, "03")
+      
     End Sub
     Private Sub dtBast_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtBast.ValueChanged
         Dim tanggalAngsuran As Date = dtBast.Value.AddMonths(1)
@@ -90,11 +83,6 @@ Public Class BastKTA
         StrSQL &= "'" & dtKontrak.Value & "',"
         StrSQL &= "'" & dtBast.Value & "',"
         StrSQL &= "'" & dtAngsuran.Value & "',"
-        StrSQL &= "'',"
-        StrSQL &= "'',"
-        StrSQL &= "'',"
-        StrSQL &= "'',"
-        StrSQL &= "'',"
         StrSQL &= "1,"
         StrSQL &= "'none',"
         StrSQL &= "'" & CStr(cmbCollector.SelectedValue) & "'"
@@ -109,7 +97,7 @@ Public Class BastKTA
         Dim bulanJatuhTempo As Integer = Microsoft.VisualBasic.DateAndTime.Month(dtAngsuran.Value)
         Dim tahunJatuhTempo As Integer = Microsoft.VisualBasic.DateAndTime.Year(dtAngsuran.Value)
         Dim tempJatuhTempo As String = ""
-        ' Dim penambahBulan As Integer = 0
+        ' Dim penambahBulan As Integer = 
         Dim tempIndex As Integer
         Dim pokok As Double = CDbl(getFieldValue("SELECT BaseDebt from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
         'Dim BungaPengali As Double = CDbl(txtBungaPengali.Text)
@@ -248,6 +236,7 @@ Public Class BastKTA
 
                 If result = vbYes Then
                     Contract_SAV()
+                    ' ContractDetailNew_SAV()
                     ContractDetail_SAV()
                     Bank_SAVE()
                     MessageBox.Show("Kontrak Berhasil Dibuat")
@@ -275,20 +264,7 @@ Public Class BastKTA
 
     End Sub
 
-    Private Sub gv1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles gv1.CellClick
-        If flagGrid = True And e.RowIndex >= 0 Then
-            txtAplikasi.Text = CStr(gv1.CurrentRow.Cells(0).Value)
-            txtPemNama.Text = CStr(gv1.CurrentRow.Cells(1).Value)
-            RunSQL("SELECT BirthDate from Member inner join Application ON member.MemberID=application.memberid AND applicationid ='" & antisqli(txtAplikasi.Text) & "'", 1)
-            dtPem.Text = CStr(dt.Rows(0)("BirthDate"))
-            'dtPem.Text = gv1.CurrentRow.Cells(2).Value
-            txtPinjaman.Text = CStr(gv1.CurrentRow.Cells(3).Value)
-            txtTenor.Text = CStr(gv1.CurrentRow.Cells(4).Value)
-            txtAngsuran.Text = CStr(gv1.CurrentRow.Cells(5).Value)
-            txtModal.Text = CStr(gv1.CurrentRow.Cells(6).Value)
-            txtKontrak.Text = CStr(AutoNumberContract(txtAplikasi.Text, "04"))
-        End If
-    End Sub
+
 
     Private Sub Bank_SAVE()
         Dim keterangan As String = "Penyerahan Uang (BAST KTA) Kepada pelanggan "
@@ -304,4 +280,39 @@ Public Class BastKTA
         RunSQL(StrSQL, 0)
     End Sub
 
+    Private Sub gv1_SelectionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gv1.SelectionChanged
+        Try
+            If flagGrid = True Then
+                txtAplikasi.Text = CStr(gv1.CurrentRow.Cells(0).Value)
+                txtPemNama.Text = CStr(gv1.CurrentRow.Cells(1).Value)
+                RunSQL("SELECT BirthDate from Member inner join Application ON member.MemberID=application.memberid AND applicationid ='" & antisqli(txtAplikasi.Text) & "'", 1)
+                dtPem.Text = CStr(dt.Rows(0)("BirthDate"))
+                'dtPem.Text = gv1.CurrentRow.Cells(2).Value
+                txtPinjaman.Text = CStr(gv1.CurrentRow.Cells(3).Value)
+                txtTenor.Text = CStr(gv1.CurrentRow.Cells(4).Value)
+                txtAngsuran.Text = CStr(gv1.CurrentRow.Cells(5).Value)
+                txtModal.Text = CStr(gv1.CurrentRow.Cells(6).Value)
+                txtKontrak.Text = CStr(AutoNumberContract(txtAplikasi.Text, "04"))
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub ContractDetailNew_SAV()
+        Dim pokok As Double = CDbl(getFieldValue("SELECT BaseDebt from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
+        'Dim BungaPengali As Double = CDbl(txtBungaPengali.Text)
+        Dim EffectiveInterestP As Double = CDbl(getFieldValue("SELECT EffectiveInterestP from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
+        Dim BungaFlat As Double = ((((CDbl(txtTenor.Text) * (CDbl(EffectiveInterestP) / 1200)) / (1 - (1 + (CDbl(EffectiveInterestP) / 1200)) ^ (-1 * CDbl(txtTenor.Text)))) - 1) * (12 / CDbl(txtTenor.Text))) * 100
+        StrSQL = ""
+        StrSQL = "Sp_ContractDetailIU "
+        StrSQL &= "'INS',"
+        StrSQL &= "'" & antisqli(txtKontrak.Text) & "',"
+        StrSQL &= "'" & dtAngsuran.Value.Date & "',"
+        StrSQL &= "" & antisqli(txtTenor.Text) & ","
+        StrSQL &= "" & pokok & ","
+        StrSQL &= "" & EffectiveInterestP & ","
+        StrSQL &= "" & BungaFlat & ""
+        RunSQL(StrSQL, 0)
+    End Sub
 End Class

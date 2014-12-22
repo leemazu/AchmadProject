@@ -168,11 +168,6 @@ Public Class BastMotorBaru
         StrSQL &= "'" & dtKontrak.Value & "',"
         StrSQL &= "'" & dtBast.Value & "',"
         StrSQL &= "'" & dtAngsuran.Value & "',"
-        StrSQL &= "''," 'bpkb dihapus
-        StrSQL &= "'',"
-        StrSQL &= "'" & txtWarna.Text & "',"
-        StrSQL &= "''," 'rangka dihapus
-        StrSQL &= "''," 'mesin dihapus
         StrSQL &= "1,"
         StrSQL &= "'none',"
         StrSQL &= "'" & CStr(cmbCollector.SelectedValue) & "'"

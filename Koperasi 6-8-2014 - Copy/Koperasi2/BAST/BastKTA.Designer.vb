@@ -322,6 +322,7 @@ Partial Class BastKTA
         '
         'cmbCollector
         '
+        Me.cmbCollector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCollector.FormattingEnabled = True
         Me.cmbCollector.Location = New System.Drawing.Point(101, 433)
         Me.cmbCollector.Name = "cmbCollector"
@@ -357,7 +358,7 @@ Partial Class BastKTA
         Me.Controls.Add(Me.Label1)
         Me.Name = "BastKTA"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "BastKTA"
+        Me.Text = "Form BAST KTA"
         CType(Me.gv1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -147,13 +147,19 @@ Public Class frmMain
     End Sub
 
     Private Sub KTAToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KTAToolStripMenuItem1.Click
-        BastKTA.Show()
+
         BastKTA.MdiParent = Me
+        BastKTA.StartPosition = FormStartPosition.Manual
+        BastKTA.Location = New Point(0, 0)
+        BastKTA.Show()
     End Sub
 
     Private Sub ElektronikToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ElektronikToolStripMenuItem1.Click
-        BastElektronik.Show()
+
         BastElektronik.MdiParent = Me
+        BastElektronik.StartPosition = FormStartPosition.Manual
+        BastElektronik.Location = New Point(0, 0)
+        BastElektronik.Show()
     End Sub
 
     Private Sub DanaTunaiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DanaTunaiToolStripMenuItem.Click
@@ -221,9 +227,11 @@ Public Class frmMain
     End Sub
 
     Private Sub MotorBaruToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MotorBaruToolStripMenuItem1.Click
-        BastMotorBaru.Show()
+
         BastMotorBaru.MdiParent = Me
-        BastMotorBaru.StartPosition = FormStartPosition.CenterParent
+        BastMotorBaru.StartPosition = FormStartPosition.Manual
+        BastMotorBaru.Location = New Point(0, 0)
+        BastMotorBaru.Show()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click

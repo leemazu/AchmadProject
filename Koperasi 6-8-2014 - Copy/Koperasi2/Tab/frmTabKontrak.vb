@@ -60,7 +60,8 @@ Public Class frmTabKontrak
 
             End If
 
-            SetLebarGrid()
+            'SetLebarGrid()
+            gv1.AutoResizeColumns()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -127,6 +128,7 @@ Public Class frmTabKontrak
             gv1.DataSource = ds
             gv1.DataMember = "GridPelunasanNormal"
         End If
+        gv1.AutoResizeColumns()
     End Sub
 
     Private Sub txtFlag_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFlag.TextChanged

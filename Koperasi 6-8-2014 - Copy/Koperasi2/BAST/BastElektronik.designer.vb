@@ -385,6 +385,7 @@ Partial Class BastElektronik
         '
         'cmbCollector
         '
+        Me.cmbCollector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCollector.FormattingEnabled = True
         Me.cmbCollector.Location = New System.Drawing.Point(100, 488)
         Me.cmbCollector.Name = "cmbCollector"

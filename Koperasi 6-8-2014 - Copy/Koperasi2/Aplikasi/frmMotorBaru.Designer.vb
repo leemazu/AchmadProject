@@ -268,7 +268,7 @@ Partial Class frmMotorBaru
         Me.txtDokumen.MaxLength = 23
         Me.txtDokumen.Name = "txtDokumen"
         Me.txtDokumen.Size = New System.Drawing.Size(154, 20)
-        Me.txtDokumen.TabIndex = 41
+        Me.txtDokumen.TabIndex = 1
         '
         'Label85
         '
@@ -284,7 +284,7 @@ Partial Class frmMotorBaru
         Me.btnReject.Location = New System.Drawing.Point(451, 54)
         Me.btnReject.Name = "btnReject"
         Me.btnReject.Size = New System.Drawing.Size(95, 28)
-        Me.btnReject.TabIndex = 2
+        Me.btnReject.TabIndex = 4
         Me.btnReject.Text = "Tolak"
         Me.btnReject.UseVisualStyleBackColor = True
         '
@@ -302,7 +302,7 @@ Partial Class frmMotorBaru
         Me.btnApprove.Location = New System.Drawing.Point(451, 20)
         Me.btnApprove.Name = "btnApprove"
         Me.btnApprove.Size = New System.Drawing.Size(95, 28)
-        Me.btnApprove.TabIndex = 1
+        Me.btnApprove.TabIndex = 2
         Me.btnApprove.Text = "Approve"
         Me.btnApprove.UseVisualStyleBackColor = True
         '

@@ -139,6 +139,7 @@ Public Module Module1
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+            Return False
         End Try
         conn.Close()
         Return True

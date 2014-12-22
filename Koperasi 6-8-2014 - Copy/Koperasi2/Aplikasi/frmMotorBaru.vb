@@ -398,7 +398,7 @@ Public Class frmMotorBaru
         Dim kodeposPerusahaan As String
         Dim kodeposKontak As String
         Dim kodeposBpkb As String
-        If txtPemNo.Text.Length = txtPemNo.MaxLength Then
+        If txtPemNo.Text.Length > 7 Then
             StrSQL = ""
             StrSQL = "SELECT*FROM MEMBER WHERE MEMBERID='" + txtPemNo.Text + "'"
             RunSQL(StrSQL, 1)

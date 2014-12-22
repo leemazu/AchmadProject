@@ -7,7 +7,7 @@ Imports DevExpress.Utils.Menu
 Imports System.Threading
 
 Public Class PembayaranAngsuran
-
+    Dim oldContractID As String = ""
     Dim contract As String
     Dim ovd As Integer
     Dim totalbayar As Integer
@@ -34,6 +34,7 @@ Public Class PembayaranAngsuran
         cmbCaraBayar.SelectedIndex = 0
         setTanggal(dtBayar)
         FormClear()
+        oldContractID = ""
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -41,37 +42,47 @@ Public Class PembayaranAngsuran
         frmTabKontrak.Show()
         frmTabKontrak.BringToFront()
     End Sub
-
-    Private Sub txtKontrak_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtKontrak.TextChanged
-        'If txtKontrak.Text.Length = txtKontrak.MaxLength Then
-
+    Private Sub FillDataForm()
+        If txtKontrak.Text.Length > 5 Then
             StrSQL = ""
             StrSQL = "SELECT * FROM ContractDetail Where ContractID ='" & txtKontrak.Text & "' "
             RunSQL(StrSQL, 1)
             If dt.Rows.Count > 0 Then
-                FillForm()
+                lblError.Text = ""
                 FillGrid()
+                FillForm()
+                'FillGrid()
                 FillPembayaran()
-                btnBayar.Enabled = True
+                ' btnBayar.Enabled = True
                 FillNoKwitansi()
                 btnBayar.Visible = True
                 dtBayar.Value = Now
-                GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
-                GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
+                'GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
+                'GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
+                txtHidden.Text = txtKontrak.Text
+                oldContractID = txtKontrak.Text
             Else
+                txtHidden.Text = ""
                 GroupBox2.Visible = False
                 GridControl1.DataSource = Nothing
                 ClearForm()
                 btnBayar.Visible = False
-            End If
 
-          
-        'Else
-        '    GroupBox2.Visible = False
-        '    GridControl1.DataSource = Nothing
-        '    ClearForm()
-        '    btnBayar.Visible = False
-        'End If
+            End If
+        Else
+            txtHidden.Text = ""
+            GroupBox2.Visible = False
+            GridControl1.DataSource = Nothing
+            ClearForm()
+            btnBayar.Visible = False
+
+        End If
+
+    End Sub
+
+    Private Sub txtKontrak_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtKontrak.TextChanged
+        'If txtKontrak.Text.Length = txtKontrak.MaxLength Then
+        FillDataForm()
     End Sub
 
     Private Sub ClearForm()
@@ -295,126 +306,6 @@ Public Class PembayaranAngsuran
 
     End Sub
 
-    Private Sub GridView1_CellValueChanged(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
-        Dim tempTglBayar As Date
-        Dim OVD As Integer
-        Dim denda As Integer
-        Dim ambc As Integer
-        'Dim ot As Integer
-        Dim ott As Integer
-        Dim angsuran As Integer
-        If e.Column.FieldName = "Tanggal Bayar" Then
-
-            contract = txtHidden.Text
-            tempTglBayar = e.Value
-
-            If Not GridView1.GetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar")).ToString() = "" Then
-                StrSQL = ""
-                StrSQL = String.Format("Select * From contractDetail where contractID ='{0}' AND TglBayar='{1}'", contract, tempTglBayar)
-                RunSQL(StrSQL, 1)
-
-                If dt.Rows.Count > 0 Then
-                    With ListKwitansi
-                        .TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-                        .Items.Clear()
-                        StrSQL = ""
-                        StrSQL = "SELECT NoKwitansi From Kwitansi Where StatusKwitansi='Belum Terpakai'"
-                        StrSQL &= String.Format(" OR (StatusKwitansi='Terpakai' AND TglBayar='{0}') ORDER BY NoKwitansi ASC", tempTglBayar)
-                        Call conn_open()
-                        cmd = New SqlCommand(StrSQL, conn)
-                        rdr = cmd.ExecuteReader()
-                        While rdr.Read()
-                            .Items.Add(rdr("NoKwitansi"))
-                        End While
-                        conn.Close()
-                    End With
-                Else
-                    With ListKwitansi
-                        .TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-                        .Items.Clear()
-                        StrSQL = ""
-                        StrSQL = "SELECT NoKwitansi From Kwitansi Where StatusKwitansi='Belum Terpakai' ORDER BY NoKwitansi ASC"
-                        Call conn_open()
-                        cmd = New SqlCommand(StrSQL, conn)
-                        rdr = cmd.ExecuteReader()
-                        While rdr.Read()
-                            .Items.Add(rdr("NoKwitansi"))
-                        End While
-                        conn.Close()
-                    End With
-                End If
-            End If
-
-        End If
-
-        If e.Column.FieldName = "Tanggal Bayar" Then
-            OVD = DateDiff(DateInterval.Day, GridView1.GetFocusedRowCellValue(GridView1.Columns("Due Date")), GridView1.GetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar")))
-            GridView1.SetFocusedRowCellValue(GridView1.Columns("OVD"), OVD)
-
-        End If
-
-        If e.Column.FieldName = "OVD" Then
-            OVD = GridView1.GetFocusedRowCellValue(GridView1.Columns("OVD"))
-            angsuran = GridView1.GetFocusedRowCellValue(GridView1.Columns("Angsuran"))
-            denda = angsuran * 0.005 * OVD
-            If denda < 0 Then
-                denda = 0
-            End If
-            GridView1.SetFocusedRowCellValue(GridView1.Columns("Denda"), denda)
-        End If
-
-        If e.Column.FieldName = "Denda" Then
-            ambc = GridView1.GetFocusedRowCellValue(GridView1.Columns("Denda")) + GridView1.GetFocusedRowCellValue(GridView1.Columns("Angsuran"))
-            GridView1.SetFocusedRowCellValue(GridView1.Columns("AMBC"), ambc)
-        End If
-
-        'If e.Column.FieldName = "AMBC" Then
-        '    ot = GridView1.GetFocusedRowCellValue(GridView1.Columns("Total Bayar")) - GridView1.GetFocusedRowCellValue(GridView1.Columns("AMBC"))
-        '    GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding"), ot)
-        'End If
-
-        If e.Column.FieldName = "AMBC" Then
-            txtAmbc.Text = ribuan(CStr(GridView1.GetFocusedRowCellValue(GridView1.Columns("AMBC"))))
-        End If
-
-
-
-        'If e.Column.FieldName = "Total Bayar" Then
-        '    Dim outstanding As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding"))
-        '    Dim outstandingRe As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"))
-        '    If IsDBNull(e.Value) Then
-        '        totalbayar = 0
-        '    Else
-        '        Try
-        '            totalbayar = e.Value
-        '        Catch ex As Exception
-        '            totalbayar = 0
-        '        End Try
-
-        '    End If
-
-        '    If totalbayar < GridView1.GetFocusedRowCellValue(GridView1.Columns(2)) Then
-        '        'MessageBox.Show("Total Bayar tidak boleh lebih kecil dari Angsuran")
-        '        lblError.Text = "Total Bayar tidak boleh lebih kecil dari Angsuran"
-        '        GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding"), 0)
-        '        GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding Total"), 0)
-        '        'GridView1.SetFocusedRowCellValue("Total Bayar", CInt(0))
-        '    Else
-        '        lblError.Text = ""
-        '        GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding"), CInt(totalbayar - GridView1.GetFocusedRowCellValue(GridView1.Columns("AMBC"))))
-        '        GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding Total"), CInt(GridView1.GetFocusedRowCellValue("Outstanding") + CInt(GridView1.GetFocusedRowCellValue("Outstanding Receive"))))
-        '    End If
-
-        'End If
-
-        If e.Column.FieldName = "Outstanding" Then
-            ott = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding")) - GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"))
-            GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding Total"), ott)
-        End If
-
-
-
-    End Sub
 
     Private Sub denda_SAV(ByVal outstanding As Integer, ByVal index As Integer, ByVal kontrak As String)
 
@@ -620,17 +511,10 @@ Public Class PembayaranAngsuran
     'End Sub
 
     Private Sub GridView1_RowStyle(ByVal sender As System.Object, ByVal e As DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs) Handles GridView1.RowStyle
-        If txtAngsuran.Text <> "" Then
-            GridView1.FocusedRowHandle = GridView1.GetVisibleRowHandle(CInt(txtAngsuran.Text) - 1)
-        End If
-
-
-
-        Dim View As GridView = CType(sender, GridView)
-        'If (GridView1.IsCellSelected(e.RowHandle, View.Columns("Tanggal Bayar"))) Then
-        '    e.Appearance.BackColor = Color.Transparent
+        'If txtAngsuran.Text <> "" Then
+        '    GridView1.FocusedRowHandle = GridView1.GetVisibleRowHandle(CInt(txtAngsuran.Text) - 1)
         'End If
-
+        Dim View As GridView = CType(sender, GridView)
 
         If (e.RowHandle >= 0) Then
 
@@ -644,9 +528,7 @@ Public Class PembayaranAngsuran
                 e.Appearance.BackColor = Color.Red
 
             End If
-
         End If
-
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -702,6 +584,8 @@ Public Class PembayaranAngsuran
         If dt.Rows.Count > 0 Then
             index = dt.Rows(0)("Angs Ke")
             GridView1.FocusedRowHandle = GridView1.GetVisibleRowHandle(CInt(index) - 1)
+            txtAngsuran.Text = GridView1.GetFocusedRowCellValue(GridView1.Columns("Angs Ke"))
+            txtAmbc.Text = GridView1.GetFocusedRowCellValue(GridView1.Columns("AMBC"))
             GridView1.Appearance.FocusedRow.BackColor = Color.Green
             GridView1.Appearance.SelectedRow.BackColor = Color.Green
             GridView1.Appearance.FocusedCell.BackColor = Color.Green
@@ -789,12 +673,13 @@ Public Class PembayaranAngsuran
 
     Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
         If txtBayar.Text <> "" Then
-            If CDbl(txtBayar.Text) < CDbl(txtHiddenAngsuran.Text) Then
+            If CDbl(txtBayar.Text) < CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))) Then
                 MessageBox.Show("Nilai Pembayaran Tidak Boleh Kurang Dari Sisa Pokok !", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 txtBayar.Focus()
                 txtBayar.SelectAll()
             Else
                 Pembayaran()
+
                 'Dim result As Integer = MessageBox.Show("Pembayaran akan disimpan dan tidak bisa diubah !", "Perhatian !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                 'If result = DialogResult.Yes Then
                 '    Detail_SAV2()
@@ -816,37 +701,42 @@ Public Class PembayaranAngsuran
     
 
     Private Sub txtBayar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBayar.TextChanged
-        Dim sp As Integer = CInt(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal")))
+        'Dim sp As Integer = 0
+        'Try
+        '    sp = CInt(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal")))
+        '    Dim bayar As Integer = 0
 
+        '    If txtBayar.Text = "" Then
+        '        bayar = 0
+        '    Else
+        '        bayar = CInt(txtBayar.Text)
+        '    End If
+        '    If Not GridControl1.DataSource Is Nothing Then
+        '        Try
+        '            'GridView1.SetFocusedRowCellValue()
+        '            GridView1.SetRowCellValue(GridView1.GetVisibleRowHandle(CInt(txtAngsuran.Text) - 1), "Total Bayar", CInt(txtBayar.Text))
+        '            ' GridView1.SetFocusedRowCellValue(GridView1.Columns("Total Bayar"), CInt(txtBayar.Text))
+        '            If bayar < sp Then
+        '                lblError.Visible = True
+        '                lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(sp) & " (Pokok) "
+        '                btnBayar.Enabled = False
+        '            Else
+        '                lblError.Visible = False
+        '                lblError.Text = ""
+        '                btnBayar.Enabled = True
+        '            End If
+        '        Catch ex As Exception
+        '            GridView1.SetFocusedRowCellValue(GridView1.Columns("Total Bayar"), 0)
+        '        End Try
 
-        Dim bayar As Integer
+        '    End If
+        'Catch ex As Exception
+        'End Try
 
-        If txtBayar.Text = "" Then
-            bayar = 0
-        Else
-            bayar = CInt(txtBayar.Text)
-
+        If Not GridView1.DataSource Is Nothing And txtAngsuran.Text <> "" Then
+            SetInfoPembayaranToGrid()
         End If
-
-        If Not GridControl1.DataSource Is Nothing Then
-
-            Try
-                GridView1.SetRowCellValue(GridView1.GetVisibleRowHandle(CInt(txtAngsuran.Text) - 1), "Total Bayar", CInt(txtBayar.Text))
-                ' GridView1.SetFocusedRowCellValue(GridView1.Columns("Total Bayar"), CInt(txtBayar.Text))
-                If bayar < sp Then
-                    lblError.Visible = True
-                    lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(sp) & " (Pokok) "
-                    btnBayar.Enabled = False
-                Else
-                    lblError.Visible = False
-                    lblError.Text = ""
-                    btnBayar.Enabled = True
-                End If
-            Catch ex As Exception
-                GridView1.SetFocusedRowCellValue(GridView1.Columns("Total Bayar"), 0)
-            End Try
-
-        End If
+        
     End Sub
 
     Private Sub cmbKwitansi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbKwitansi.SelectedIndexChanged
@@ -857,8 +747,9 @@ Public Class PembayaranAngsuran
         If GridControl1.DataSource Is Nothing Then
         Else
             FillNoKwitansi()
+            SetInfoPembayaranToGrid()
             ' ChangeGridValue()
-            GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
+            'GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
             'GridView1.FocusedRowHandle = GridView1.GetVisibleRowHandle(CInt(txtAngsuran.Text) - 1)
         End If
     End Sub
@@ -871,11 +762,6 @@ Public Class PembayaranAngsuran
         e.Handled = True
     End Sub
 
-    Private Sub GridView1_FocusedRowChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
-        txtAngsuran.Text = GridView1.GetFocusedRowCellValue(GridView1.Columns("Angs Ke"))
-        txtAmbc.Text = ribuan(CStr(GridView1.GetFocusedRowCellValue(GridView1.Columns("AMBC"))))
-        txtHiddenAngsuran.Text = GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))
-    End Sub
 
     Private Sub Pembayaran()
         Dim message As String
@@ -891,17 +777,22 @@ Public Class PembayaranAngsuran
         If result = vbYes Then
             If ContractDetail_SAV() Then
                 MessageBox.Show("Pembayaran telah disimpan")
-                FillForm()
-                FillGrid()
-                FillPembayaran()
-                btnBayar.Enabled = True
-                FillNoKwitansi()
+                FillDataForm()
+                'txtKontrak.Clear()
+                'txtKontrak.Text = ""
+                'txtKontrak.Text = oldContractID
 
-                GroupBox2.Visible = True
-                btnBayar.Visible = True
-                dtBayar.Value = Now
-                GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
-                GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
+                '    FillForm()
+                '    FillGrid()
+                '    FillPembayaran()
+                '    btnBayar.Enabled = True
+                '    FillNoKwitansi()
+
+                '    GroupBox2.Visible = True
+                '    btnBayar.Visible = True
+                '    dtBayar.Value = Now
+                '    GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
+                '    GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
             End If
         End If
 
@@ -911,107 +802,202 @@ Public Class PembayaranAngsuran
     End Sub
 
     Private Function ContractDetail_SAV() As Boolean
-        Dim contract As String = txtHidden.Text
-        Dim tglBayar As Date = dtBayar.Value.Date
-        Dim AMBC As Integer = CInt(txtAmbc.Text)
-        Dim OVD As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("OVD"))
-        Dim denda As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Denda"))
-        Dim totalBayar As Integer = CInt(txtBayar.Text)
-        Dim outstanding As Integer = CInt(txtBayar.Text) - CInt(txtAmbc.Text)
-        Dim outstandingRe As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"))
-        Dim outstandingTotal As Integer = outstanding - outstandingRe
-        Dim index As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Angs Ke"))
-        Dim Nokwitansi As String = cmbKwitansi.Text
-        Dim alasan As String = "Pembayaran Angsuran Ke " & index & " sebesar Rp. " & ribuan(CStr(totalBayar)) & "."
+        'Dim contract As String = txtHidden.Text
+        'Dim tglBayar As Date = dtBayar.Value.Date
+        'Dim AMBC As Integer = CInt(txtAmbc.Text)
+        'Dim OVD As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("OVD"))
+        'Dim denda As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Denda"))
+        'Dim totalBayar As Integer = CInt(txtBayar.Text)
+        'Dim outstanding As Integer = CInt(txtBayar.Text) - CInt(txtAmbc.Text)
+        'Dim outstandingRe As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"))
+        'Dim outstandingTotal As Integer = outstanding - outstandingRe
+        'Dim index As Integer = GridView1.GetFocusedRowCellValue(GridView1.Columns("Angs Ke"))
+        'Dim Nokwitansi As String = cmbKwitansi.Text
+        'Dim alasan As String = "Pembayaran Angsuran Ke " & index & " sebesar Rp. " & ribuan(CStr(totalBayar)) & "."
 
+        'Try
+        '    StrSQL = ""
+        '    StrSQL = "UPDATE ContractDetail SET "
+        '    StrSQL &= String.Format("TglBayar = '{0}',", tglBayar)
+        '    StrSQL &= "totalBayar = " & totalBayar & ","
+        '    'StrSQL &= "outstanding = " & outstanding & ","
+        '    StrSQL &= "outstandingReceive = " & outstandingRe & ","
+        '    'StrSQL &= "outstandingTotal= " & outstandingTotal & ","
+        '    StrSQL &= "NoKwitansi ='" & Nokwitansi & "' "
+        '    StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
+        '    StrSQL &= "AND [index]= " & index - 1 & ""
+        '    RunSQL(StrSQL, 0)
+
+        '    'update OVD
+        '    StrSQL = ""
+        '    StrSQL = "UPDATE ContractDetail SET "
+        '    StrSQL &= "OVD = DATEDIFF(DAY,JatuhTempo,TglBayar) "
+        '    StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
+        '    StrSQL &= "AND [index]= " & index - 1 & ""
+        '    RunSQL(StrSQL, 0)
+
+        '    'UPDATE DENDA
+        '    StrSQL = ""
+        '    StrSQL = "UPDATE ContractDetail SET "
+        '    StrSQL &= "Denda = Angsuran*0.005*OVD "
+        '    StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
+        '    StrSQL &= "AND [index]= " & index - 1 & ""
+        '    RunSQL(StrSQL, 0)
+
+        '    'UPDATE AMBC
+        '    StrSQL = ""
+        '    StrSQL = "UPDATE ContractDetail SET "
+        '    StrSQL &= "AMBC = Angsuran+Denda "
+        '    StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
+        '    StrSQL &= "AND [index]= " & index - 1 & ""
+        '    RunSQL(StrSQL, 0)
+
+        '    'UPDATE OUTSTANDING
+        '    StrSQL = ""
+        '    StrSQL = "UPDATE ContractDetail SET "
+        '    StrSQL &= "Outstanding = TotalBayar-AMBC "
+        '    StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
+        '    StrSQL &= "AND [index]= " & index - 1 & ""
+        '    RunSQL(StrSQL, 0)
+
+        '    'UPDATE OutstandingTotal
+        '    StrSQL = ""
+        '    StrSQL = "UPDATE ContractDetail SET "
+        '    StrSQL &= "OutstandingTotal = Outstanding + OutstandingReceive "
+        '    StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
+        '    StrSQL &= "AND [index]= " & index - 1 & ""
+        '    RunSQL(StrSQL, 0)
+
+        '    StrSQL = ""
+        '    StrSQL = "UPDATE Kwitansi SET "
+        '    StrSQL &= "StatusKwitansi ='Terpakai',"
+        '    StrSQL &= "TglBayar ='" & tglBayar & "',"
+        '    StrSQL &= "ContractID ='" & contract & "',"
+        '    StrSQL &= "PIC2='" & cmbPIC.SelectedValue & "',"
+        '    StrSQL &= "Alasan = case when alasan like '%" & alasan & "%'"
+        '    StrSQL &= " THEN Alasan ELSE Alasan+'" & alasan & "' END,"
+        '    StrSQL &= "CaraBayar ='" & cmbCaraBayar.Text & "',"
+        '    StrSQL &= "MemberID ='" & memberID & "' "
+        '    StrSQL &= " WHERE NoKwitansi ='" & Nokwitansi & "'"
+        '    RunSQL(StrSQL, 0)
+
+        '    StrSQL = ""
+        '    StrSQL = ("UPDATE Kwitansi SET ")
+        '    StrSQL &= "Nominal= A.Valsum From Kwitansi INNER JOIN "
+        '    StrSQL &= "(SELECT NoKwitansi,SUM(totalbayar) valsum from ContractDetail "
+        '    StrSQL &= "Where NoKwitansi ='" & Nokwitansi & "' GROUP BY NoKwitansi)  A "
+        '    StrSQL &= " ON Kwitansi.NoKwitansi = A.NoKwitansi "
+        '    StrSQL &= "WHERE Kwitansi.NoKwitansi ='" & Nokwitansi & "'"
+        '    RunSQL(StrSQL, 0)
+
+
+        '    If outstanding < 0 Then
+        '        denda_SAV(outstanding, index, contract)
+        '    End If
+
+        '    Return True
+
+        'Catch ex As Exception
+        '    Return False
+        '    MessageBox.Show(ex.Message)
+        'End Try
         Try
-            StrSQL = ""
-            StrSQL = "UPDATE ContractDetail SET "
-            StrSQL &= String.Format("TglBayar = '{0}',", tglBayar)
-            StrSQL &= "totalBayar = " & totalBayar & ","
-            'StrSQL &= "outstanding = " & outstanding & ","
-            StrSQL &= "outstandingReceive = " & outstandingRe & ","
-            'StrSQL &= "outstandingTotal= " & outstandingTotal & ","
-            StrSQL &= "NoKwitansi ='" & Nokwitansi & "' "
-            StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
-            StrSQL &= "AND [index]= " & index - 1 & ""
-            RunSQL(StrSQL, 0)
-
-            'update OVD
-            StrSQL = ""
-            StrSQL = "UPDATE ContractDetail SET "
-            StrSQL &= "OVD = DATEDIFF(DAY,JatuhTempo,TglBayar) "
-            StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
-            StrSQL &= "AND [index]= " & index - 1 & ""
-            RunSQL(StrSQL, 0)
-
-            'UPDATE DENDA
-            StrSQL = ""
-            StrSQL = "UPDATE ContractDetail SET "
-            StrSQL &= "Denda = Angsuran*0.005*OVD "
-            StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
-            StrSQL &= "AND [index]= " & index - 1 & ""
-            RunSQL(StrSQL, 0)
-
-            'UPDATE AMBC
-            StrSQL = ""
-            StrSQL = "UPDATE ContractDetail SET "
-            StrSQL &= "AMBC = Angsuran+Denda "
-            StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
-            StrSQL &= "AND [index]= " & index - 1 & ""
-            RunSQL(StrSQL, 0)
-
-            'UPDATE OUTSTANDING
-            StrSQL = ""
-            StrSQL = "UPDATE ContractDetail SET "
-            StrSQL &= "Outstanding = TotalBayar-AMBC "
-            StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
-            StrSQL &= "AND [index]= " & index - 1 & ""
-            RunSQL(StrSQL, 0)
-
-            'UPDATE OutstandingTotal
-            StrSQL = ""
-            StrSQL = "UPDATE ContractDetail SET "
-            StrSQL &= "OutstandingTotal = Outstanding + OutstandingReceive "
-            StrSQL &= "WHERE ContractID ='" & txtHidden.Text & "' "
-            StrSQL &= "AND [index]= " & index - 1 & ""
-            RunSQL(StrSQL, 0)
+            Dim index As Integer = CInt(txtAngsuran.Text)
+            Dim alasan As String = "Pembayaran Angsuran Ke " & index & " sebesar Rp. " & ribuan(CStr(txtBayar.Text)) & "."
 
             StrSQL = ""
-            StrSQL = "UPDATE Kwitansi SET "
-            StrSQL &= "StatusKwitansi ='Terpakai',"
-            StrSQL &= "TglBayar ='" & tglBayar & "',"
-            StrSQL &= "ContractID ='" & contract & "',"
-            StrSQL &= "PIC2='" & cmbPIC.SelectedValue & "',"
-            StrSQL &= "Alasan = case when alasan like '%" & alasan & "%'"
-            StrSQL &= " THEN Alasan ELSE Alasan+'" & alasan & "' END,"
-            StrSQL &= "CaraBayar ='" & cmbCaraBayar.Text & "',"
-            StrSQL &= "MemberID ='" & memberID & "' "
-            StrSQL &= " WHERE NoKwitansi ='" & Nokwitansi & "'"
+            StrSQL = "Sp_Pembayaran "
+            StrSQL &= "'" & antisqli(txtKontrak.Text) & "'"
+            StrSQL &= "," & CInt(txtAngsuran.Text) & ""
+            StrSQL &= "," & CDbl(txtBayar.Text) & ""
+            StrSQL &= ",'" & CDate(dtBayar.Value.Date) & "'"
+            StrSQL &= ",'" & cmbPIC.SelectedValue & "'"
+            StrSQL &= ",'" & cmbCaraBayar.Text & "'"
+            StrSQL &= ",'" & cmbKwitansi.Text & "'"
+            StrSQL &= ",'" & antisqli(alasan) & "'"
+            StrSQL &= ",'" & antisqli(memberID) & "'"
             RunSQL(StrSQL, 0)
-
-            StrSQL = ""
-            StrSQL = ("UPDATE Kwitansi SET ")
-            StrSQL &= "Nominal= A.Valsum From Kwitansi INNER JOIN "
-            StrSQL &= "(SELECT NoKwitansi,SUM(totalbayar) valsum from ContractDetail "
-            StrSQL &= "Where NoKwitansi ='" & Nokwitansi & "' GROUP BY NoKwitansi)  A "
-            StrSQL &= " ON Kwitansi.NoKwitansi = A.NoKwitansi "
-            StrSQL &= "WHERE Kwitansi.NoKwitansi ='" & Nokwitansi & "'"
-            RunSQL(StrSQL, 0)
-
-
-            If outstanding < 0 Then
-                denda_SAV(outstanding, index, contract)
-            End If
-
             Return True
-
         Catch ex As Exception
+            SaveErrorLog(ex.Message, "SAVE PEMBAYARAN")
             Return False
-            MessageBox.Show(ex.Message)
         End Try
         
     End Function
 
+    Private Sub SetInfoPembayaranToGrid()
+        Dim fTanggalBayar As Date = Now
+        Dim fAdmKredit As Integer = 0
+        Dim fAngsuranKe As Integer = 0
+        Dim fAmbc As Integer = 0
+        Dim fBayar As Integer = 0
+        Dim gDueDate As Date
+        Dim gPokok As Integer = 0
+        Dim gOVD As Integer = 0
+        Dim gDenda As Integer = 0
+        Dim gAMBC As Integer = 0
+        Dim gOutstanding As Integer = 0
+        Dim gOutstandingRe As Integer = 0
+        Dim gOutstandingTotal As Integer = 0
+        Dim gAngsuran As Integer = 0
 
+        If Not GridView1.DataSource Is Nothing And txtAngsuran.Text <> "" Then
+            Try
+                fTanggalBayar = dtBayar.Value.Date
+                fAdmKredit = CDbl(txtAdminKredit.Text)
+                fAngsuranKe = txtAngsuran.Text
+                fAmbc = CDbl(txtAmbc.Text)
+                fBayar = CDbl(txtBayar.Text)
+
+                gAngsuran = GridView1.GetFocusedRowCellValue(GridView1.Columns("Angsuran"))
+                gDueDate = GridView1.GetFocusedRowCellValue(GridView1.Columns("Due Date"))
+                gPokok = GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))
+                gOVD = DateDiff(DateInterval.Day, gDueDate, fTanggalBayar)
+                If gOVD > 0 Then
+                    gDenda = gAngsuran * 0.005 * gOVD
+                Else
+                    gDenda = 0
+                End If
+                gAMBC = gAngsuran + gDenda
+                gOutstanding = fBayar - gAMBC
+                gOutstandingRe = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"))
+                gOutstandingTotal = gOutstanding + gOutstandingRe
+
+                GridView1.SetFocusedRowCellValue("Tanggal Bayar", fTanggalBayar)
+                GridView1.SetFocusedRowCellValue("OVD", gOVD)
+                GridView1.SetFocusedRowCellValue("Denda", gDenda)
+                GridView1.SetFocusedRowCellValue("Total Bayar", fBayar)
+                GridView1.SetFocusedRowCellValue("AMBC", gAMBC)
+                GridView1.SetFocusedRowCellValue("Outstanding", gOutstanding)
+                GridView1.SetFocusedRowCellValue("Outstanding Total", gOutstandingTotal)
+
+                If fBayar >= gPokok Then
+                    lblError.Text = ""
+                    btnBayar.Enabled = True
+                Else
+                    lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(gPokok) & " (Pokok) "
+                    btnBayar.Enabled = False
+                End If
+
+
+            Catch ex As Exception
+
+            End Try
+        End If
+
+       
+
+
+
+    End Sub
+
+    Private Sub GroupBox2_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox2.Enter
+
+    End Sub
+
+    Private Sub txtAngsuran_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtAngsuran.TextChanged
+        If txtAngsuran.Text <> "" And Not GridView1.DataSource Is Nothing Then
+            GridView1.FocusedRowHandle = GridView1.GetVisibleRowHandle(CInt(txtAngsuran.Text) - 1)
+        End If
+    End Sub
 End Class

@@ -767,6 +767,7 @@ Public Class frmDanaTunai
                     txtAdmin.Text = ribuan(txtAdmin.Text)
                     txtAdminKredit.Text = ribuan(txtAdminKredit.Text)
                     txtPremiAdmin.Text = ribuan(adminpremi)
+                    FillBpkbInfo(txtBpkb.Text)
                     Button2.PerformClick()
                 End If
             Else
@@ -823,11 +824,11 @@ Public Class frmDanaTunai
                 txtKontakRt.Text = dt.Rows(0)("EmerRT").ToString()
                 txtKontakRw.Text = dt.Rows(0)("EmerRW").ToString()
                 txtKontakTelp.Text = dt.Rows(0)("EmerPhone").ToString()
-                txtBpkbNama.Text = dt.Rows(0)("bpkbName").ToString()
-                txtBpkbAlamat.Text = dt.Rows(0)("bpkbAddress").ToString()
+                ' txtBpkbNama.Text = dt.Rows(0)("bpkbName").ToString()
+                ' txtBpkbAlamat.Text = dt.Rows(0)("bpkbAddress").ToString()
                 txtKontakHubungan.Text = dt.Rows(0)("EmerRelations").ToString()
-                txtBpkbRt.Text = dt.Rows(0)("bpkbRT").ToString()
-                txtBpkbRw.Text = dt.Rows(0)("BpkbRW").ToString()
+                ' txtBpkbRt.Text = dt.Rows(0)("bpkbRT").ToString()
+                'txtBpkbRw.Text = dt.Rows(0)("BpkbRW").ToString()
                 txtUangPemohon.Text = dt.Rows(0)("Income").ToString()
                 txtUangPasangan.Text = dt.Rows(0)("SpouseIncome").ToString()
                 txtUangLain.Text = dt.Rows(0)("OtherIncome").ToString()
@@ -850,9 +851,9 @@ Public Class frmDanaTunai
                 cmbPenagihanKota.Text = detailAlamat(kodeposPenagihan).kota
                 cmbPenagihanKec.Text = detailAlamat(kodeposPenagihan).kecamatan
                 cmbPenagihanKel.Text = detailAlamat(kodeposPenagihan).kelurahan
-                cmbBpkbKota.Text = detailAlamat(kodeposBpkb).kota
-                cmbBpkbKec.Text = detailAlamat(kodeposBpkb).kecamatan
-                cmbBpkbKel.Text = detailAlamat(kodeposBpkb).kelurahan
+                'cmbBpkbKota.Text = detailAlamat(kodeposBpkb).kota
+                'cmbBpkbKec.Text = detailAlamat(kodeposBpkb).kecamatan
+                ' cmbBpkbKel.Text = detailAlamat(kodeposBpkb).kelurahan
                 cmbKontakKota.Text = detailAlamat(kodeposKontak).kota
                 cmbKontakKec.Text = detailAlamat(kodeposKontak).kecamatan
                 cmbKontakKel.Text = detailAlamat(kodeposKontak).kelurahan
@@ -1008,4 +1009,24 @@ Public Class frmDanaTunai
     Private Sub Panel1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+    Private Sub FillBpkbInfo(ByVal BoBpkb As String)
+        If txtBpkb.Text.Length > 7 Then
+            StrSQL = ""
+            StrSQL = "SELECT*FROM BPKB WHERE NoBpkb='" & antisqli(txtBpkb.Text) & "'"
+            RunSQL(StrSQL, 1)
+
+            If dt.Rows.Count > 0 Then
+                txtBpkbNama.Text = dt.Rows(0)("NamaBpkb").ToString()
+                txtBpkbAlamat.Text = dt.Rows(0)("Alamat").ToString()
+                txtBpkbRt.Text = dt.Rows(0)("RT").ToString()
+                txtBpkbRw.Text = dt.Rows(0)("RW").ToString()
+                Dim kodepostBpkb As String = dt.Rows(0)("Kodepos").ToString()
+                cmbBpkbKota.Text = detailAlamat(kodepostBpkb).kota
+                cmbBpkbKec.Text = detailAlamat(kodepostBpkb).kecamatan
+                cmbBpkbKel.Text = detailAlamat(kodepostBpkb).kelurahan
+            End If
+
+        End If
+    End Sub
+
 End Class
