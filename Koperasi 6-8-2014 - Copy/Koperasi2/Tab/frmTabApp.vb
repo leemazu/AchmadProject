@@ -75,13 +75,13 @@ Public Class frmTabApp
         Dim filter As String = ""
         Dim dsFilter As New DataSet
         Try
-            filter = String.Format("WHERE [No.Aplikasi] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [POS] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [No.Anggota] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [Nama Anggota] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [Credit Analyst] LIKE '{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [Surveyor] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [Salesman] LIKE '%{0}%' ", txtFilter.Text)
+            filter = String.Format("WHERE [No.Aplikasi] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [POS] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [No.Anggota] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [Nama Anggota] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [Credit Analyst] LIKE '{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [Surveyor] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [Salesman] LIKE '%{0}%' ", antisqli(txtFilter.Text))
             StrSQL = String.Format("SELECT TOP 100 * FROM TEMPAPPLICATION {0} ORDER BY [No.Aplikasi] DESC", filter)
             RunSQL(StrSQL, 2, "TEMPAPPLICATION", , dsFilter)
             gridApplication.DataSource = dsFilter

@@ -6,10 +6,11 @@
 
     Private Sub FillGrid()
         Try
+            Dim dsKaryawan As New DataSet
             StrSQL = ""
             StrSQL = "SELECT EmployeeID as [NIK],EmployeeName as [Nama],PositionID as [Posisi],Address as [Alamat] From Employee ORDER BY EmployeeID ASC"
-            RunSQL(StrSQL, 2, "TableKaryawan")
-            gv1.DataSource = ds
+            RunSQL(StrSQL, 2, "TableKaryawan", , dsKaryawan)
+            gv1.DataSource = dsKaryawan
             gv1.DataMember = "TableKaryawan"
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -18,15 +19,15 @@
 
     Private Sub txtCari_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCari.TextChanged
         Dim Filter As String = ""
-
+        Dim dsFilterKaryawan As New DataSet
         Try
             Filter = String.Format("WHERE EmployeeID LIKE '%{0}%' ", txtCari.Text)
             Filter &= String.Format("OR EmployeeName LIKE '%{0}%' ", txtCari.Text)
             StrSQL = ""
             StrSQL = String.Format("SELECT EmployeeID as [NIK],EmployeeName as [Nama],PositionID as [Posisi],Address as [Alamat] From Employee {0} ORDER BY EmployeeID ASC ", Filter)
-            RunSQL(StrSQL, 2, "FilterKaryawan")
+            RunSQL(StrSQL, 2, "FilterKaryawan", , dsFilterKaryawan)
             gv1.DataSource = Nothing
-            gv1.DataSource = ds
+            gv1.DataSource = dsFilterKaryawan
             gv1.DataMember = "FilterKaryawan"
         Catch ex As Exception
 

@@ -305,6 +305,7 @@ Partial Class PembayaranAngsuran
         '
         'txtAdminKredit
         '
+        Me.txtAdminKredit.Enabled = False
         Me.txtAdminKredit.Location = New System.Drawing.Point(805, 19)
         Me.txtAdminKredit.Name = "txtAdminKredit"
         Me.txtAdminKredit.Size = New System.Drawing.Size(109, 20)

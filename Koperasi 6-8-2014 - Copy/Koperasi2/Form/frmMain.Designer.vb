@@ -49,6 +49,8 @@ Partial Class frmMain
         Me.AngsuranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PolisAsuransiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EntryPolisToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EntryRebateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PelunasanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PelunasanNormalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.PelunasanDimukaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -67,6 +69,8 @@ Partial Class frmMain
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.flag = New System.Windows.Forms.TextBox
+        Me.PengeluaranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.PendapatanLainlainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -145,25 +149,25 @@ Partial Class frmMain
         'DanaTunaiToolStripMenuItem
         '
         Me.DanaTunaiToolStripMenuItem.Name = "DanaTunaiToolStripMenuItem"
-        Me.DanaTunaiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DanaTunaiToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.DanaTunaiToolStripMenuItem.Text = "Dana Tunai"
         '
         'MotorBaruToolStripMenuItem1
         '
         Me.MotorBaruToolStripMenuItem1.Name = "MotorBaruToolStripMenuItem1"
-        Me.MotorBaruToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.MotorBaruToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
         Me.MotorBaruToolStripMenuItem1.Text = "Motor Baru"
         '
         'KTAToolStripMenuItem1
         '
         Me.KTAToolStripMenuItem1.Name = "KTAToolStripMenuItem1"
-        Me.KTAToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.KTAToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
         Me.KTAToolStripMenuItem1.Text = "KTA"
         '
         'ElektronikToolStripMenuItem1
         '
         Me.ElektronikToolStripMenuItem1.Name = "ElektronikToolStripMenuItem1"
-        Me.ElektronikToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ElektronikToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
         Me.ElektronikToolStripMenuItem1.Text = "Elektronik"
         '
         'KontrakToolStripMenuItem
@@ -223,9 +227,22 @@ Partial Class frmMain
         '
         'PolisAsuransiToolStripMenuItem
         '
+        Me.PolisAsuransiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntryPolisToolStripMenuItem, Me.EntryRebateToolStripMenuItem})
         Me.PolisAsuransiToolStripMenuItem.Name = "PolisAsuransiToolStripMenuItem"
         Me.PolisAsuransiToolStripMenuItem.Size = New System.Drawing.Size(92, 20)
         Me.PolisAsuransiToolStripMenuItem.Text = "Polis Asuransi"
+        '
+        'EntryPolisToolStripMenuItem
+        '
+        Me.EntryPolisToolStripMenuItem.Name = "EntryPolisToolStripMenuItem"
+        Me.EntryPolisToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.EntryPolisToolStripMenuItem.Text = "Entry Polis"
+        '
+        'EntryRebateToolStripMenuItem
+        '
+        Me.EntryRebateToolStripMenuItem.Name = "EntryRebateToolStripMenuItem"
+        Me.EntryRebateToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.EntryRebateToolStripMenuItem.Text = "Entry Rebate"
         '
         'PelunasanToolStripMenuItem
         '
@@ -292,7 +309,7 @@ Partial Class frmMain
         '
         'ModalToolStripMenuItem
         '
-        Me.ModalToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenambahanToolStripMenuItem, Me.PengembalianModalToolStripMenuItem, Me.PencairanCashToolStripMenuItem})
+        Me.ModalToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenambahanToolStripMenuItem, Me.PengembalianModalToolStripMenuItem, Me.PencairanCashToolStripMenuItem, Me.PengeluaranToolStripMenuItem, Me.PendapatanLainlainToolStripMenuItem})
         Me.ModalToolStripMenuItem.Name = "ModalToolStripMenuItem"
         Me.ModalToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
         Me.ModalToolStripMenuItem.Text = "Modal"
@@ -300,19 +317,19 @@ Partial Class frmMain
         'PenambahanToolStripMenuItem
         '
         Me.PenambahanToolStripMenuItem.Name = "PenambahanToolStripMenuItem"
-        Me.PenambahanToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.PenambahanToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.PenambahanToolStripMenuItem.Text = "Penambahan"
         '
         'PengembalianModalToolStripMenuItem
         '
         Me.PengembalianModalToolStripMenuItem.Name = "PengembalianModalToolStripMenuItem"
-        Me.PengembalianModalToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.PengembalianModalToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.PengembalianModalToolStripMenuItem.Text = "Pengembalian"
         '
         'PencairanCashToolStripMenuItem
         '
         Me.PencairanCashToolStripMenuItem.Name = "PencairanCashToolStripMenuItem"
-        Me.PencairanCashToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.PencairanCashToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.PencairanCashToolStripMenuItem.Text = "Pencairan Cash"
         '
         'StatusStrip
@@ -337,6 +354,18 @@ Partial Class frmMain
         Me.flag.Size = New System.Drawing.Size(47, 20)
         Me.flag.TabIndex = 9
         Me.flag.Visible = False
+        '
+        'PengeluaranToolStripMenuItem
+        '
+        Me.PengeluaranToolStripMenuItem.Name = "PengeluaranToolStripMenuItem"
+        Me.PengeluaranToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.PengeluaranToolStripMenuItem.Text = "Pengeluaran"
+        '
+        'PendapatanLainlainToolStripMenuItem
+        '
+        Me.PendapatanLainlainToolStripMenuItem.Name = "PendapatanLainlainToolStripMenuItem"
+        Me.PendapatanLainlainToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.PendapatanLainlainToolStripMenuItem.Text = "Pendapatan Lain"
         '
         'frmMain
         '
@@ -402,5 +431,9 @@ Partial Class frmMain
     Friend WithEvents PencairanCashToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KaryawanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ParameterSistemToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EntryPolisToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EntryRebateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PengeluaranToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PendapatanLainlainToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -153,15 +153,18 @@ Public Class frmKaryawan
         ckPelunasanNormal.Checked = False
         ckPembayaran.Checked = False
         ckVKontrakDT.Checked = False
-        ckVKontrakEle.Checked = False
-        ckVKontrakKTA.Checked = False
-        ckVKontrakMB.Checked = False
+        'ckVKontrakEle.Checked = False
+        'ckVKontrakKTA.Checked = False
+        'ckVKontrakMB.Checked = False
         ckVReportKotnrak.Checked = False
         ckBBKontrak.Checked = False
         isiFormComboBox()
         setTanggal(dtTglLahir)
         Button2.Text = "Save"
         FlagMember = "INS"
+        GroupBox2.Visible = False
+        GroupBox3.Visible = False
+        CheckBox1.Checked = False
 
     End Sub
 
@@ -249,9 +252,9 @@ Public Class frmKaryawan
             ckPelunasanKhusus.Checked = CBool(dt.Rows(0)("PelKhusus"))
             ckPelunasanNormal.Checked = CBool(dt.Rows(0)("PelNormal"))
             ckVKontrakDT.Checked = CBool(dt.Rows(0)("VKontrakDT"))
-            ckVKontrakEle.Checked = CBool(dt.Rows(0)("VKontrakEle"))
-            ckVKontrakKTA.Checked = CBool(dt.Rows(0)("VKontrakKta"))
-            ckVKontrakMB.Checked = CBool(dt.Rows(0)("VKontrakMB"))
+            'ckVKontrakEle.Checked = CBool(dt.Rows(0)("VKontrakEle"))
+            'ckVKontrakKTA.Checked = CBool(dt.Rows(0)("VKontrakKta"))
+            'ckVKontrakMB.Checked = CBool(dt.Rows(0)("VKontrakMB"))
             ckVReportKotnrak.Checked = CBool(dt.Rows(0)("VKontrak"))
             ckEditDT.Checked = CBool(dt.Rows(0)("EdDT"))
             ckEditEle.Checked = CBool(dt.Rows(0)("EdEle"))
@@ -380,9 +383,9 @@ Public Class frmKaryawan
         Dim PelAsuransi As Integer = IIf(ckPelunasanAsuransi.Checked, 1, 0)
         Dim VKontrak As Integer = IIf(ckVReportKotnrak.Checked, 1, 0)
         Dim VKontrakDT As Integer = IIf(ckVKontrakDT.Checked, 1, 0)
-        Dim VKontrakMB As Integer = IIf(ckVKontrakMB.Checked, 1, 0)
-        Dim VKontrakEle As Integer = IIf(ckVKontrakEle.Checked, 1, 0)
-        Dim VKontrakKta As Integer = IIf(ckVKontrakKTA.Checked, 1, 0)
+        Dim VKontrakMB As Integer = 0
+        Dim VKontrakEle As Integer = 0
+        Dim VKontrakKta As Integer = 0
         Dim EdDT As Integer = IIf(ckEditDT.Checked, 1, 0)
         Dim EdMB As Integer = IIf(ckEditMB.Checked, 1, 0)
         Dim EdEle As Integer = IIf(ckEditEle.Checked, 1, 0)
@@ -421,4 +424,13 @@ Public Class frmKaryawan
 
     End Sub
 
+    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            GroupBox3.Visible = True
+            GroupBox2.Visible = True
+        Else
+            GroupBox3.Visible = False
+            GroupBox2.Visible = False
+        End If
+    End Sub
 End Class

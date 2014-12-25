@@ -1,5 +1,6 @@
 Public Class frmPolisAsuransi
-
+    Dim oldPolis As String = ""
+    Dim insUpd As String
     Private Sub frmPolisAsuransi_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ClearForm()
         FillGrid()
@@ -15,6 +16,8 @@ Public Class frmPolisAsuransi
         setTanggal(dtPolis)
         txtPremi.Text = 0
         cmbPolis.SelectedIndex = 0
+        oldPolis = ""
+        insUpd = "INS"
     End Sub
 
     Private Sub FillGrid()
@@ -58,8 +61,17 @@ Public Class frmPolisAsuransi
             If dt.Rows.Count > 0 Then
                 txtNoPolis.Text = CStr(dt.Rows(0)("NoPolis"))
                 dtPolis.Value = CDate(dt.Rows(0)("TglPolis"))
-                txtPremi.Text = ribuan(CStr(dt.Rows(0)("Nominal")))
+                'txtPremi.Text = ribuan(CStr(dt.Rows(0)("PremiAwal")))
                 cmbPolis.Text = CStr(dt.Rows(0)("BulanPolis"))
+                oldPolis = CStr(dt.Rows(0)("NoPolis"))
+                insUpd = "UPD"
+            Else
+                txtNoPolis.Text = ""
+                dtPolis.Value = Now
+                'txtPremi.Text = 0
+                cmbPolis.Text = "JANUARI"
+                insUpd = "INS"
+                oldPolis = ""
             End If
 
         Catch ex As Exception
@@ -92,5 +104,36 @@ Public Class frmPolisAsuransi
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If txtNoPolis.Text <> "" And txtAplikasi.Text <> "" Then
+            Dim pesan As String = "Anda Akan Menginput Polis dengan Detail Berikut : "
+            pesan &= vbNewLine & "---------------------------------------------------------------------"
+            pesan &= vbNewLine & "Nomor Polis " & vbTab & vbTab & ": " & txtNoPolis.Text
+            pesan &= vbNewLine & "Nama Pelanggan " & vbTab & vbTab & ": " & txtPemohon.Text
+            pesan &= vbNewLine & "Tanggal Polis " & vbTab & vbTab & ": " & dtPolis.Text
+            pesan &= vbNewLine & vbNewLine & "Apakah Anda yakin ? "
+            Dim result As Integer = MessageBox.Show(pesan, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = vbYes Then
+                StrSQL = ""
+                StrSQL = "Sp_PolisIU "
+                StrSQL &= "'" & insUpd & "',"
+                StrSQL &= "'" & antisqli(txtNoPolis.Text) & "',"
+                StrSQL &= "'" & dtPolis.Value.Date & "',"
+                StrSQL &= "0,"
+                StrSQL &= "'" & cmbPolis.Text & "',"
+                StrSQL &= "'',"
+                StrSQL &= "'" & txtAplikasi.Text & "',"
+                StrSQL &= "" & CDbl(txtPremi.Text) & ","
+                StrSQL &= "'" & oldPolis & "'"
+                If RunSQL(StrSQL, 0) = True Then
+                    MessageBox.Show("Data Berhasil Disimpan !", "Sukses", MessageBoxButtons.OK)
+                    ClearForm()
+                End If
+
+            End If
+        End If
+       
     End Sub
 End Class

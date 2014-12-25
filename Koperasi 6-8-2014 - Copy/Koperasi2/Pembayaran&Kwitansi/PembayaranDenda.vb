@@ -529,6 +529,7 @@ Public Class PembayaranDenda
     Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
         If DataFlag = True And txtBayar.Text > 0 Then
             Pembayaran()
+
         End If
     End Sub
     Private Sub Pembayaran()
@@ -544,6 +545,7 @@ Public Class PembayaranDenda
         If result = vbYes Then
             Try
                 PembayaranDenda()
+                Pendapatan_SAV()
                 MessageBox.Show("Pembayaran Denda Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Dim oldContract = txtKontrak.Text
                 txtKontrak.Text = ""
@@ -555,22 +557,27 @@ Public Class PembayaranDenda
     End Sub
 
     Private Sub ChangingGridValue()
+        Try
+            Dim BeginValue As New Double
+            StrSQL = ""
+            StrSQL = "SELECT OutstandingReceive From Denda Where ContractID='" & txtKontrak.Text & "' AND [index]= " & cmbAngsuran.Text & " "
+            RunSQL(StrSQL, 1)
+            BeginValue = 0
+            BeginValue = CDbl(dt.Rows(0)("OutstandingReceive"))
 
-        Dim BeginValue As New Double
-        StrSQL = ""
-        StrSQL = "SELECT OutstandingReceive From Denda Where ContractID='" & txtKontrak.Text & "' AND [index]= " & cmbAngsuran.Text & " "
-        RunSQL(StrSQL, 1)
-        BeginValue = 0
-        BeginValue = CDbl(dt.Rows(0)("OutstandingReceive"))
+            GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
+            GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
+            GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"), BeginValue + CDbl(txtBayar.Text))
 
-        GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
-        GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
-        GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"), BeginValue + CDbl(txtBayar.Text))
+            Dim bayar As Double = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"))
+            Dim Total As Double = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding"))
 
-        Dim bayar As Double = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding Receive"))
-        Dim Total As Double = GridView1.GetFocusedRowCellValue(GridView1.Columns("Outstanding"))
+            GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding Total"), Total + bayar)
+        Catch ex As Exception
 
-        GridView1.SetFocusedRowCellValue(GridView1.Columns("Outstanding Total"), Total + bayar)
+        End Try
+
+      
 
     End Sub
 
@@ -628,5 +635,21 @@ Public Class PembayaranDenda
         RunSQL(StrSQL, 0)
     End Sub
 #End Region
+
+    Private Sub Pendapatan_SAV()
+        Try
+            StrSQL = ""
+            StrSQL = "Sp_BankIU "
+            StrSQL &= "'IN_BUNGA', "
+            StrSQL &= "'" & txtKontrak.Text & "', "
+            StrSQL &= "'" & dtBayar.Value.Date & "', "
+            StrSQL &= "" & CDbl(txtBayar.Text) & ", "
+            StrSQL &= "'" & UserName & "' "
+            RunSQL(StrSQL, 0)
+        Catch ex As Exception
+
+        End Try
+      
+    End Sub
 
 End Class

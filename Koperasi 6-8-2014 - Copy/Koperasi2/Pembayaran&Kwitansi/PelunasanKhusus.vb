@@ -59,7 +59,7 @@ Public Class PelunasanKhusus
         lblTipe.Text = "Tipe"
         txtHidden.Clear()
         memberID = ""
-
+        txtRugi.Clear()
         txtBayar.Text = 0
         txtSIsaPokok.Text = 0
         cmbCaraBayar.Text = "Kasir 101"
@@ -518,8 +518,8 @@ Public Class PelunasanKhusus
             txtSIsaPokok.Text = ribuan(getFieldValue(StrSQL))
         Else
             StrSQL = ""
-            StrSQL = "select top 1 OP from contractDetail "
-            StrSQL &= " WHERE ContractID = '" & txtKontrak.Text & "' Group By ContractID , op,[index] Order By [index] ASC"
+            StrSQL = "select top 1 OP+SP from contractDetail "
+            StrSQL &= " WHERE ContractID = '" & txtKontrak.Text & "' Group By ContractID , op,sp,[index] Order By [index] ASC"
             txtSIsaPokok.Text = ribuan(getFieldValue(StrSQL))
         End If
 
@@ -542,9 +542,13 @@ Public Class PelunasanKhusus
 
         rugi = CDbl(txtSIsaPokok.Text) - CDbl(txtBayar.Text)
 
-        If txtBayar.Text < txtSIsaPokok.Text Then
+        If CDbl(txtBayar.Text) < CDbl(txtSIsaPokok.Text) Then
             Dim result As Integer = MessageBox.Show("Anda Yakin Menutup Kontrak ini dengan Kerugian Rp." & ribuan(rugi) & "?", "Perhatian", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = vbYes Then
+                Dim result3 As Integer = MessageBox.Show("Anda ingin menambahkan " & txtKonsumen.Text & " Ke dalam BlackList? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If result3 = vbYes Then
+                    BlackList_Sav()
+                End If
                 UpdateContract()
                 UpdateKwitansi()
                 updateLoss()
@@ -556,6 +560,9 @@ Public Class PelunasanKhusus
         Else
             Dim result2 As Integer = MessageBox.Show("Anda Yakin Menutup Kontrak ini ?", "Perhatian", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result2 = vbYes Then
+
+                
+                Bank_SAV()
                 UpdateContract()
                 UpdateKwitansi()
                 MessageBox.Show("Status Kontrak Berhasil Diubah", "Sukses", MessageBoxButtons.OK)
@@ -588,6 +595,64 @@ Public Class PelunasanKhusus
         StrSQL = ""
         StrSQL = "INSERT INTO PenutupanLoss (ContractID,Kerugian) VALUES ("
         StrSQL &= "'" & txtKontrak.Text & "'," & rugi & ")"
+        RunSQL(StrSQL, 0)
+    End Sub
+
+    Private Sub txtBayar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBayar.TextChanged
+        Dim pokok As Double
+        Dim bayar As Double
+        Dim rugi As Double
+
+        If txtSIsaPokok.Text = "" Then
+            pokok = 0
+            txtSIsaPokok.Text = 0
+        Else
+            pokok = CDbl(txtSIsaPokok.Text)
+        End If
+
+        If txtBayar.Text = "" Then
+            bayar = 0
+            txtBayar.Text = 0
+        Else
+            bayar = CDbl(txtBayar.Text)
+        End If
+
+        rugi = bayar - pokok
+
+        If rugi < 0 Then
+            txtRugi.Text = ribuan(rugi)
+        Else
+            txtRugi.Text = 0
+        End If
+
+
+    End Sub
+
+    Private Sub BlackList_Sav()
+        StrSQL = ""
+        StrSQL = "Sp_BlackListIU 'INS', "
+        StrSQL &= "'" & memberID & "',"
+        StrSQL &= "'Pelunasan Khusus',"
+        StrSQL &= "'" & txtKontrak.Text & "'"
+        RunSQL(StrSQL, 0)
+    End Sub
+
+    Private Sub Bank_SAV()
+        StrSQL = ""
+        StrSQL = "Sp_BankIU 'AR_OUT',"
+        StrSQL &= "'" & txtKontrak.Text & "',"
+        StrSQL &= "'" & dtBayar.Value.Date & "',"
+        StrSQL &= "" & CDbl(txtSIsaPokok.Text) & ","
+        StrSQL &= "'" & UserName & "',"
+        RunSQL(StrSQL, 0)
+
+
+        StrSQL = ""
+        StrSQL = "Sp_BankIU 'KAS_OUT',"
+        StrSQL &= "'" & txtKontrak.Text & "',"
+        StrSQL &= "'" & dtBayar.Value.Date & "',"
+        StrSQL &= "" & CDbl(txtRugi.Text) & ","
+        StrSQL &= "'" & UserName & "',"
         RunSQL(StrSQL, 0)
     End Sub
 

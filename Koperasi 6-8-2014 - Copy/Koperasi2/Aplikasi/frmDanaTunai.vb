@@ -581,7 +581,7 @@ Public Class frmDanaTunai
             txtBungaFlat.Text = Format(tempBungaFlat, "#,##0.00")
             tempBungaPengali = CDbl(tempBungaFlat) * (CDbl(txtTenor.Text) / 12)
             txtBungaPengali.Text = Format(tempBungaPengali, "#,##0.00")
-            txtBunga.Text = Format(CDbl(txtPokok.Text) * CDbl(tempBungaPengali) / 100, "#,##0")
+            txtBunga.Text = Format(CDbl(txtPokok.Text) * CDbl(txtBungaPengali.Text) / 100, "#,##0")
             txtTotalHutang.Text = Format(CDbl(txtPokok.Text) + CDbl(txtBunga.Text), "#,##0")
             txtAngsuran.Text = Format(Math.Ceiling(CDbl(txtTotalHutang.Text) / (CDbl(txtTenor.Text) * 1000)) * 1000, "#,##0")
         End If

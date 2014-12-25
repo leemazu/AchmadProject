@@ -26,26 +26,26 @@ Partial Class frmPolisAsuransi
         Me.Label1 = New System.Windows.Forms.Label
         Me.txtFilter = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.txtKontrak = New System.Windows.Forms.TextBox
-        Me.txtAplikasi = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.txtPemohon = New System.Windows.Forms.TextBox
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.txtStatus = New System.Windows.Forms.TextBox
-        Me.Label5 = New System.Windows.Forms.Label
         Me.txtPos = New System.Windows.Forms.TextBox
         Me.Label6 = New System.Windows.Forms.Label
+        Me.txtStatus = New System.Windows.Forms.TextBox
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.txtPemohon = New System.Windows.Forms.TextBox
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.txtAplikasi = New System.Windows.Forms.TextBox
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.txtKontrak = New System.Windows.Forms.TextBox
+        Me.Label2 = New System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.Label7 = New System.Windows.Forms.Label
+        Me.cmbPolis = New System.Windows.Forms.ComboBox
+        Me.dtPolis = New System.Windows.Forms.DateTimePicker
         Me.txtPremi = New System.Windows.Forms.TextBox
         Me.Label8 = New System.Windows.Forms.Label
         Me.Label9 = New System.Windows.Forms.Label
         Me.txtNoPolis = New System.Windows.Forms.TextBox
         Me.Label10 = New System.Windows.Forms.Label
-        Me.dtPolis = New System.Windows.Forms.DateTimePicker
-        Me.cmbPolis = New System.Windows.Forms.ComboBox
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.Button1 = New System.Windows.Forms.Button
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -81,6 +81,8 @@ Partial Class frmPolisAsuransi
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtStatus)
         Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.txtPremi)
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.txtPemohon)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtAplikasi)
@@ -93,70 +95,6 @@ Partial Class frmPolisAsuransi
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Kontrak"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(18, 27)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Nomor Kontrak"
-        '
-        'txtKontrak
-        '
-        Me.txtKontrak.Location = New System.Drawing.Point(102, 19)
-        Me.txtKontrak.Name = "txtKontrak"
-        Me.txtKontrak.Size = New System.Drawing.Size(151, 20)
-        Me.txtKontrak.TabIndex = 3
-        '
-        'txtAplikasi
-        '
-        Me.txtAplikasi.Location = New System.Drawing.Point(102, 45)
-        Me.txtAplikasi.Name = "txtAplikasi"
-        Me.txtAplikasi.Size = New System.Drawing.Size(151, 20)
-        Me.txtAplikasi.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 53)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Nomor Aplikasi"
-        '
-        'txtPemohon
-        '
-        Me.txtPemohon.Location = New System.Drawing.Point(102, 71)
-        Me.txtPemohon.Name = "txtPemohon"
-        Me.txtPemohon.Size = New System.Drawing.Size(151, 20)
-        Me.txtPemohon.TabIndex = 7
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(18, 79)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(83, 13)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Nama Pemohon"
-        '
-        'txtStatus
-        '
-        Me.txtStatus.Location = New System.Drawing.Point(374, 19)
-        Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.Size = New System.Drawing.Size(99, 20)
-        Me.txtStatus.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(291, 22)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Status Kontrak"
         '
         'txtPos
         '
@@ -174,14 +112,76 @@ Partial Class frmPolisAsuransi
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "POS"
         '
+        'txtStatus
+        '
+        Me.txtStatus.Location = New System.Drawing.Point(374, 19)
+        Me.txtStatus.Name = "txtStatus"
+        Me.txtStatus.Size = New System.Drawing.Size(99, 20)
+        Me.txtStatus.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(291, 22)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(77, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Status Kontrak"
+        '
+        'txtPemohon
+        '
+        Me.txtPemohon.Location = New System.Drawing.Point(102, 71)
+        Me.txtPemohon.Name = "txtPemohon"
+        Me.txtPemohon.Size = New System.Drawing.Size(151, 20)
+        Me.txtPemohon.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(18, 79)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(83, 13)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Nama Pemohon"
+        '
+        'txtAplikasi
+        '
+        Me.txtAplikasi.Location = New System.Drawing.Point(102, 45)
+        Me.txtAplikasi.Name = "txtAplikasi"
+        Me.txtAplikasi.Size = New System.Drawing.Size(151, 20)
+        Me.txtAplikasi.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(18, 53)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(77, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Nomor Aplikasi"
+        '
+        'txtKontrak
+        '
+        Me.txtKontrak.Location = New System.Drawing.Point(102, 19)
+        Me.txtKontrak.Name = "txtKontrak"
+        Me.txtKontrak.Size = New System.Drawing.Size(151, 20)
+        Me.txtKontrak.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(18, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(78, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Nomor Kontrak"
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.cmbPolis)
         Me.GroupBox2.Controls.Add(Me.dtPolis)
-        Me.GroupBox2.Controls.Add(Me.txtPremi)
-        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtNoPolis)
         Me.GroupBox2.Controls.Add(Me.Label10)
@@ -192,9 +192,44 @@ Partial Class frmPolisAsuransi
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Data Asuransi"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(20, 92)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Simpan"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(291, 57)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(59, 13)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Bulan Polis"
+        '
+        'cmbPolis
+        '
+        Me.cmbPolis.FormattingEnabled = True
+        Me.cmbPolis.Items.AddRange(New Object() {"JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"})
+        Me.cmbPolis.Location = New System.Drawing.Point(371, 50)
+        Me.cmbPolis.Name = "cmbPolis"
+        Me.cmbPolis.Size = New System.Drawing.Size(102, 21)
+        Me.cmbPolis.TabIndex = 17
+        '
+        'dtPolis
+        '
+        Me.dtPolis.Location = New System.Drawing.Point(107, 51)
+        Me.dtPolis.Name = "dtPolis"
+        Me.dtPolis.Size = New System.Drawing.Size(153, 20)
+        Me.dtPolis.TabIndex = 16
+        '
         'txtPremi
         '
-        Me.txtPremi.Location = New System.Drawing.Point(371, 24)
+        Me.txtPremi.Enabled = False
+        Me.txtPremi.Location = New System.Drawing.Point(374, 79)
         Me.txtPremi.MaxLength = 12
         Me.txtPremi.Name = "txtPremi"
         Me.txtPremi.Size = New System.Drawing.Size(102, 20)
@@ -203,7 +238,7 @@ Partial Class frmPolisAsuransi
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(291, 27)
+        Me.Label8.Location = New System.Drawing.Point(291, 82)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(74, 13)
         Me.Label8.TabIndex = 14
@@ -234,40 +269,6 @@ Partial Class frmPolisAsuransi
         Me.Label10.TabIndex = 10
         Me.Label10.Text = "Nomor Polis"
         '
-        'dtPolis
-        '
-        Me.dtPolis.Location = New System.Drawing.Point(107, 51)
-        Me.dtPolis.Name = "dtPolis"
-        Me.dtPolis.Size = New System.Drawing.Size(153, 20)
-        Me.dtPolis.TabIndex = 16
-        '
-        'cmbPolis
-        '
-        Me.cmbPolis.FormattingEnabled = True
-        Me.cmbPolis.Items.AddRange(New Object() {"JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"})
-        Me.cmbPolis.Location = New System.Drawing.Point(371, 50)
-        Me.cmbPolis.Name = "cmbPolis"
-        Me.cmbPolis.Size = New System.Drawing.Size(102, 21)
-        Me.cmbPolis.TabIndex = 17
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(291, 57)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(59, 13)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "Bulan Polis"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(206, 93)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Simpan"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'frmPolisAsuransi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -279,7 +280,7 @@ Partial Class frmPolisAsuransi
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "frmPolisAsuransi"
-        Me.Text = "frmPolisAsuransi"
+        Me.Text = "Entry Nomor Polis"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -91,7 +91,7 @@ Public Class PelunasanNormal
 
     Private Function ValidasiKontrak()
         StrSQL = ""
-        StrSQL = "SELECT ContractID From contractDetail GROUP BY ContractID HAVING COUNT(noKwitansi) = COUNT([index]) AND SUM(Outstanding) < SUM (outstandingReceive)"
+        StrSQL = "SELECT ContractID From contractDetail GROUP BY ContractID HAVING COUNT(TotalBayar) = COUNT([index])"
         StrSQL &= " AND ContractID='" & txtKontrak.Text & "' "
         RunSQL(StrSQL, 1)
 

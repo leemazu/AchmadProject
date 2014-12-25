@@ -540,8 +540,8 @@ Public Class PelunasanDimuka
             txtSIsaPokok.Text = ribuan(getFieldValue(StrSQL))
         Else
             StrSQL = ""
-            StrSQL = "select top 1 OP from contractDetail "
-            StrSQL &= " WHERE ContractID = '" & txtKontrak.Text & "' Group By ContractID , op,[index] Order By [index] ASC"
+            StrSQL = "select top 1 OP+SP as Sisa from contractDetail "
+            StrSQL &= " WHERE ContractID = '" & txtKontrak.Text & "' Group By ContractID , op,sp,[index] Order By [index] ASC"
             txtSIsaPokok.Text = ribuan(getFieldValue(StrSQL))
         End If
 
@@ -610,13 +610,24 @@ Public Class PelunasanDimuka
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        If txtBayar.Text < txtTotalKekurangan.Text Then
+        If CDbl(txtBayar.Text) < CDbl(txtTotalKekurangan.Text) Then
             MessageBox.Show("Jumlah Bayar Tidak Boleh Kurang Dari TotalKekurangan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            UpdateContract()
-            UpdateKwitansi()
-            MessageBox.Show("Status Kontrak Berhasil Diubah", "Sukses", MessageBoxButtons.OK)
-            ClearForm()
+            Dim pesan As String = "Anda Akan Menginput Pelunasan Dimuka dengan Detail Berikut : "
+            pesan &= vbNewLine & "---------------------------------------------------------------------"
+            pesan &= vbNewLine & "Nomor Kontrak " & vbTab & vbTab & ": " & txtKontrak.Text
+            pesan &= vbNewLine & "Nama Pelanggan Kontrak " & vbTab & ": " & txtKonsumen.Text
+            pesan &= vbNewLine & "Jumlah Pembayaran " & vbTab & vbTab & ": " & ribuan(txtBayar.Text)
+            pesan &= vbNewLine & vbNewLine & "Apakah Anda yakin ? "
+            Dim result As Integer = MessageBox.Show(pesan, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = vbYes Then
+                UpdateContract()
+                UpdateKwitansi()
+                Pendapatan_SAV()
+                MessageBox.Show("Status Kontrak Berhasil Diubah", "Sukses", MessageBoxButtons.OK)
+                ClearForm()
+            End If
+
         End If
     End Sub
     Private Sub UpdateContract()
@@ -639,4 +650,32 @@ Public Class PelunasanDimuka
         RunSQL(StrSQL, 0)
 
     End Sub
+
+    Private Sub Pendapatan_SAV()
+        Try
+            Dim Pokok As Double = CDbl(txtSIsaPokok.Text)
+            Dim Bunga As Double = CDbl(txtBayar.Text) - CDbl(txtSIsaPokok.Text)
+            StrSQL = ""
+            StrSQL = "Sp_BankIU "
+            StrSQL &= "'IN_MODAL', "
+            StrSQL &= "'" & txtKontrak.Text & "', "
+            StrSQL &= "'" & dtBayar.Value.Date & "', "
+            StrSQL &= "" & Pokok & ", "
+            StrSQL &= "'" & UserName & "' "
+            RunSQL(StrSQL, 0)
+
+            StrSQL = ""
+            StrSQL = "Sp_BankIU "
+            StrSQL &= "'IN_BUNGA', "
+            StrSQL &= "'" & txtKontrak.Text & "', "
+            StrSQL &= "'" & dtBayar.Value.Date & "', "
+            StrSQL &= "" & Bunga & ", "
+            StrSQL &= "'" & UserName & "' "
+            RunSQL(StrSQL, 0)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class

@@ -334,15 +334,15 @@ Public Class frmMain
     End Sub
 
     Private Sub PolisAsuransiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PolisAsuransiToolStripMenuItem.Click
-        frmPolisAsuransi.StartPosition = FormStartPosition.Manual
-        frmPolisAsuransi.Location = New Point(0, 0)
-        frmPolisAsuransi.MdiParent = Me
-        frmPolisAsuransi.Show()
+      
     End Sub
 
     Private Sub KaryawanToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KaryawanToolStripMenuItem.Click
-        frmKaryawan.Show()
+
         frmKaryawan.MdiParent = Me
+        frmKaryawan.StartPosition = FormStartPosition.Manual
+        frmKaryawan.Location = New Point(0, 0)
+        frmKaryawan.Show()
     End Sub
 
     Private Sub ParameterSistemToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ParameterSistemToolStripMenuItem.Click
@@ -350,5 +350,19 @@ Public Class frmMain
         FrmParsis.Location = New Point(0, 0)
         FrmParsis.MdiParent = Me
         FrmParsis.Show()
+    End Sub
+
+    Private Sub EntryPolisToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EntryPolisToolStripMenuItem.Click
+        frmPolisAsuransi.StartPosition = FormStartPosition.Manual
+        frmPolisAsuransi.Location = New Point(0, 0)
+        frmPolisAsuransi.MdiParent = Me
+        frmPolisAsuransi.Show()
+    End Sub
+
+    Private Sub EntryRebateToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EntryRebateToolStripMenuItem.Click
+        frmRebate.StartPosition = FormStartPosition.Manual
+        frmRebate.Location = New Point(0, 0)
+        frmRebate.MdiParent = Me
+        frmRebate.Show()
     End Sub
 End Class

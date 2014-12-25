@@ -586,8 +586,8 @@ Public Class kontrakDanaTunai
         cmbTagihKota.SelectedItem = 1
         ' cmbTagihKota.SelectedItem = 0
         FillCombobox("select*from v_kota ORDer BY city asc", cmbKantorKota, 1, dtKantorKota)
-        ' FillCombobox("select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbKantorKota.Text + "' ORDER BY [SubDistrict] ASC", cmbKantorKecamatan, 1, dtKantorKecamatan)
-        ' FillCombobox("select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKantorKecamatan.Text + "' ORDER BY [Village] ASC", cmbKantorKelurahan, 2, dtKantorKelurahan)
+        FillCombobox("select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" & cmbKantorKota.Text & "' ORDER BY [SubDistrict] ASC", cmbKantorKecamatan, 1, dtKantorKecamatan)
+        FillCombobox("select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" & cmbKantorKecamatan.Text & "' ORDER BY [Village] ASC", cmbKantorKelurahan, 2, dtKantorKelurahan)
         cmbKantorKota.SelectedItem = 1
         ' cmbKantorKota.SelectedItem = 0
         FillCombobox("select*from v_kota ORDer BY city asc", cmbDaruratKota, 1, dtDaruratKota)

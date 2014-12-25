@@ -55,14 +55,12 @@ Partial Class frmKaryawan
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.ckBBKontrak = New System.Windows.Forms.CheckBox
         Me.ckEditKaryawan = New System.Windows.Forms.CheckBox
         Me.ckEditKTA = New System.Windows.Forms.CheckBox
         Me.ckEditEle = New System.Windows.Forms.CheckBox
         Me.ckEditMB = New System.Windows.Forms.CheckBox
         Me.ckEditDT = New System.Windows.Forms.CheckBox
-        Me.ckVKontrakKTA = New System.Windows.Forms.CheckBox
-        Me.ckVKontrakEle = New System.Windows.Forms.CheckBox
-        Me.ckVKontrakMB = New System.Windows.Forms.CheckBox
         Me.ckVKontrakDT = New System.Windows.Forms.CheckBox
         Me.ckVReportKotnrak = New System.Windows.Forms.CheckBox
         Me.ckPelunasanAsuransi = New System.Windows.Forms.CheckBox
@@ -89,7 +87,7 @@ Partial Class frmKaryawan
         Me.Label17 = New System.Windows.Forms.Label
         Me.txtUsername = New System.Windows.Forms.TextBox
         Me.Label16 = New System.Windows.Forms.Label
-        Me.ckBBKontrak = New System.Windows.Forms.CheckBox
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -97,6 +95,7 @@ Partial Class frmKaryawan
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
         Me.GroupBox1.Controls.Add(Me.txtTelp)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.cmbStatus)
@@ -413,9 +412,6 @@ Partial Class frmKaryawan
         Me.GroupBox2.Controls.Add(Me.ckEditEle)
         Me.GroupBox2.Controls.Add(Me.ckEditMB)
         Me.GroupBox2.Controls.Add(Me.ckEditDT)
-        Me.GroupBox2.Controls.Add(Me.ckVKontrakKTA)
-        Me.GroupBox2.Controls.Add(Me.ckVKontrakEle)
-        Me.GroupBox2.Controls.Add(Me.ckVKontrakMB)
         Me.GroupBox2.Controls.Add(Me.ckVKontrakDT)
         Me.GroupBox2.Controls.Add(Me.ckVReportKotnrak)
         Me.GroupBox2.Controls.Add(Me.ckPelunasanAsuransi)
@@ -436,6 +432,16 @@ Partial Class frmKaryawan
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Hak Akses"
+        '
+        'ckBBKontrak
+        '
+        Me.ckBBKontrak.AutoSize = True
+        Me.ckBBKontrak.Location = New System.Drawing.Point(578, 158)
+        Me.ckBBKontrak.Name = "ckBBKontrak"
+        Me.ckBBKontrak.Size = New System.Drawing.Size(109, 17)
+        Me.ckBBKontrak.TabIndex = 22
+        Me.ckBBKontrak.Text = "BuyBack Kontrak"
+        Me.ckBBKontrak.UseVisualStyleBackColor = True
         '
         'ckEditKaryawan
         '
@@ -492,44 +498,14 @@ Partial Class frmKaryawan
         Me.ckEditDT.UseVisualStyleBackColor = True
         Me.ckEditDT.Visible = False
         '
-        'ckVKontrakKTA
-        '
-        Me.ckVKontrakKTA.AutoSize = True
-        Me.ckVKontrakKTA.Location = New System.Drawing.Point(393, 124)
-        Me.ckVKontrakKTA.Name = "ckVKontrakKTA"
-        Me.ckVKontrakKTA.Size = New System.Drawing.Size(113, 17)
-        Me.ckVKontrakKTA.TabIndex = 16
-        Me.ckVKontrakKTA.Text = "View Kontrak KTA"
-        Me.ckVKontrakKTA.UseVisualStyleBackColor = True
-        '
-        'ckVKontrakEle
-        '
-        Me.ckVKontrakEle.AutoSize = True
-        Me.ckVKontrakEle.Location = New System.Drawing.Point(393, 101)
-        Me.ckVKontrakEle.Name = "ckVKontrakEle"
-        Me.ckVKontrakEle.Size = New System.Drawing.Size(139, 17)
-        Me.ckVKontrakEle.TabIndex = 15
-        Me.ckVKontrakEle.Text = "View Kontrak Elektronik"
-        Me.ckVKontrakEle.UseVisualStyleBackColor = True
-        '
-        'ckVKontrakMB
-        '
-        Me.ckVKontrakMB.AutoSize = True
-        Me.ckVKontrakMB.Location = New System.Drawing.Point(393, 78)
-        Me.ckVKontrakMB.Name = "ckVKontrakMB"
-        Me.ckVKontrakMB.Size = New System.Drawing.Size(144, 17)
-        Me.ckVKontrakMB.TabIndex = 14
-        Me.ckVKontrakMB.Text = "View Kontrak Motor Baru"
-        Me.ckVKontrakMB.UseVisualStyleBackColor = True
-        '
         'ckVKontrakDT
         '
         Me.ckVKontrakDT.AutoSize = True
         Me.ckVKontrakDT.Location = New System.Drawing.Point(393, 55)
         Me.ckVKontrakDT.Name = "ckVKontrakDT"
-        Me.ckVKontrakDT.Size = New System.Drawing.Size(148, 17)
+        Me.ckVKontrakDT.Size = New System.Drawing.Size(135, 17)
         Me.ckVKontrakDT.TabIndex = 13
-        Me.ckVKontrakDT.Text = "View Kontrak Dana Tunai"
+        Me.ckVKontrakDT.Text = "View / Update Kontrak"
         Me.ckVKontrakDT.UseVisualStyleBackColor = True
         '
         'ckVReportKotnrak
@@ -777,15 +753,15 @@ Partial Class frmKaryawan
         Me.Label16.TabIndex = 31
         Me.Label16.Text = "Username"
         '
-        'ckBBKontrak
+        'CheckBox1
         '
-        Me.ckBBKontrak.AutoSize = True
-        Me.ckBBKontrak.Location = New System.Drawing.Point(578, 158)
-        Me.ckBBKontrak.Name = "ckBBKontrak"
-        Me.ckBBKontrak.Size = New System.Drawing.Size(109, 17)
-        Me.ckBBKontrak.TabIndex = 22
-        Me.ckBBKontrak.Text = "BuyBack Kontrak"
-        Me.ckBBKontrak.UseVisualStyleBackColor = True
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(249, 191)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(119, 17)
+        Me.CheckBox1.TabIndex = 30
+        Me.CheckBox1.Text = "Buatkan ID Aplikasi"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'frmKaryawan
         '
@@ -854,7 +830,6 @@ Partial Class frmKaryawan
     Friend WithEvents ckPelunasanDimuka As System.Windows.Forms.CheckBox
     Friend WithEvents ckPelunasanKhusus As System.Windows.Forms.CheckBox
     Friend WithEvents ckPelunasanAsuransi As System.Windows.Forms.CheckBox
-    Friend WithEvents ckVKontrakMB As System.Windows.Forms.CheckBox
     Friend WithEvents ckVKontrakDT As System.Windows.Forms.CheckBox
     Friend WithEvents ckVReportKotnrak As System.Windows.Forms.CheckBox
     Friend WithEvents ckEditKaryawan As System.Windows.Forms.CheckBox
@@ -862,8 +837,6 @@ Partial Class frmKaryawan
     Friend WithEvents ckEditEle As System.Windows.Forms.CheckBox
     Friend WithEvents ckEditMB As System.Windows.Forms.CheckBox
     Friend WithEvents ckEditDT As System.Windows.Forms.CheckBox
-    Friend WithEvents ckVKontrakKTA As System.Windows.Forms.CheckBox
-    Friend WithEvents ckVKontrakEle As System.Windows.Forms.CheckBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
@@ -877,4 +850,5 @@ Partial Class frmKaryawan
     Friend WithEvents cmbStatusAkun As System.Windows.Forms.ComboBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents ckBBKontrak As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 End Class

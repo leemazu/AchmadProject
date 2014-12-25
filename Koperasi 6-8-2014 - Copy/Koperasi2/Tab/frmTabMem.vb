@@ -73,10 +73,10 @@ Public Class frmTabMem
         Dim filter As String = ""
         Dim dsFilter As New DataSet
         Try
-            filter = String.Format("WHERE [MemberID] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [MemberName] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [PersonalIdentity] LIKE '%{0}%' ", txtFilter.Text)
-            filter &= String.Format("OR [Address] LIKE '%{0}%' ", txtFilter.Text)
+            filter = String.Format("WHERE [MemberID] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [MemberName] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [PersonalIdentity] LIKE '%{0}%' ", antisqli(txtFilter.Text))
+            filter &= String.Format("OR [Address] LIKE '%{0}%' ", antisqli(txtFilter.Text))
             StrSQL = String.Format("SELECT TOP 100 MemberId,MemberName,PersonalIdentity,Address FROM MEMBER {0} ORDER BY [MemberId] DESC", filter)
             RunSQL(StrSQL, 2, "MEMBER", , dsFilter)
             gridMember.DataSource = dsFilter

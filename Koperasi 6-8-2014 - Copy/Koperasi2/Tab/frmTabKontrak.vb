@@ -28,7 +28,7 @@ Public Class frmTabKontrak
 
 
             ElseIf txtFlag.Text = "Normal" Then
-                StrSQL = "SELECT ContractID From contractDetail GROUP BY ContractID HAVING COUNT(noKwitansi) = COUNT([index]) AND SUM(Outstanding) < SUM (outstandingReceive)"
+                StrSQL = "SELECT ContractID From contractDetail GROUP BY ContractID HAVING COUNT(TotalBayar) = COUNT([index])"
                 RunSQL(StrSQL, 2, "TabelPelunasanNormal", , dsTable)
                 gv1.DataSource = dsTable
                 gv1.DataMember = "TabelPelunasanNormal"

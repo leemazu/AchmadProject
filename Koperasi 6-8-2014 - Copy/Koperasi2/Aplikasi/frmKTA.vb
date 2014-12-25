@@ -354,7 +354,7 @@
         StrSQL &= "'" & cmbSalesman.SelectedValue & "', "
         StrSQL &= "'4', "
         StrSQL &= "'" & txtTenor.Text & "', "
-        StrSQL &= CInt(txtTingkatBunga.Text) & ", "
+        StrSQL &= CDbl(txtTingkatBunga.Text) & ", "
         StrSQL &= CDbl(txtPinjaman.Text) & ", "
         StrSQL &= "0, "
         StrSQL &= "0, " 'CDbl(DownPayment.Text) & ", "
@@ -546,7 +546,7 @@
             txtBungaFlat.Text = Format(tempFlatInterestP, "#,##0.00")
             tempMultiplierInterestP = CDbl(tempFlatInterestP) * (CDbl(txtTenor.Text) / 12)
             txtBungaPengali.Text = Format(tempMultiplierInterestP, "#,##0.00")
-            txtBunga.Text = Format(CDbl(txtPokok.Text) * CDbl(tempMultiplierInterestP) / 100, "#,##0")
+            txtBunga.Text = Format(CDbl(txtPokok.Text) * CDbl(txtBungaPengali.Text) / 100, "#,##0")
             txtTotalHutang.Text = Format(CDbl(txtPokok.Text) + CDbl(txtBunga.Text), "#,##0")
             txtAngsuran.Text = Format(Math.Ceiling(CDbl(txtTotalHutang.Text) / (CDbl(txtTenor.Text) * 1000)) * 1000, "#,##0")
         End If

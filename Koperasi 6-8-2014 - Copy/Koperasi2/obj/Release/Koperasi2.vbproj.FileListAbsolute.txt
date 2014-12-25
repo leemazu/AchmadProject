@@ -261,3 +261,4 @@ C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.exe
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.xml
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.pdb
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmRebate.resources

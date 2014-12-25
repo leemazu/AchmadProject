@@ -58,6 +58,8 @@ Partial Class PelunasanKhusus
         Me.cmbPIC = New System.Windows.Forms.ComboBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.txtRugi = New System.Windows.Forms.TextBox
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -317,6 +319,8 @@ Partial Class PelunasanKhusus
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.txtRugi)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.dtBayar)
         Me.GroupBox1.Controls.Add(Me.Button3)
@@ -381,6 +385,23 @@ Partial Class PelunasanKhusus
         Me.Label1.Size = New System.Drawing.Size(61, 13)
         Me.Label1.TabIndex = 53
         Me.Label1.Text = "No Kontrak"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(720, 53)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.TabIndex = 65
+        Me.Label5.Text = "Kerugian"
+        '
+        'txtRugi
+        '
+        Me.txtRugi.Enabled = False
+        Me.txtRugi.Location = New System.Drawing.Point(775, 50)
+        Me.txtRugi.Name = "txtRugi"
+        Me.txtRugi.Size = New System.Drawing.Size(153, 20)
+        Me.txtRugi.TabIndex = 64
         '
         'PelunasanKhusus
         '
@@ -453,4 +474,6 @@ Partial Class PelunasanKhusus
     Friend WithEvents cmbPIC As System.Windows.Forms.ComboBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents txtRugi As System.Windows.Forms.TextBox
 End Class

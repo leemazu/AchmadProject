@@ -55,6 +55,13 @@ Public Class PembayaranAngsuran
                 FillPembayaran()
                 ' btnBayar.Enabled = True
                 FillNoKwitansi()
+
+                If txtObjek.Text = "KTA" And txtAngsuran.Text = "1" Then
+                    txtAdminKredit.Text = ribuan("100000")
+                Else
+                    txtAdminKredit.Text = "0"
+                End If
+
                 btnBayar.Visible = True
                 dtBayar.Value = Now
                 'GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
@@ -585,7 +592,7 @@ Public Class PembayaranAngsuran
             index = dt.Rows(0)("Angs Ke")
             GridView1.FocusedRowHandle = GridView1.GetVisibleRowHandle(CInt(index) - 1)
             txtAngsuran.Text = GridView1.GetFocusedRowCellValue(GridView1.Columns("Angs Ke"))
-            txtAmbc.Text = GridView1.GetFocusedRowCellValue(GridView1.Columns("AMBC"))
+            txtAmbc.Text = ribuan(GridView1.GetFocusedRowCellValue(GridView1.Columns("AMBC")))
             GridView1.Appearance.FocusedRow.BackColor = Color.Green
             GridView1.Appearance.SelectedRow.BackColor = Color.Green
             GridView1.Appearance.FocusedCell.BackColor = Color.Green
@@ -673,24 +680,38 @@ Public Class PembayaranAngsuran
 
     Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
         If txtBayar.Text <> "" Then
-            If CDbl(txtBayar.Text) < CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))) Then
-                MessageBox.Show("Nilai Pembayaran Tidak Boleh Kurang Dari Sisa Pokok !", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                txtBayar.Focus()
-                txtBayar.SelectAll()
+
+            If txtAngsuran.Text = "1" And txtObjek.Text = "KTA" Then
+                If CDbl(txtBayar.Text) < (CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))) + CDbl(txtAdminKredit.Text)) Then
+                    MessageBox.Show("Nilai Pembayaran Tidak Boleh Kurang Dari Sisa Pokok + Admin Kredit !", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    txtBayar.Focus()
+                    txtBayar.SelectAll()
+                Else
+                    Pembayaran()
+                End If
             Else
-                Pembayaran()
+                If CDbl(txtBayar.Text) < CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))) Then
 
-                'Dim result As Integer = MessageBox.Show("Pembayaran akan disimpan dan tidak bisa diubah !", "Perhatian !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                'If result = DialogResult.Yes Then
-                '    Detail_SAV2()
-                'End If
+                    MessageBox.Show("Nilai Pembayaran Tidak Boleh Kurang Dari Sisa Pokok !", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    txtBayar.Focus()
+                    txtBayar.SelectAll()
+                Else
+                    Pembayaran()
 
-                'FillGrid()
-                'FillPembayaran()
+                    'Dim result As Integer = MessageBox.Show("Pembayaran akan disimpan dan tidak bisa diubah !", "Perhatian !", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                    'If result = DialogResult.Yes Then
+                    '    Detail_SAV2()
+                    'End If
 
-                'GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
-                'GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
+                    'FillGrid()
+                    'FillPembayaran()
+
+                    'GridView1.SetFocusedRowCellValue(GridView1.Columns("Nomor Kwitansi"), cmbKwitansi.Text)
+                    'GridView1.SetFocusedRowCellValue(GridView1.Columns("Tanggal Bayar"), dtBayar.Value)
+                End If
             End If
+
+           
         End If
     End Sub
 
@@ -776,6 +797,7 @@ Public Class PembayaranAngsuran
 
         If result = vbYes Then
             If ContractDetail_SAV() Then
+                Pendapatan_SAV()
                 MessageBox.Show("Pembayaran telah disimpan")
                 FillDataForm()
                 'txtKontrak.Clear()
@@ -971,13 +993,25 @@ Public Class PembayaranAngsuran
                 GridView1.SetFocusedRowCellValue("Outstanding", gOutstanding)
                 GridView1.SetFocusedRowCellValue("Outstanding Total", gOutstandingTotal)
 
-                If fBayar >= gPokok Then
-                    lblError.Text = ""
-                    btnBayar.Enabled = True
+                If txtObjek.Text = "KTA" And txtAngsuran.Text = "1" Then
+                    If fBayar >= gPokok + CDbl(txtAdminKredit.Text) Then
+                        lblError.Text = ""
+                        btnBayar.Enabled = True
+                    Else
+                        lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(gPokok + CDbl(txtAdminKredit.Text)) & " (Pokok+Admin Kredit) "
+                        btnBayar.Enabled = False
+                    End If
                 Else
-                    lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(gPokok) & " (Pokok) "
-                    btnBayar.Enabled = False
+                    If fBayar >= gPokok Then
+                        lblError.Text = ""
+                        btnBayar.Enabled = True
+                    Else
+                        lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(gPokok) & " (Pokok) "
+                        btnBayar.Enabled = False
+                    End If
                 End If
+
+               
 
 
             Catch ex As Exception
@@ -1000,4 +1034,34 @@ Public Class PembayaranAngsuran
             GridView1.FocusedRowHandle = GridView1.GetVisibleRowHandle(CInt(txtAngsuran.Text) - 1)
         End If
     End Sub
+
+    Private Sub Pendapatan_SAV()
+        Try
+
+            Dim pokok As Double = CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal")))
+            Dim bunga As Double = CDbl(txtBayar.Text) - CDbl(pokok)
+
+            StrSQL = ""
+            StrSQL = "Sp_BankIU "
+            StrSQL &= "'IN_MODAL', "
+            StrSQL &= "'" & txtKontrak.Text & "', "
+            StrSQL &= "'" & dtBayar.Value.Date & "', "
+            StrSQL &= "" & pokok & ", "
+            StrSQL &= "'" & UserName & "' "
+            RunSQL(StrSQL, 0)
+
+            StrSQL = ""
+            StrSQL = "Sp_BankIU "
+            StrSQL &= "'IN_BUNGA', "
+            StrSQL &= "'" & txtKontrak.Text & "', "
+            StrSQL &= "'" & dtBayar.Value.Date & "', "
+            StrSQL &= "" & Bunga & ", "
+            StrSQL &= "'" & UserName & "' "
+            RunSQL(StrSQL, 0)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class
