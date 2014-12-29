@@ -346,10 +346,10 @@ Public Class frmMain
     End Sub
 
     Private Sub ParameterSistemToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ParameterSistemToolStripMenuItem.Click
-        FrmParsis.StartPosition = FormStartPosition.Manual
-        FrmParsis.Location = New Point(0, 0)
-        FrmParsis.MdiParent = Me
-        FrmParsis.Show()
+        frmParsys.StartPosition = FormStartPosition.Manual
+        frmParsys.Location = New Point(0, 0)
+        frmParsys.MdiParent = Me
+        frmParsys.Show()
     End Sub
 
     Private Sub EntryPolisToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EntryPolisToolStripMenuItem.Click

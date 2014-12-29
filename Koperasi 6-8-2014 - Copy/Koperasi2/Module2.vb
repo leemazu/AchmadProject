@@ -12,6 +12,12 @@ Module Module2
 
     Private _StrSQL As String
     Private _isDoubleLogin As Boolean
+    Public ParsisAdminKredit As Double
+    Public ParsisTahunKwitansi As Integer
+    Public ParsisTahunMotorBaru As Integer
+    Public ParsisAdminElektronik As Integer
+    Public ParsisAdminKTA As Integer
+    Public ParsisRateRebate As Double
 
     Public Property UserAuth() As String
         Get
@@ -207,6 +213,25 @@ Module Module2
         End Try
         connGetField.Close()
         Return hasil
+    End Function
+
+    Public Function SetParsysValue() As Boolean
+        Try
+            StrSQL = ""
+            StrSQL = "SELECT*FROM V_PARSYS"
+            RunSQL(StrSQL, 1)
+            ParsisAdminKredit = CDbl(dt.Rows(0)("Biaya Admin").ToString())
+            ParsisRateRebate = CDbl(dt.Rows(0)("Rate Rebate").ToString())
+            ParsisTahunKwitansi = CInt(dt.Rows(0)("Tahun Kwitansi").ToString())
+            ParsisTahunMotorBaru = CInt(dt.Rows(0)("Tahun Motor Baru").ToString())
+            ParsisAdminElektronik = CDbl(dt.Rows(0)("Admin Elektronik").ToString())
+            ParsisAdminKTA = CDbl(dt.Rows(0)("Admin KTA").ToString())
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
     End Function
 
 End Module

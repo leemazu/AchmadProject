@@ -13,6 +13,7 @@ Public Class frmLogin
                     If pass = Textbox2.Text Then
                         MessageBox.Show("Login Success!!", "Mulya", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         mainFormSetting()
+                        SetParsysValue()
                         frmMain.Show()
                         Me.Hide()
                     Else

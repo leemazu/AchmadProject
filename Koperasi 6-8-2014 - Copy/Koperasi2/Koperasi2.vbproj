@@ -186,6 +186,12 @@
     <Compile Include="Form\FrmParsis.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmParsys.Designer.vb">
+      <DependentUpon>frmParsys.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmParsys.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Kontrak\Buyback.Designer.vb">
       <DependentUpon>Buyback.vb</DependentUpon>
     </Compile>
@@ -481,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmParsis.resx">
       <DependentUpon>FrmParsis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmParsys.resx">
+      <DependentUpon>frmParsys.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kontrak\Buyback.resx">
       <DependentUpon>Buyback.vb</DependentUpon>

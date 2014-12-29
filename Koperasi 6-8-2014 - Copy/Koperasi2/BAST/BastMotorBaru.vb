@@ -121,34 +121,56 @@ Public Class BastMotorBaru
         FlagGrid = True
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If txtAplikasi.Text.Length > 7 Then
-            StrSQL = ""
-            StrSQL = "SELECT ApplicationID From Application Where ApplicationID ='" & txtAplikasi.Text & "' "
-            RunSQL(StrSQL, 1)
+        'If txtAplikasi.Text.Length > 7 Then
+        '    StrSQL = ""
+        '    StrSQL = "SELECT ApplicationID From Application Where ApplicationID ='" & txtAplikasi.Text & "' "
+        '    RunSQL(StrSQL, 1)
 
-            If dt.Rows.Count > 0 Then
-                Dim pesan As String = "Anda Akan Membuat Kontrak dengan Detail Berikut : "
-                pesan &= vbNewLine & "---------------------------------------------------------------------"
-                pesan &= vbNewLine & "Nomor Kontrak " & vbTab & vbTab & ": " & txtKontrak.Text
-                pesan &= vbNewLine & "Nama Pelanggan Kontrak " & vbTab & ": " & txtPemNama.Text
-                pesan &= vbNewLine & "Tanggal Kontrak " & vbTab & vbTab & ": " & dtKontrak.Text
-                pesan &= vbNewLine & vbNewLine & "Apakah Anda yakin ? "
-                Dim result As Integer = MessageBox.Show(pesan, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        '    If dt.Rows.Count > 0 Then
+        '        Dim pesan As String = "Anda Akan Membuat Kontrak dengan Detail Berikut : "
+        '        pesan &= vbNewLine & "---------------------------------------------------------------------"
+        '        pesan &= vbNewLine & "Nomor Kontrak " & vbTab & vbTab & ": " & txtKontrak.Text
+        '        pesan &= vbNewLine & "Nama Pelanggan Kontrak " & vbTab & ": " & txtPemNama.Text
+        '        pesan &= vbNewLine & "Tanggal Kontrak " & vbTab & vbTab & ": " & dtKontrak.Text
+        '        pesan &= vbNewLine & vbNewLine & "Apakah Anda yakin ? "
+        '        Dim result As Integer = MessageBox.Show(pesan, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-                If result = vbYes Then
-                    Contract_SAV()
-                    ContractDetail_SAV()
-                    Bank_SAVE()
+        '        If result = vbYes Then
+        '            Contract_SAV()
+        '            ContractDetail_SAV()
+        '            Bank_SAVE()
+        '            MessageBox.Show("Kontrak Berhasil Dibuat")
+        '            FlagGrid = False
+        '            form_Clear()
+        '            FillTable()
+        '        End If
+        '    Else
+        '        MessageBox.Show("Kontrak tidak berhasil dibuat")
+        '    End If
+        'Else
+        '    MessageBox.Show("Kontrak tidak berhasil dibuat")
+        'End If
+        If InputVerification() Then
+            Dim pesan As String = "Anda Akan Membuat Kontrak dengan Detail Berikut : "
+            pesan &= vbNewLine & "---------------------------------------------------------------------"
+            pesan &= vbNewLine & "Nomor Kontrak " & vbTab & vbTab & ": " & txtKontrak.Text
+            pesan &= vbNewLine & "Nama Pelanggan Kontrak " & vbTab & ": " & txtPemNama.Text
+            pesan &= vbNewLine & "Tanggal Kontrak " & vbTab & vbTab & ": " & dtKontrak.Text
+            pesan &= vbNewLine & vbNewLine & "Apakah Anda yakin ? "
+            Dim result As Integer = MessageBox.Show(pesan, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = vbYes Then
+                If CreateContract() = True Then
                     MessageBox.Show("Kontrak Berhasil Dibuat")
                     FlagGrid = False
                     form_Clear()
                     FillTable()
+                Else
+                    MessageBox.Show("Kontrak Tidak Berhasil Dibuat")
                 End If
-            Else
-                MessageBox.Show("Kontrak tidak berhasil dibuat")
+
             End If
         Else
-            MessageBox.Show("Kontrak tidak berhasil dibuat")
+            MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -367,5 +389,56 @@ Public Class BastMotorBaru
         RunSQL(StrSQL, 0)
     End Sub
 
+    Private Function CreateContract() As Boolean
+        Try
+            Dim pokok As Double = CDbl(getFieldValue("SELECT BaseDebt from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
+            'Dim BungaPengali As Double = CDbl(txtBungaPengali.Text)
+            Dim EffectiveInterestP As Double = CDbl(getFieldValue("SELECT EffectiveInterestP from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
+            Dim FlagInsUpd As String = "INS"
+            Dim FlagKontrak As String = "BAST_NMC"
+            Dim LoadAdmin As Double = CDbl(getFieldValue("SELECT LoanAdmin from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
+            Dim SubsidiDealer As Double = CDbl(getFieldValue("SELECT DealerSubs from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
+            Dim AdminMurni As Double = LoadAdmin - SubsidiDealer
+            Dim BiayaMarketing As Double = CDbl(getFieldValue("SELECT MarketingCost from Application Where ApplicationID='" & txtAplikasi.Text & "'"))
+            StrSQL = ""
+            StrSQL = "Sp_ContractIU '" & FlagInsUpd & "', "
+            StrSQL &= "'" & FlagKontrak & "',"
+            StrSQL &= "'" & txtAplikasi.Text & "',"
+            StrSQL &= "'" & txtKontrak.Text & "',"
+            StrSQL &= "'" & dtKontrak.Value & "',"
+            StrSQL &= "'" & dtBast.Value & "',"
+            StrSQL &= "'" & dtAngsuran.Value & "',"
+            StrSQL &= "'" & cmbCollector.SelectedValue.ToString() & "',"
+            StrSQL &= "'" & UserName & "',"
+            StrSQL &= "" & CInt(txtTenor.Text) & ","
+            StrSQL &= "" & pokok & ","
+            StrSQL &= "" & EffectiveInterestP & ","
+            StrSQL &= "" & AdminMurni & ","
+            StrSQL &= "" & BiayaMarketing & ""
+            RunSQL(StrSQL, 0)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+    Private Function InputVerification() As Boolean
+        StrSQL = ""
+        StrSQL = "SELECT ContractID From Contract WHERE ContractID = '" & txtKontrak.Text & "' "
+        RunSQL(StrSQL, 1)
+        If txtKontrak.Text = "" Or txtKontrak.Text.Length < 7 Then
+            errorMessage = "Nomor Kontrak Salah"
+            Return False
+        ElseIf dt.Rows.Count > 0 Then
+            errorMessage = "Nomor Kontrak " & txtKontrak.Text & " Sudah Terdaftar "
+            Return False
+        ElseIf txtAplikasi.Text = "" Then
+            errorMessage = "Tidak ada aplikasi yang diproses"
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 
 End Class

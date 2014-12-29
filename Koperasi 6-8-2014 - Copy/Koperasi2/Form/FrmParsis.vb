@@ -1,7 +1,8 @@
-﻿Public Class FrmParsis
+﻿Imports System.Xml
+Public Class FrmParsis
 
-    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
-        decimalOnly(TextBox1, e, TextBox1.Text)
+    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        decimalOnly(txtBiayaAdmin, e, txtBiayaAdmin.Text)
     End Sub
 
     Private Sub FrmParsis_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -13,15 +14,15 @@
         StrSQL = "SELECT * FROM SystemParameter"
         RunSQL(StrSQL, 1)
         If dt.Rows.Count > 0 Then
-            TextBox1.Text = ribuan(CStr(dt.Rows(0)("BiayaAdmin")))
+            txtBiayaAdmin.Text = ribuan(CStr(dt.Rows(0)("BiayaAdmin")))
         End If
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         LoadForm()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim result As Integer = MessageBox.Show("Anda yakin ingin mengubah parameter sistem ? ", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = vbYes Then
             If Parsis_SAVE() Then
@@ -30,13 +31,13 @@
                 MessageBox.Show("Parameter Sistem Gagal Diubah")
             End If
         End If
-        
+
     End Sub
 
     Private Function Parsis_SAVE() As Boolean
         Try
             StrSQL = ""
-            StrSQL = "UPDATE SystemParameter SET BiayaAdmin = " & CDbl(TextBox1.Text) & " "
+            StrSQL = "UPDATE SystemParameter SET BiayaAdmin = " & CDbl(txtBiayaAdmin.Text) & " "
             RunSQL(StrSQL, 0)
             Return True
         Catch ex As Exception
