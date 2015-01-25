@@ -6,6 +6,7 @@ Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.Utils.Menu
 Imports System.Threading
 
+
 Public Class PembayaranAngsuran
     Dim oldContractID As String = ""
     Dim contract As String
@@ -57,7 +58,9 @@ Public Class PembayaranAngsuran
                 FillNoKwitansi()
 
                 If txtObjek.Text = "KTA" And txtAngsuran.Text = "1" Then
-                    txtAdminKredit.Text = ribuan("100000")
+                    txtAdminKredit.Text = ribuan(ParsisAdminKTA)
+                ElseIf txtObjek.Text = "Elektronik" And txtAngsuran.Text = "1" Then
+                    txtAdminKredit.Text = ribuan(ParsisAdminElektronik)
                 Else
                     txtAdminKredit.Text = "0"
                 End If
@@ -689,6 +692,14 @@ Public Class PembayaranAngsuran
                 Else
                     Pembayaran()
                 End If
+            ElseIf txtAngsuran.Text = "1" And txtObjek.Text = "Elektronik" Then
+                If CDbl(txtBayar.Text) < (CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))) + CDbl(txtAdminKredit.Text)) Then
+                    MessageBox.Show("Nilai Pembayaran Tidak Boleh Kurang Dari Sisa Pokok + Admin Kredit !", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    txtBayar.Focus()
+                    txtBayar.SelectAll()
+                Else
+                    Pembayaran()
+                End If
             Else
                 If CDbl(txtBayar.Text) < CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal"))) Then
 
@@ -799,7 +810,15 @@ Public Class PembayaranAngsuran
             If ContractDetail_SAV() Then
                 Pendapatan_SAV()
                 MessageBox.Show("Pembayaran telah disimpan")
-                FillDataForm()
+                txtKontrak.Text = ""
+                txtKontrak.Text = oldContractID
+                txtKontrak.Text = ""
+                txtKontrak.Text = oldContractID
+
+                'FillDataForm()
+                ' GridControl1.RefreshDataSource()
+                'GridControl1.RefreshDataSource()
+                ' FillDataForm()
                 'txtKontrak.Clear()
                 'txtKontrak.Text = ""
                 'txtKontrak.Text = oldContractID
@@ -925,7 +944,7 @@ Public Class PembayaranAngsuran
         'End Try
         Try
             Dim index As Integer = CInt(txtAngsuran.Text)
-            Dim alasan As String = "Pembayaran Angsuran Ke " & index & " sebesar Rp. " & ribuan(CStr(txtBayar.Text)) & "."
+            Dim alasan As String = "Pembayaran Nomor Kontrak  " & txtKontrak.Text & " Angsuran Ke " & index & " sebesar Rp. " & ribuan(CStr(txtBayar.Text)) & "."
 
             StrSQL = ""
             StrSQL = "Sp_Pembayaran "
@@ -1001,6 +1020,14 @@ Public Class PembayaranAngsuran
                         lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(gPokok + CDbl(txtAdminKredit.Text)) & " (Pokok+Admin Kredit) "
                         btnBayar.Enabled = False
                     End If
+                ElseIf txtObjek.Text = "Elektronik" And txtAngsuran.Text = "1" Then
+                    If fBayar >= gPokok + CDbl(txtAdminKredit.Text) Then
+                        lblError.Text = ""
+                        btnBayar.Enabled = True
+                    Else
+                        lblError.Text = "Pembayaran tidak boleh kurang dari " & ribuan(gPokok + CDbl(txtAdminKredit.Text)) & " (Pokok+Admin Kredit) "
+                        btnBayar.Enabled = False
+                    End If
                 Else
                     If fBayar >= gPokok Then
                         lblError.Text = ""
@@ -1011,7 +1038,7 @@ Public Class PembayaranAngsuran
                     End If
                 End If
 
-               
+
 
 
             Catch ex As Exception
@@ -1037,27 +1064,50 @@ Public Class PembayaranAngsuran
 
     Private Sub Pendapatan_SAV()
         Try
-
+            Dim PendapatanFlag As String
+            Dim nominal2 As Double
             Dim pokok As Double = CDbl(GridView1.GetFocusedRowCellValue(GridView1.Columns("Amount Principal")))
             Dim bunga As Double = CDbl(txtBayar.Text) - CDbl(pokok)
 
-            StrSQL = ""
-            StrSQL = "Sp_BankIU "
-            StrSQL &= "'IN_MODAL', "
-            StrSQL &= "'" & txtKontrak.Text & "', "
-            StrSQL &= "'" & dtBayar.Value.Date & "', "
-            StrSQL &= "" & pokok & ", "
-            StrSQL &= "'" & UserName & "' "
-            RunSQL(StrSQL, 0)
+            If txtObjek.Text = "KTA" And txtAngsuran.Text = "1" Then
+                PendapatanFlag = "KTA_FIRST"
+                nominal2 = CDbl(txtAdminKredit.Text)
+            ElseIf txtObjek.Text = "Elektronik" And txtAngsuran.Text = "1" Then
+                PendapatanFlag = "ELE_FIRST"
+                nominal2 = CDbl(txtAdminKredit.Text)
+            Else
+                PendapatanFlag = "PAY_REG"
+                nominal2 = 0
+            End If
 
             StrSQL = ""
             StrSQL = "Sp_BankIU "
-            StrSQL &= "'IN_BUNGA', "
-            StrSQL &= "'" & txtKontrak.Text & "', "
-            StrSQL &= "'" & dtBayar.Value.Date & "', "
-            StrSQL &= "" & Bunga & ", "
-            StrSQL &= "'" & UserName & "' "
+            StrSQL &= "'" & PendapatanFlag & "',"
+            StrSQL &= "'" & txtKontrak.Text & "',"
+            StrSQL &= "'" & dtBayar.Value.Date & "',"
+            StrSQL &= "" & pokok & ","
+            StrSQL &= "'" & UserName & "',"
+            StrSQL &= "" & nominal2 & ",0"
             RunSQL(StrSQL, 0)
+
+
+            'StrSQL = ""
+            'StrSQL = "Sp_BankIU "
+            'StrSQL &= "'IN_MODAL', "
+            'StrSQL &= "'" & txtKontrak.Text & "', "
+            'StrSQL &= "'" & dtBayar.Value.Date & "', "
+            'StrSQL &= "" & pokok & ", "
+            'StrSQL &= "'" & UserName & "' "
+            'RunSQL(StrSQL, 0)
+
+            'StrSQL = ""
+            'StrSQL = "Sp_BankIU "
+            'StrSQL &= "'IN_BUNGA', "
+            'StrSQL &= "'" & txtKontrak.Text & "', "
+            'StrSQL &= "'" & dtBayar.Value.Date & "', "
+            'StrSQL &= "" & Bunga & ", "
+            'StrSQL &= "'" & UserName & "' "
+            'RunSQL(StrSQL, 0)
 
         Catch ex As Exception
 

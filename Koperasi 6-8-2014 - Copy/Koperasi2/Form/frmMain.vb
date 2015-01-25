@@ -193,8 +193,8 @@ Public Class frmMain
     End Sub
 
     Private Sub KwitansiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KwitansiToolStripMenuItem.Click
-        frmKwitansiOwner.Show()
-        frmKwitansiOwner.MdiParent = Me
+        'frmKwitansiOwner.Show()
+        'frmKwitansiOwner.MdiParent = Me
     End Sub
 
     Private Sub PelunasanNormalToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PelunasanNormalToolStripMenuItem.Click
@@ -364,5 +364,17 @@ Public Class frmMain
         frmRebate.Location = New Point(0, 0)
         frmRebate.MdiParent = Me
         frmRebate.Show()
+    End Sub
+
+    Private Sub CreateKwitansiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateKwitansiToolStripMenuItem.Click
+        frmMKwitansi.StartPosition = FormStartPosition.CenterParent
+        frmMKwitansi.MdiParent = Me
+        frmMKwitansi.Show()
+    End Sub
+
+    Private Sub ViewKwitansiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewKwitansiToolStripMenuItem.Click
+        frmTKwitansi.StartPosition = FormStartPosition.CenterParent
+        frmTKwitansi.MdiParent = Me
+        frmTKwitansi.Show()
     End Sub
 End Class

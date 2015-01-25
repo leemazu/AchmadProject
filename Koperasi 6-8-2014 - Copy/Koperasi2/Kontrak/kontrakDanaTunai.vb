@@ -6,6 +6,8 @@ Public Class kontrakDanaTunai
     Dim FlagCollateral As Boolean = False
     Dim FlagBpkb As Boolean = False
     Dim OldBpkb As String = ""
+    Dim oldBiayaAdmin As Double = 0
+    Dim oldBiayaMarketing As Double = 0
     Private Sub IsiSeluruhForm()
         Try
             If txtKontrakID.Text.Length > 7 Then
@@ -91,16 +93,17 @@ Public Class kontrakDanaTunai
                 Try
                     UpdateApplication()
                     UpdateMember()
-                    UpdateContract()
+                    ' UpdateContract()
 
                     If FlagBpkb = True Then
                         UpdateBpkb(OldBpkb)
                     End If
 
                     If FlagCollateral = True Then
-                        If UpdateCollateral() Then
-                            UbahAR()
-                        End If
+                        'If UpdateCollateral() Then
+                        '    UbahAR()
+                        'End If
+                        UpdateCollateral()
                     End If
 
                     MessageBox.Show("Data Berhasil Disimpan")
@@ -182,179 +185,169 @@ Public Class kontrakDanaTunai
 #Region "Form Event"
     Private Sub kontrakDanaTunai_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ClearForm()
-        gerakinCombo()
-        DisableComponent()
+
+        'DisableComponent()
+       
     End Sub
 
-    Private Sub gerakinCombo() 'sampe ketemu fix
-        cmbKtpKota.SelectedIndex = 1
-        cmbKtpKecamatan.SelectedIndex = 1
-        cmbTagihKota.SelectedIndex = 1
-        cmbTagihKecamatan.SelectedIndex = 1
-        cmbKantorKota.SelectedIndex = 1
-        cmbKantorKecamatan.SelectedIndex = 1
-        cmbDaruratKota.SelectedIndex = 1
-        cmbDaruratKecamatan.SelectedIndex = 1
-        cmbBaruKota.SelectedIndex = 1
-        cmbBaruKecamatan.SelectedIndex = 1
-        cmbDTBpkbKota.SelectedIndex = 1
-        cmbMBBpkbKota.SelectedIndex = 1
-        'cmbDTBpkbKecamatan.SelectedIndex = 1
-    End Sub
+    
 
     Private Sub ComboKotaSelectedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbKantorKota.SelectedIndexChanged, cmbTagihKota.SelectedIndexChanged, cmbDaruratKota.SelectedIndexChanged, cmbBaruKota.SelectedIndexChanged, cmbKtpKota.SelectedIndexChanged, cmbDTBpkbKota.SelectedIndexChanged, cmbMBBpkbKota.SelectedIndexChanged
-        Dim tblKec1 As New DataTable
-        Dim tblKec2 As New DataTable
-        Dim tblKec3 As New DataTable
-        Dim tblKec4 As New DataTable
-        Dim tblKec5 As New DataTable
-        Dim tblKec6 As New DataTable
-        Dim tblKec7 As New DataTable
-        'tblKec.Rows.Clear()
+        'Dim tblKec1 As New DataTable
+        'Dim tblKec2 As New DataTable
+        'Dim tblKec3 As New DataTable
+        'Dim tblKec4 As New DataTable
+        'Dim tblKec5 As New DataTable
+        'Dim tblKec6 As New DataTable
+        'Dim tblKec7 As New DataTable
 
-        Select Case sender.Name
+        ''tblKec.Rows.Clear()
 
-            Case "cmbKtpKota"
-                tblKec1.Rows.Clear()
-                With cmbKtpKecamatan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbKtpKota.Text + "' ORDER BY [SubDistrict] ASC"
-                    FillCombobox(StrSQL, cmbKtpKecamatan, 1, tblKec1)
-                End With
+        'Select Case sender.Name
 
-            Case "cmbTagihKota"
-                tblKec2.Rows.Clear()
-                With cmbTagihKecamatan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbTagihKota.Text + "' ORDER BY [SubDistrict] ASC"
-                    FillCombobox(StrSQL, cmbTagihKecamatan, 1, tblKec2)
-                End With
+        '    Case "cmbKtpKota"
+        '        tblKec1.Rows.Clear()
 
-            Case "cmbKantorKota"
-                tblKec3.Rows.Clear()
-                With cmbKantorKecamatan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbKantorKota.Text + "' ORDER BY [SubDistrict] ASC"
-                    FillCombobox(StrSQL, cmbKantorKecamatan, 1, tblKec3)
-                End With
 
-            Case "cmbDaruratKota"
-                tblKec4.Rows.Clear()
-                With cmbDaruratKecamatan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbDaruratKota.Text + "' ORDER BY [SubDistrict] ASC"
-                    FillCombobox(StrSQL, cmbDaruratKecamatan, 1, tblKec4)
-                End With
+        '        With cmbKtpKecamatan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" & cmbKtpKota.Text & "' ORDER BY [SubDistrict] ASC"
+        '            FillCombobox(StrSQL, cmbKtpKecamatan, 1, tblKec1)
+        '        End With
 
-            Case "cmbBaruKota"
-                tblKec5.Rows.Clear()
-                With cmbBaruKecamatan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbBaruKota.Text + "' ORDER BY [SubDistrict] ASC"
-                    FillCombobox(StrSQL, cmbBaruKecamatan, 1, tblKec5)
-                End With
+        '    Case "cmbTagihKota"
+        '        tblKec2.Rows.Clear()
+        '        With cmbTagihKecamatan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbTagihKota.Text + "' ORDER BY [SubDistrict] ASC"
+        '            FillCombobox(StrSQL, cmbTagihKecamatan, 1, tblKec2)
+        '        End With
 
-            Case "cmbDTBpkbKota"
-                tblKec6.Rows.Clear()
-                With cmbDTBpkbKecamatan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbDTBpkbKota.Text + "' ORDER BY [SubDistrict] ASC"
-                    FillCombobox(StrSQL, cmbDTBpkbKecamatan, 1, tblKec6)
-                End With
+        '    Case "cmbKantorKota"
+        '        tblKec3.Rows.Clear()
+        '        With cmbKantorKecamatan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbKantorKota.Text + "' ORDER BY [SubDistrict] ASC"
+        '            FillCombobox(StrSQL, cmbKantorKecamatan, 1, tblKec3)
+        '        End With
 
-            Case "cmbMBBpkbKota"
-                tblKec7.Rows.Clear()
-                With cmbMBBpkbKecamatan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbMBBpkbKota.Text + "' ORDER BY [SubDistrict] ASC"
-                    FillCombobox(StrSQL, cmbMBBpkbKecamatan, 1, tblKec7)
-                End With
+        '    Case "cmbDaruratKota"
+        '        tblKec4.Rows.Clear()
+        '        With cmbDaruratKecamatan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbDaruratKota.Text + "' ORDER BY [SubDistrict] ASC"
+        '            FillCombobox(StrSQL, cmbDaruratKecamatan, 1, tblKec4)
+        '        End With
 
-        End Select
+        '    Case "cmbBaruKota"
+        '        tblKec5.Rows.Clear()
+        '        With cmbBaruKecamatan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbBaruKota.Text + "' ORDER BY [SubDistrict] ASC"
+        '            FillCombobox(StrSQL, cmbBaruKecamatan, 1, tblKec5)
+        '        End With
+
+        '    Case "cmbDTBpkbKota"
+        '        tblKec6.Rows.Clear()
+        '        With cmbDTBpkbKecamatan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbDTBpkbKota.Text + "' ORDER BY [SubDistrict] ASC"
+        '            FillCombobox(StrSQL, cmbDTBpkbKecamatan, 1, tblKec6)
+        '        End With
+
+        '    Case "cmbMBBpkbKota"
+        '        tblKec7.Rows.Clear()
+        '        With cmbMBBpkbKecamatan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbMBBpkbKota.Text + "' ORDER BY [SubDistrict] ASC"
+        '            FillCombobox(StrSQL, cmbMBBpkbKecamatan, 1, tblKec7)
+        '        End With
+
+        'End Select
     End Sub
 
     Private Sub ComboKecamatanSelectedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbKantorKecamatan.SelectedIndexChanged, cmbTagihKecamatan.SelectedIndexChanged, cmbKtpKecamatan.SelectedIndexChanged, cmbDaruratKecamatan.SelectedIndexChanged, cmbBaruKecamatan.SelectedIndexChanged, cmbDTBpkbKecamatan.SelectedIndexChanged, cmbMBBpkbKecamatan.SelectedIndexChanged
-        Dim tblKel1 As New DataTable
-        Dim tblKel2 As New DataTable
-        Dim tblKel3 As New DataTable
-        Dim tblKel4 As New DataTable
-        Dim tblKel5 As New DataTable
-        Dim tblKel6 As New DataTable
-        Dim tblKel7 As New DataTable
-        'tblKec.Rows.Clear()
+        'Dim tblKel1 As New DataTable
+        'Dim tblKel2 As New DataTable
+        'Dim tblKel3 As New DataTable
+        'Dim tblKel4 As New DataTable
+        'Dim tblKel5 As New DataTable
+        'Dim tblKel6 As New DataTable
+        'Dim tblKel7 As New DataTable
+        ''tblKec.Rows.Clear()
 
-        Select Case sender.Name
+        'Select Case sender.Name
 
-            Case "cmbKtpKecamatan"
-                tblKel1.Rows.Clear()
-                With cmbKtpKelurahan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKtpKecamatan.Text + "' ORDER BY [Village] ASC"
-                    FillCombobox(StrSQL, cmbKtpKelurahan, 2, tblKel1)
-                End With
+        '    Case "cmbKtpKecamatan"
+        '        tblKel1.Rows.Clear()
+        '        With cmbKtpKelurahan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKtpKecamatan.Text + "' ORDER BY [Village] ASC"
+        '            FillCombobox(StrSQL, cmbKtpKelurahan, 2, tblKel1)
+        '        End With
 
-            Case "cmbTagihKecamatan"
-                tblKel2.Rows.Clear()
-                With cmbTagihKelurahan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbTagihKecamatan.Text + "' ORDER BY [Village] ASC"
-                    FillCombobox(StrSQL, cmbTagihKelurahan, 2, tblKel2)
-                End With
+        '    Case "cmbTagihKecamatan"
+        '        tblKel2.Rows.Clear()
+        '        With cmbTagihKelurahan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbTagihKecamatan.Text + "' ORDER BY [Village] ASC"
+        '            FillCombobox(StrSQL, cmbTagihKelurahan, 2, tblKel2)
+        '        End With
 
-            Case "cmbKantorKecamatan"
-                tblKel3.Rows.Clear()
-                With cmbKantorKelurahan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKantorKecamatan.Text + "' ORDER BY [Village] ASC"
-                    FillCombobox(StrSQL, cmbKantorKelurahan, 2, tblKel3)
-                End With
+        '    Case "cmbKantorKecamatan"
+        '        tblKel3.Rows.Clear()
+        '        With cmbKantorKelurahan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKantorKecamatan.Text + "' ORDER BY [Village] ASC"
+        '            FillCombobox(StrSQL, cmbKantorKelurahan, 2, tblKel3)
+        '        End With
 
-            Case "cmbDaruratKecamatan"
-                tblKel4.Rows.Clear()
-                With cmbDaruratKelurahan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbDaruratKecamatan.Text + "' ORDER BY [Village] ASC"
-                    FillCombobox(StrSQL, cmbDaruratKelurahan, 2, tblKel4)
-                End With
+        '    Case "cmbDaruratKecamatan"
+        '        tblKel4.Rows.Clear()
+        '        With cmbDaruratKelurahan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbDaruratKecamatan.Text + "' ORDER BY [Village] ASC"
+        '            FillCombobox(StrSQL, cmbDaruratKelurahan, 2, tblKel4)
+        '        End With
 
-            Case "cmbBaruKecamatan"
-                tblKel5.Rows.Clear()
-                With cmbBaruKelurahan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbBaruKecamatan.Text + "' ORDER BY [Village] ASC"
-                    FillCombobox(StrSQL, cmbBaruKelurahan, 2, tblKel5)
-                End With
+        '    Case "cmbBaruKecamatan"
+        '        tblKel5.Rows.Clear()
+        '        With cmbBaruKelurahan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbBaruKecamatan.Text + "' ORDER BY [Village] ASC"
+        '            FillCombobox(StrSQL, cmbBaruKelurahan, 2, tblKel5)
+        '        End With
 
-            Case "cmbDTBpkbKecamatan"
-                tblKel6.Rows.Clear()
-                With cmbDTBpkbKelurahan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbDTBpkbKecamatan.Text + "' ORDER BY [Village] ASC"
-                    FillCombobox(StrSQL, cmbDTBpkbKelurahan, 2, tblKel6)
-                End With
+        '    Case "cmbDTBpkbKecamatan"
+        '        tblKel6.Rows.Clear()
+        '        With cmbDTBpkbKelurahan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbDTBpkbKecamatan.Text + "' ORDER BY [Village] ASC"
+        '            FillCombobox(StrSQL, cmbDTBpkbKelurahan, 2, tblKel6)
+        '        End With
 
-            Case "cmbMBBpkbKecamatan"
-                tblKel7.Rows.Clear()
-                With cmbMBBpkbKelurahan
-                    .DataSource = Nothing
-                    StrSQL = ""
-                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbMBBpkbKecamatan.Text + "' ORDER BY [Village] ASC"
-                    FillCombobox(StrSQL, cmbMBBpkbKelurahan, 2, tblKel7)
-                End With
-        End Select
+        '    Case "cmbMBBpkbKecamatan"
+        '        tblKel7.Rows.Clear()
+        '        With cmbMBBpkbKelurahan
+        '            .DataSource = Nothing
+        '            StrSQL = ""
+        '            StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbMBBpkbKecamatan.Text + "' ORDER BY [Village] ASC"
+        '            FillCombobox(StrSQL, cmbMBBpkbKelurahan, 2, tblKel7)
+        '        End With
+        'End Select
     End Sub
 
 #End Region
@@ -496,39 +489,37 @@ Public Class kontrakDanaTunai
 #End Region
 #Region "Form Utility"
     Private Sub ClearForm()
-        TrueContractID = ""
-        btnSave.Enabled = False
-        btnUpdate.Enabled = False
-        btnReset.Enabled = False
-        Try
-            ComboBoxFillData()
-        Catch ex As Exception
 
-        End Try
-        GridControl1.DataSource = Nothing
-        setTanggal(dtpAplikasiTanggal)
-        setTanggal(dtpAnggotaTglLahir)
-        setTanggal(dtpDTAngsuran1)
-        setTanggal(dtpDTBast)
-        setTanggal(dtpDTKontrak)
-        setTanggal(dtpKTAAngsuran)
-        setTanggal(dtpKTABast)
-        setTanggal(dtpKTAKontrak)
-        setTanggal(dtpDTBpkbKeluar)
-        setTanggal(dtpDTBpkbMasuk)
-        setTanggal(dtpELAngsuran)
-        setTanggal(dtpELBast)
-        setTanggal(dtpELKontrak)
-        setTanggal(dtpMBAngsuran)
-        setTanggal(dtpMBBast)
-        setTanggal(dtpMBBpkbKeluar)
-        setTanggal(dtpMbBpkbMasuk)
-        setTanggal(dtpMBKontrak)
-        TabControl1.TabPages.Remove(TpDanaTunai)
-        TabControl1.TabPages.Remove(TpMotorBaru)
-        TabControl1.TabPages.Remove(TpElektronik)
-        TabControl1.TabPages.Remove(TpKTA)
-        txtKontrakStatus.Enabled = False
+        ComboBoxFillData()
+        'TrueContractID = ""
+        'btnSave.Enabled = False
+        'btnUpdate.Enabled = False
+        'btnReset.Enabled = False
+
+        'GridControl1.DataSource = Nothing
+        'setTanggal(dtpAplikasiTanggal)
+        'setTanggal(dtpAnggotaTglLahir)
+        'setTanggal(dtpDTAngsuran1)
+        'setTanggal(dtpDTBast)
+        'setTanggal(dtpDTKontrak)
+        'setTanggal(dtpKTAAngsuran)
+        'setTanggal(dtpKTABast)
+        'setTanggal(dtpKTAKontrak)
+        'setTanggal(dtpDTBpkbKeluar)
+        'setTanggal(dtpDTBpkbMasuk)
+        'setTanggal(dtpELAngsuran)
+        'setTanggal(dtpELBast)
+        'setTanggal(dtpELKontrak)
+        'setTanggal(dtpMBAngsuran)
+        'setTanggal(dtpMBBast)
+        'setTanggal(dtpMBBpkbKeluar)
+        'setTanggal(dtpMbBpkbMasuk)
+        'setTanggal(dtpMBKontrak)
+        'TabControl1.TabPages.Remove(TpDanaTunai)
+        'TabControl1.TabPages.Remove(TpMotorBaru)
+        'TabControl1.TabPages.Remove(TpElektronik)
+        'TabControl1.TabPages.Remove(TpKTA)
+        'txtKontrakStatus.Enabled = False
 
         'DisableComponent()
         'ClearComponent()
@@ -562,8 +553,7 @@ Public Class kontrakDanaTunai
         Dim dtDTBpkbKelurahan As New DataTable
         Dim dtMBBpkbKota As New DataTable
         Dim dtMbBpkbStatus As New DataTable
-
-
+        Dim dtMbBpkbKecamatan As New DataTable
         FillCombobox("SpEmployee_CBO 'CL'", cmbKolektor, 2, dtKolektor)
         FillCombobox("Sp_Reference_CBO 'POS'", cmbAplikasiPos, 2, dtPos)
         FillCombobox("SpEmployee_CBO 'CA'", cmbAplikasiCa, 2, dtCA)
@@ -571,44 +561,14 @@ Public Class kontrakDanaTunai
         FillCombobox("SpEmployee_CBO 'SM'", cmbAplikasiSm, 2, dtSM)
         FillCombobox("Sp_Reference_CBO 'GEN'", cmbAnggotaSex, 2, dtSex)
         FillCombobox("Sp_Reference_CBO 'TWC'", cmbAnggotaPekerjaan, 2, dtWorkID)
-
-        FillCombobox("select*from v_kota ORDer BY city asc", cmbKtpKota, 1, dtKtpKota)
-        cmbKtpKota.SelectedItem = 1
-
-        ' cmbKtpKota.SelectedItem = 0
-
-        'FillCombobox("select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbKtpKota.Text + "' ORDER BY [SubDistrict] ASC", cmbKtpKecamatan, 1, dtKtpKecamatan)
-        'FillCombobox("select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKtpKecamatan.Text + "' ORDER BY [Village] ASC", cmbKtpKelurahan, 2, dtKtpKelurahan)
-
-        FillCombobox("select*from v_kota ORDer BY city asc", cmbTagihKota, 1, dtTagihKota)
-        ' FillCombobox("select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbTagihKota.Text + "' ORDER BY [SubDistrict] ASC", cmbTagihKecamatan, 1, dtTagihKecamatan)
-        ' FillCombobox("select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbTagihKecamatan.Text + "' ORDER BY [Village] ASC", cmbTagihKelurahan, 2, dtTagihKelurahan)
-        cmbTagihKota.SelectedItem = 1
-        ' cmbTagihKota.SelectedItem = 0
-        FillCombobox("select*from v_kota ORDer BY city asc", cmbKantorKota, 1, dtKantorKota)
-        FillCombobox("select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" & cmbKantorKota.Text & "' ORDER BY [SubDistrict] ASC", cmbKantorKecamatan, 1, dtKantorKecamatan)
-        FillCombobox("select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" & cmbKantorKecamatan.Text & "' ORDER BY [Village] ASC", cmbKantorKelurahan, 2, dtKantorKelurahan)
-        cmbKantorKota.SelectedItem = 1
-        ' cmbKantorKota.SelectedItem = 0
-        FillCombobox("select*from v_kota ORDer BY city asc", cmbDaruratKota, 1, dtDaruratKota)
-        ' FillCombobox("select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbDaruratKota.Text + "' ORDER BY [SubDistrict] ASC", cmbDaruratKecamatan, 1, dtDaruratKecamatan)
-        ' FillCombobox("select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbDaruratKecamatan.Text + "' ORDER BY [Village] ASC", cmbDaruratKelurahan, 2, dtDaruratKelurahan)
-        cmbDaruratKota.SelectedItem = 1
-        ' cmbDaruratKota.SelectedItem = 0
-        FillCombobox("select*from v_kota ORDer BY city asc", cmbBaruKota, 1, dtBaruKota)
-        ' FillCombobox("select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbBaruKota.Text + "' ORDER BY [SubDistrict] ASC", cmbBaruKecamatan, 1, dtBaruKecamatan)
-        ' FillCombobox("select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbBaruKecamatan.Text + "' ORDER BY [Village] ASC", cmbBaruKelurahan, 2, dtBaruKelurahan)
-        cmbBaruKota.SelectedItem = 1
-        FillCombobox("select*from v_kota ORDer BY city asc", cmbDTBpkbKota, 1, dtDTBpkbKota)
-        cmbDTBpkbKota.SelectedItem = 1
-        FillCombobox("select*from v_kota ORDer BY city asc", cmbMBBpkbKota, 1, dtMBBpkbKota)
-        cmbMBBpkbKota.SelectedItem = 1
-        FillCombobox("SELECT DISTINCT SUBDISTRICT FROM __ADDRLOCATION WHERE CITY='" & cmbDTBpkbKota.Text & "' ", cmbDTBpkbKecamatan, 1, dtDTBpkbKecamatan)
-
-        FillCombobox("SELECT DISTINCT ADDRLOCATIONID,VILLAGE FROM __ADDRLOCATION WHERE VILLAGE ='" & cmbDTBpkbKecamatan.Text & "'", cmbDTBpkbKelurahan, 2, dtDTBpkbKelurahan)
-        'cmbBaruKota.SelectedItem = 0
         FillCombobox("Sp_Reference_CBO 'BST'", cmbDTBpkbStatus, 2, dtDTStatusBpkb)
         FillCombobox("Sp_Reference_CBO 'BST'", cmbMBBpkbStatus, 2, dtMbBpkbStatus)
+
+        FillCombobox("select*from v_kota ORDer BY city asc", cmbKtpKota, 1, dtKtpKota)
+        cmbKtpKota.Text = "Bekasi"
+        cmbKtpKecamatan.Text = "-"
+
+
     End Sub
     Private Sub DisableComponent()
         cmbKolektor.Enabled = False
@@ -893,6 +853,8 @@ Public Class kontrakDanaTunai
         txtBaruTelp2.Clear()
         txtDaruratNama.Clear()
         lblCollateralWarning.Text = ""
+        oldBiayaAdmin = 0
+        oldBiayaMarketing = 0
 
 
     End Sub
@@ -1339,6 +1301,7 @@ Public Class kontrakDanaTunai
         If dt.Rows.Count > 0 Then
             Select Case txtAplikasiTipe.Text
                 Case "Dana Tunai"
+                    cmbMBBpkbKota.Text = "Bekasi"
                     DisableDTComponent()
                     txtDTKendaraan.Text = dt.Rows(0)("Merk").ToString()
                     txtDTTipe.Text = dt.Rows(0)("Tipe").ToString()
@@ -1356,9 +1319,11 @@ Public Class kontrakDanaTunai
                     txtDTPremiAdmin.Text = ribuan(dt.Rows(0)("Premi+Admin").ToString())
                     txtDTTingkatBunga.Text = CDbl(dt.Rows(0)("TingkatBungaEfektif%").ToString())
                     txtDTAdminKredit.Text = ribuan(dt.Rows(0)("AdminKredit").ToString())
+
                     dtpDTAngsuran1.Value = getFieldValue("SELECT TOP 1 FirstInstallment FROM CONTRACT WHERE ContractID='" & txtKontrakID.Text & "' ")
                     dtpDTBast.Value = getFieldValue("SELECT TOP 1 BASTDATE FROM CONTRACT WHERE ContractID='" & txtKontrakID.Text & "' ")
                     dtpDTKontrak.Value = getFieldValue("SELECT TOP 1 CONTRACTDATE FROM CONTRACT WHERE ContractID='" & txtKontrakID.Text & "' ")
+                    oldBiayaAdmin = CDbl(getFieldValue("SELECT LoanAdmin from Application Where ApplicationID='" & NomorAplikasi & "'"))
                     KalkulasiDanaTunai()
                     FlagBpkb = True
                     FillDataBpkb(txtDTBpkbNo.Text)
@@ -1390,6 +1355,7 @@ Public Class kontrakDanaTunai
                     KalkulasiElektronik()
 
                 Case "Motor Baru"
+                    cmbMBBpkbKota.Text = "Bekasi"
                     ClearMBComponent()
                     DisableMBComponent()
                     txtMBKendaraan.Text = dt.Rows(0)("Merk").ToString()
@@ -1414,6 +1380,8 @@ Public Class kontrakDanaTunai
                     txtMBDownPayment.Text = ribuan(dt.Rows(0)("UangMuka").ToString())
                     txtMBSubsidiDealer.Text = ribuan(dt.Rows(0)("SubsidiDealer").ToString())
                     txtAplikasiDokumen.Text = dt.Rows(0)("Dokumen").ToString()
+                    oldBiayaAdmin = CDbl(getFieldValue("SELECT LoanAdmin from Application Where ApplicationID='" & NomorAplikasi & "'"))
+                    oldBiayaMarketing = CDbl(getFieldValue("SELECT MarketingCost from Application Where ApplicationID='" & NomorAplikasi & "'"))
                     KalkulasiMotorBaru()
                     FlagBpkb = True
                     FillDataBpkb(txtMBBpkbNo.Text)
@@ -1557,40 +1525,84 @@ Public Class kontrakDanaTunai
             Dim Flag As String = "UPD_CTR"
             Dim Tanggal As Date = Now
             Dim Nominal As Double = 0
+            Dim nominal2 As Double = 0
+            Dim nominal3 As Double = 0
             Dim Userid As String = UserName
 
             Select Case txtAplikasiTipe.Text
 
                 Case "KTA"
                     KalkulasiKTA()
-                    Tanggal = dtpKTAKontrak.Value.Date
-                    Nominal = CDbl(txtKTAPokok.Text)
+                    'Tanggal = dtpKTAKontrak.Value.Date
+                    'Nominal = CDbl(txtKTAPokok.Text)
+                    CreateContractKTA()
 
                 Case "Elektronik"
                     KalkulasiElektronik()
-                    Tanggal = dtpELKontrak.Value.Date
-                    Nominal = CDbl(txtELPokok.Text)
+                    ' Tanggal = dtpELKontrak.Value.Date
+                    'Nominal = CDbl(txtELPokok.Text)
+                    CreateContractElektronik()
 
                 Case "Dana Tunai"
                     KalkulasiDanaTunai()
-                    Tanggal = dtpDTKontrak.Value.Date
-                    Nominal = CDbl(txtDTPokok.Text)
-
+                    'Tanggal = dtpDTKontrak.Value.Date
+                    'Nominal = CDbl(txtDTPokok.Text)
+                    'nominal2 = oldBiayaAdmin
+                    'StrSQL = ""
+                    'StrSQL = "INSERT INTO BANK_KAS VALUES ("
+                    'StrSQL &= "'" & Tanggal & "',"
+                    'StrSQL &= "" & nominal2 & ","
+                    'StrSQL &= "'K',"
+                    'StrSQL &= "'" & Now & "',"
+                    'StrSQL &= "'" & ContractID & "',"
+                    'StrSQL &= "'EDIT KONTRAK NILAI BIAYA ADMIN',"
+                    'StrSQL &= "'TRB009')"
+                    'RunSQL(StrSQL, 0)
+                    CreateContractDanaTunai()
                 Case "Motor Baru"
                     KalkulasiMotorBaru()
-                    Tanggal = dtpMBKontrak.Value.Date
-                    Nominal = CDbl(txtMBPokok.Text)
+                    'Tanggal = dtpMBKontrak.Value.Date
+                    'Nominal = CDbl(txtMBPokok.Text)
+                    'nominal2 = oldBiayaAdmin
+                    'nominal3 = oldBiayaMarketing
+                    ''ini hanya sementara , cuma biar jalan (fungsi membalikkan nilai biaya)
+                    'StrSQL = ""
+                    'StrSQL = "INSERT INTO BANK_KAS VALUES ("
+                    'StrSQL &= "'" & Tanggal & "',"
+                    'StrSQL &= "" & nominal2 & ","
+                    'StrSQL &= "'K',"
+                    'StrSQL &= "'" & Now & "',"
+                    'StrSQL &= "'" & ContractID & "',"
+                    'StrSQL &= "'EDIT KONTRAK NILAI BIAYA ADMIN',"
+                    'StrSQL &= "'TRB009')"
+                    'RunSQL(StrSQL, 0)
+
+                    'If nominal3 > 0 Then
+                    '    StrSQL = ""
+                    '    StrSQL = "INSERT INTO BANK_KAS VALUES ("
+                    '    StrSQL &= "'" & Tanggal & "',"
+                    '    StrSQL &= "" & nominal3 & ","
+                    '    StrSQL &= "'K',"
+                    '    StrSQL &= "'" & Now & "',"
+                    '    StrSQL &= "'" & ContractID & "',"
+                    '    StrSQL &= "'EDIT KONTRAK NILAI BIAYA MARKETING',"
+                    '    StrSQL &= "'TRB009',"
+                    '    RunSQL(StrSQL, 0)
+                    'End If
+
+                    CreateContractMotorBaru()
+
 
             End Select
 
-            StrSQL = ""
-            StrSQL = "Sp_BankIU "
-            StrSQL &= "'" & Flag & "',"
-            StrSQL &= "'" & ContractID & "',"
-            StrSQL &= "'" & Tanggal & "',"
-            StrSQL &= "" & Nominal & ","
-            StrSQL &= "'" & Userid & "'"
-            RunSQL(StrSQL, 0)
+            'StrSQL = ""
+            'StrSQL = "Sp_BankIU "
+            'StrSQL &= "'" & Flag & "',"
+            'StrSQL &= "'" & ContractID & "',"
+            'StrSQL &= "'" & Tanggal & "',"
+            'StrSQL &= "" & Nominal & ","
+            'StrSQL &= "'" & Userid & "',0,0"
+            'RunSQL(StrSQL, 0)
 
             Return True
         Catch ex As Exception
@@ -2420,4 +2432,313 @@ Public Class kontrakDanaTunai
 
 #End Region
 
+    Private Sub btnMBKalkulasi_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMBKalkulasi.Click
+        KalkulasiMotorBaru()
+    End Sub
+
+    Private Sub DeleteHistory()
+
+
+        StrSQL = ""
+        StrSQL = "DELETE FROM Contract WHERE ContractID='" & txtKontrakID.Text & "' "
+        RunSQL(StrSQL, 0)
+
+        StrSQL = ""
+        StrSQL = "DELETE FROM ContractDetail Where ContractID='" & txtKontrakID.Text & "' "
+        RunSQL(StrSQL, 0)
+
+        StrSQL = ""
+        StrSQL = "DELETE FROM Bank_Kas Where NoTransaksi='" & txtKontrakID.Text & "' "
+        RunSQL(StrSQL, 0)
+
+        StrSQL = ""
+        StrSQL = "DELETE FROM Bank_Angsuran Where NoTransaksi='" & txtKontrakID.Text & "' "
+        RunSQL(StrSQL, 0)
+
+        StrSQL = ""
+        StrSQL = "DELETE FROM Bank_Modal Where NoTransaksi='" & txtKontrakID.Text & "' "
+        RunSQL(StrSQL, 0)
+    End Sub
+
+    Private Function CreateContractKTA() As Boolean
+        Try
+
+            'Delete kontrak dan bank
+
+            DeleteHistory()
+
+            Dim pokok As Double = CDbl(getFieldValue("SELECT BaseDebt from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            'Dim BungaPengali As Double = CDbl(txtBungaPengali.Text)
+            Dim EffectiveInterestP As Double = CDbl(getFieldValue("SELECT EffectiveInterestP from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            Dim FlagInsUpd As String = "INS"
+            Dim FlagKontrak As String = "BAST_KTA"
+            StrSQL = ""
+            StrSQL = "Sp_ContractIU '" & FlagInsUpd & "', "
+            StrSQL &= "'" & FlagKontrak & "',"
+            StrSQL &= "'" & txtAplikasiID.Text & "',"
+            StrSQL &= "'" & txtKontrakID.Text & "',"
+            StrSQL &= "'" & dtpKTAKontrak.Value & "',"
+            StrSQL &= "'" & dtpKTABast.Value & "',"
+            StrSQL &= "'" & dtpKTAAngsuran.Value & "',"
+            StrSQL &= "'" & cmbKolektor.SelectedValue & "',"
+            StrSQL &= "'" & UserName & "',"
+            StrSQL &= "" & CInt(txtKTATenor.Text) & ","
+            StrSQL &= "" & pokok & ","
+            StrSQL &= "" & EffectiveInterestP & ",0,0"
+            RunSQL(StrSQL, 0)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+    Private Function CreateContractElektronik() As Boolean
+        Try
+            DeleteHistory()
+            Dim pokok As Double = CDbl(getFieldValue("SELECT BaseDebt from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            'Dim BungaPengali As Double = CDbl(txtBungaPengali.Text)
+            Dim EffectiveInterestP As Double = CDbl(getFieldValue("SELECT EffectiveInterestP from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            Dim FlagInsUpd As String = "INS"
+            Dim FlagKontrak As String = "BAST_ELE"
+            StrSQL = ""
+            StrSQL = "Sp_ContractIU '" & FlagInsUpd & "', "
+            StrSQL &= "'" & FlagKontrak & "',"
+            StrSQL &= "'" & txtAplikasiID.Text & "',"
+            StrSQL &= "'" & txtKontrakID.Text & "',"
+            StrSQL &= "'" & dtpELKontrak.Value & "',"
+            StrSQL &= "'" & dtpELBast.Value & "',"
+            StrSQL &= "'" & dtpELAngsuran.Value & "',"
+            StrSQL &= "'" & cmbKolektor.SelectedValue & "',"
+            StrSQL &= "'" & UserName & "',"
+            StrSQL &= "" & CInt(txtELTenor.Text) & ","
+            StrSQL &= "" & pokok & ","
+            StrSQL &= "" & EffectiveInterestP & ",0,0"
+            RunSQL(StrSQL, 0)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Private Function CreateContractDanaTunai() As Boolean
+        Try
+            DeleteHistory()
+            Dim pokok As Double = CDbl(getFieldValue("SELECT BaseDebt from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            'Dim BungaPengali As Double = CDbl(txtBungaPengali.Text)
+            Dim EffectiveInterestP As Double = CDbl(getFieldValue("SELECT EffectiveInterestP from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            Dim AdminMurni As Double = CDbl(getFieldValue("SELECT LoanAdmin from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            Dim FlagInsUpd As String = "INS"
+            Dim FlagKontrak As String = "BAST_DT"
+            StrSQL = ""
+            StrSQL = "Sp_ContractIU '" & FlagInsUpd & "', "
+            StrSQL &= "'" & FlagKontrak & "',"
+            StrSQL &= "'" & txtAplikasiID.Text & "',"
+            StrSQL &= "'" & txtKontrakID.Text & "',"
+            StrSQL &= "'" & dtpDTKontrak.Value & "',"
+            StrSQL &= "'" & dtpDTBast.Value & "',"
+            StrSQL &= "'" & dtpDTAngsuran1.Value & "',"
+            StrSQL &= "'" & cmbKolektor.SelectedValue.ToString() & "',"
+            StrSQL &= "'" & UserName & "',"
+            StrSQL &= "" & CInt(txtDTTenor.Text) & ","
+            StrSQL &= "" & pokok & ","
+            StrSQL &= "" & EffectiveInterestP & ","
+            StrSQL &= "" & AdminMurni & ",0"
+            RunSQL(StrSQL, 0)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Private Function CreateContractMotorBaru() As Boolean
+        Try
+            Dim pokok As Double = CDbl(getFieldValue("SELECT BaseDebt from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            'Dim BungaPengali As Double = CDbl(txtBungaPengali.Text)
+            Dim EffectiveInterestP As Double = CDbl(getFieldValue("SELECT EffectiveInterestP from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            Dim FlagInsUpd As String = "INS"
+            Dim FlagKontrak As String = "BAST_NMC"
+            Dim LoadAdmin As Double = CDbl(getFieldValue("SELECT LoanAdmin from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            Dim SubsidiDealer As Double = CDbl(getFieldValue("SELECT DealerSubs from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            Dim AdminMurni As Double = LoadAdmin - SubsidiDealer
+            Dim BiayaMarketing As Double = CDbl(getFieldValue("SELECT MarketingCost from Application Where ApplicationID='" & txtAplikasiID.Text & "'"))
+            StrSQL = ""
+            StrSQL = "Sp_ContractIU '" & FlagInsUpd & "', "
+            StrSQL &= "'" & FlagKontrak & "',"
+            StrSQL &= "'" & txtAplikasiID.Text & "',"
+            StrSQL &= "'" & txtKontrakID.Text & "',"
+            StrSQL &= "'" & dtpMBKontrak.Value & "',"
+            StrSQL &= "'" & dtpMBBast.Value & "',"
+            StrSQL &= "'" & dtpMBAngsuran.Value & "',"
+            StrSQL &= "'" & cmbKolektor.SelectedValue.ToString() & "',"
+            StrSQL &= "'" & UserName & "',"
+            StrSQL &= "" & CInt(txtMBTenor.Text) & ","
+            StrSQL &= "" & pokok & ","
+            StrSQL &= "" & EffectiveInterestP & ","
+            StrSQL &= "" & AdminMurni & ","
+            StrSQL &= "" & BiayaMarketing & ""
+            RunSQL(StrSQL, 0)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Private Sub cmbKtpKota_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbKtpKota.TextChanged
+        Dim tblKec1 As New DataTable
+        Dim tblKec2 As New DataTable
+        Dim tblKec3 As New DataTable
+        Dim tblKec4 As New DataTable
+        Dim tblKec5 As New DataTable
+        Dim tblKec6 As New DataTable
+        Dim tblKec7 As New DataTable
+
+        'tblKec.Rows.Clear()
+
+        Select Case sender.Name
+
+            Case "cmbKtpKota"
+                tblKec1.Rows.Clear()
+
+
+                With cmbKtpKecamatan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" & cmbKtpKota.Text & "' ORDER BY [SubDistrict] ASC"
+                    FillCombobox(StrSQL, cmbKtpKecamatan, 1, tblKec1)
+                End With
+
+            Case "cmbTagihKota"
+                tblKec2.Rows.Clear()
+                With cmbTagihKecamatan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbTagihKota.Text + "' ORDER BY [SubDistrict] ASC"
+                    FillCombobox(StrSQL, cmbTagihKecamatan, 1, tblKec2)
+                End With
+
+            Case "cmbKantorKota"
+                tblKec3.Rows.Clear()
+                With cmbKantorKecamatan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbKantorKota.Text + "' ORDER BY [SubDistrict] ASC"
+                    FillCombobox(StrSQL, cmbKantorKecamatan, 1, tblKec3)
+                End With
+
+            Case "cmbDaruratKota"
+                tblKec4.Rows.Clear()
+                With cmbDaruratKecamatan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbDaruratKota.Text + "' ORDER BY [SubDistrict] ASC"
+                    FillCombobox(StrSQL, cmbDaruratKecamatan, 1, tblKec4)
+                End With
+
+            Case "cmbBaruKota"
+                tblKec5.Rows.Clear()
+                With cmbBaruKecamatan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbBaruKota.Text + "' ORDER BY [SubDistrict] ASC"
+                    FillCombobox(StrSQL, cmbBaruKecamatan, 1, tblKec5)
+                End With
+
+            Case "cmbDTBpkbKota"
+                tblKec6.Rows.Clear()
+                With cmbDTBpkbKecamatan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbDTBpkbKota.Text + "' ORDER BY [SubDistrict] ASC"
+                    FillCombobox(StrSQL, cmbDTBpkbKecamatan, 1, tblKec6)
+                End With
+
+            Case "cmbMBBpkbKota"
+                tblKec7.Rows.Clear()
+                With cmbMBBpkbKecamatan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct [SubDistrict] from [__AddrLocation] WHERE CITY ='" + cmbMBBpkbKota.Text + "' ORDER BY [SubDistrict] ASC"
+                    FillCombobox(StrSQL, cmbMBBpkbKecamatan, 1, tblKec7)
+                End With
+
+        End Select
+    End Sub
+
+    Private Sub cmbKtpKecamatan_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbKtpKecamatan.TextChanged
+        Dim tblKel1 As New DataTable
+        Dim tblKel2 As New DataTable
+        Dim tblKel3 As New DataTable
+        Dim tblKel4 As New DataTable
+        Dim tblKel5 As New DataTable
+        Dim tblKel6 As New DataTable
+        Dim tblKel7 As New DataTable
+        'tblKec.Rows.Clear()
+
+        Select Case sender.Name
+
+            Case "cmbKtpKecamatan"
+                tblKel1.Rows.Clear()
+                With cmbKtpKelurahan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKtpKecamatan.Text + "' ORDER BY [Village] ASC"
+                    FillCombobox(StrSQL, cmbKtpKelurahan, 2, tblKel1)
+                End With
+
+            Case "cmbTagihKecamatan"
+                tblKel2.Rows.Clear()
+                With cmbTagihKelurahan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbTagihKecamatan.Text + "' ORDER BY [Village] ASC"
+                    FillCombobox(StrSQL, cmbTagihKelurahan, 2, tblKel2)
+                End With
+
+            Case "cmbKantorKecamatan"
+                tblKel3.Rows.Clear()
+                With cmbKantorKelurahan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbKantorKecamatan.Text + "' ORDER BY [Village] ASC"
+                    FillCombobox(StrSQL, cmbKantorKelurahan, 2, tblKel3)
+                End With
+
+            Case "cmbDaruratKecamatan"
+                tblKel4.Rows.Clear()
+                With cmbDaruratKelurahan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbDaruratKecamatan.Text + "' ORDER BY [Village] ASC"
+                    FillCombobox(StrSQL, cmbDaruratKelurahan, 2, tblKel4)
+                End With
+
+            Case "cmbBaruKecamatan"
+                tblKel5.Rows.Clear()
+                With cmbBaruKelurahan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbBaruKecamatan.Text + "' ORDER BY [Village] ASC"
+                    FillCombobox(StrSQL, cmbBaruKelurahan, 2, tblKel5)
+                End With
+
+            Case "cmbDTBpkbKecamatan"
+                tblKel6.Rows.Clear()
+                With cmbDTBpkbKelurahan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbDTBpkbKecamatan.Text + "' ORDER BY [Village] ASC"
+                    FillCombobox(StrSQL, cmbDTBpkbKelurahan, 2, tblKel6)
+                End With
+
+            Case "cmbMBBpkbKecamatan"
+                tblKel7.Rows.Clear()
+                With cmbMBBpkbKelurahan
+                    .DataSource = Nothing
+                    StrSQL = ""
+                    StrSQL = "select distinct AddrLocationID,[Village] from [__AddrLocation] WHERE SubDistrict ='" + cmbMBBpkbKecamatan.Text + "' ORDER BY [Village] ASC"
+                    FillCombobox(StrSQL, cmbMBBpkbKelurahan, 2, tblKel7)
+                End With
+        End Select
+    End Sub
 End Class

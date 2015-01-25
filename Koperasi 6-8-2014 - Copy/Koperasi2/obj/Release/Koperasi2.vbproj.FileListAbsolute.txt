@@ -202,9 +202,9 @@ C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\PO.vb
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBarang.vb
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBpkb.vb
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaUang.vb
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBarang.rpt
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaBpkb.rpt
-C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaUang.vb
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Report\TandaTerimaUang.rpt
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.exe
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\bin\Release\Koperasi2.pdb
@@ -222,17 +222,21 @@ C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastKTA.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.BastMotorBaru.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.EntryBPKB.resources
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmRebate.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.CtrlDanaTunai.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmAnggota.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmKaryawan.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmMain.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.FrmParsis.resources
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmParsys.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.Buyback.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.kontrakMotorBaru.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPenambahanModal.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPencairanCash.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmPengembalianModal.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.PembayaranAngsuran.resources
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmMKwitansi.resources
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTKwitansi.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabApp.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabKaryawan.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmTabMem.resources
@@ -261,4 +265,3 @@ C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.exe
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.xml
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.pdb
-C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Release\Koperasi2.frmRebate.resources

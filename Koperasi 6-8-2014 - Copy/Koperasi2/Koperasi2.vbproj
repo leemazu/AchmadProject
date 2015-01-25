@@ -246,6 +246,18 @@
     <Compile Include="Pembayaran&amp;Kwitansi\Copy of PembayaranAngsuran.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\frmMKwitansi.Designer.vb">
+      <DependentUpon>frmMKwitansi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\frmMKwitansi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\frmTKwitansi.Designer.vb">
+      <DependentUpon>frmTKwitansi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembayaran&amp;Kwitansi\frmTKwitansi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReportModule.vb" />
     <Compile Include="Report\POView.Designer.vb">
       <DependentUpon>POView.vb</DependentUpon>
@@ -510,6 +522,12 @@
     <EmbeddedResource Include="Pembayaran&amp;Kwitansi\Copy of PembayaranAngsuran.resx">
       <DependentUpon>Copy of PembayaranAngsuran.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\frmMKwitansi.resx">
+      <DependentUpon>frmMKwitansi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran&amp;Kwitansi\frmTKwitansi.resx">
+      <DependentUpon>frmTKwitansi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tab\frmTabApp.resx">
       <DependentUpon>frmTabApp.vb</DependentUpon>

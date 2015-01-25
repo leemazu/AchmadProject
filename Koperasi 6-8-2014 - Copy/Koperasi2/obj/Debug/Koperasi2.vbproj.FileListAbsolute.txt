@@ -796,3 +796,5 @@ C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Debug\Koperasi2.exe.licenses
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Debug\Koperasi2.frmRebate.resources
 C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Debug\Koperasi2.frmParsys.resources
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Debug\Koperasi2.frmMKwitansi.resources
+C:\Users\Miaow\Documents\GitHub\AchmadProject\Koperasi 6-8-2014 - Copy\Koperasi2\obj\Debug\Koperasi2.frmTKwitansi.resources
